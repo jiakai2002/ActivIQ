@@ -10,11 +10,9 @@ venv/
 models/*
 !models/.gitkeep
 
-# Generated datasets
+# Raw downloaded datasets remain local; prepared datasets are shared with the app.
 data/raw/*
 !data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
 
 # Local user/session data
 data/user_profiles/*

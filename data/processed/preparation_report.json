@@ -1,0 +1,63 @@
+{
+  "augmentation": "disabled",
+  "intent_dataset": {
+    "splits": {
+      "train": {
+        "path": "C:\\Users\\jiakai\\Projects\\pt\\data\\raw\\intent_dataset\\train.parquet",
+        "output": "C:\\Users\\jiakai\\Projects\\pt\\data\\processed\\intents\\train.csv",
+        "rows": 960,
+        "labels": {
+          "log_feeling": 160,
+          "generate_plan": 160,
+          "general_chat": 160,
+          "find_exercise": 160,
+          "get_nutrition_info": 160,
+          "out_of_scope": 160
+        },
+        "problems": []
+      },
+      "validation": {
+        "path": "C:\\Users\\jiakai\\Projects\\pt\\data\\raw\\intent_dataset\\validation.parquet",
+        "output": "C:\\Users\\jiakai\\Projects\\pt\\data\\processed\\intents\\validation.csv",
+        "rows": 120,
+        "labels": {
+          "generate_plan": 20,
+          "out_of_scope": 20,
+          "get_nutrition_info": 20,
+          "general_chat": 20,
+          "find_exercise": 20,
+          "log_feeling": 20
+        },
+        "problems": []
+      },
+      "test": {
+        "path": "C:\\Users\\jiakai\\Projects\\pt\\data\\raw\\intent_dataset\\test.parquet",
+        "output": "C:\\Users\\jiakai\\Projects\\pt\\data\\processed\\intents\\test.csv",
+        "rows": 120,
+        "labels": {
+          "general_chat": 20,
+          "generate_plan": 20,
+          "get_nutrition_info": 20,
+          "log_feeling": 20,
+          "out_of_scope": 20,
+          "find_exercise": 20
+        },
+        "problems": []
+      }
+    },
+    "problems": []
+  },
+  "exercise_database": {
+    "problems": [],
+    "path": "C:\\Users\\jiakai\\Projects\\pt\\data\\raw\\exercise_db\\exercises.json",
+    "output": "C:\\Users\\jiakai\\Projects\\pt\\data\\processed\\exercises.json",
+    "records": 876
+  },
+  "nutrition": {
+    "source": "SR Legacy",
+    "path": "C:\\Users\\jiakai\\Projects\\pt\\data\\raw\\nutrition\\sr-legacy",
+    "output": "C:\\Users\\jiakai\\Projects\\pt\\data\\processed\\nutrition.json",
+    "records": 7793,
+    "problems": []
+  }
+}

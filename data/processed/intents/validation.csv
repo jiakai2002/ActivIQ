@@ -1,0 +1,121 @@
+text,label
+Design a workout routine using only a medicine ball.,generate_plan
+Tell me about the dinosaurs.,out_of_scope
+Tell me about the benefits of taking fish oil supplements.,get_nutrition_info
+Some days are definitely much harder than others to get going.,general_chat
+How to do a bent-over dumbbell row.,find_exercise
+What is the mind-body connection in yoga?,find_exercise
+Can you generate a 30-day fitness challenge for me to follow?,generate_plan
+Create a 5-day gym workout plan for building muscle.,generate_plan
+My breathing felt really deep and controlled during yoga.,log_feeling
+Show me a pre-run activation routine.,find_exercise
+That was a surprisingly easy workout.,log_feeling
+What are some foods high in zinc?,get_nutrition_info
+I feel really hydrated and good today.,log_feeling
+How many calories are in a serving of pad thai?,get_nutrition_info
+Is almond milk a good source of calcium?,get_nutrition_info
+Thanks for being my virtual coach.,general_chat
+I feel a great sense of calm after my evening walk.,log_feeling
+Can you explain what a black hole is in a way a child could understand?,out_of_scope
+Can you elaborate on the concept of progressive overload?,general_chat
+Tell me the macros for a cup of edamame.,get_nutrition_info
+That protein shake made me feel sick.,log_feeling
+I feel a bit dizzy.,log_feeling
+Show me a good medicine ball workout for core strength.,find_exercise
+"It's a journey, not a destination, right?",general_chat
+How many calories are in a standard pint of lager beer?,get_nutrition_info
+Tell me the nutritional facts for a single slice of cheese pizza.,get_nutrition_info
+I'm always looking for new healthy and tasty recipes.,general_chat
+I want a comprehensive training plan for an Olympic distance triathlon.,generate_plan
+The endorphin rush after that run is real right now.,log_feeling
+What are the original seven wonders of the ancient world?,out_of_scope
+Create a workout for me based on the equipment I have at home.,generate_plan
+Create a program to help me run my fastest 5k ever.,generate_plan
+Who won the last soccer World Cup?,out_of_scope
+Record my mood as 'fantastic'.,log_feeling
+I think a positive mindset is half the battle.,general_chat
+How to do a proper sit-up without using your hip flexors.,find_exercise
+My whole body is stiff this morning.,log_feeling
+Can you find some exercises for improving shoulder mobility?,find_exercise
+I’m feeling super motivated after hitting a new PR!,log_feeling
+Is whole milk unhealthy for adults?,get_nutrition_info
+How many carbs are in a slice of watermelon?,get_nutrition_info
+How do I start a successful YouTube channel?,out_of_scope
+Show me a workout for improving my basketball performance.,find_exercise
+Can you tell me about the rise and fall of the Roman Empire?,out_of_scope
+Do you have any favorite fitness influencers?,general_chat
+How to do a bear crawl.,find_exercise
+What's the sugar content of a Gatorade?,get_nutrition_info
+Can you give me some advice for my fantasy football draft?,out_of_scope
+Create a routine for improving my balance and stability.,generate_plan
+Can you generate a beginner's plan for intermittent fasting?,generate_plan
+Find me a video on how to perform a pull-up correctly.,find_exercise
+Design a program for an aspiring amateur bodybuilder.,generate_plan
+What's the best way to learn how to swim?,out_of_scope
+I want a diet plan that is supposed to be good for clear skin.,generate_plan
+What is a German volume training program?,find_exercise
+How do I make a good first impression at a job interview?,out_of_scope
+Is extra virgin olive oil better than regular vegetable oil?,get_nutrition_info
+What are the best practices for cybersecurity?,out_of_scope
+Find a routine for relieving neck pain.,find_exercise
+Who composed the famous classical piece 'The Four Seasons'?,out_of_scope
+Can you tell me about the art of bonsai?,out_of_scope
+I'm trying to convince my friend to join the gym with me so I have a partner.,general_chat
+How do you stay so knowledgeable about all this?,general_chat
+Thanks for breaking that complex topic down for me.,general_chat
+What are some foods that can help lower cholesterol?,get_nutrition_info
+"My motivation is at an all-time low this week, I can't seem to get going.",log_feeling
+I feel a great sense of clarity.,log_feeling
+Tell me about the macros for a can of tuna in water.,get_nutrition_info
+I'm feeling really irritable today.,log_feeling
+Can you help me with a name for my new cat?,out_of_scope
+My nagging back pain seems to be gone after those stretches.,log_feeling
+I'm feeling very grateful for my body's ability to move.,log_feeling
+I want a diet plan specifically for gaining healthy weight and muscle.,generate_plan
+What's the proper grip width for a barbell curl?,find_exercise
+What are the differences between simple carbs and complex carbs?,get_nutrition_info
+What are the different types of pasta?,out_of_scope
+What are the most common symptoms of the flu?,out_of_scope
+I'm trying to focus on my 'why'.,general_chat
+What's the best way to organize my closet?,out_of_scope
+What are the anti-inflammatory benefits of turmeric?,get_nutrition_info
+How to use the leg press machine properly.,find_exercise
+"Thanks, I needed to hear that today.",general_chat
+How do I get better at public speaking?,out_of_scope
+Is it possible to eat too much protein?,get_nutrition_info
+What do you think is the best type of cardio for fat loss?,general_chat
+Tell me the macros for a skinless chicken thigh.,get_nutrition_info
+I need a workout routine that I can do outdoors.,generate_plan
+That's an interesting question.,general_chat
+I feel so much more confident in my own skin.,log_feeling
+I feel a bit nauseous after that very intense circuit.,log_feeling
+What is the official currency of Japan?,out_of_scope
+My appetite has been huge lately since I started lifting more.,log_feeling
+Thanks for all your support.,general_chat
+What's the nutritional value of one cup of raw broccoli?,get_nutrition_info
+Can you recommend a good pair of noise-cancelling headphones?,out_of_scope
+What is the concept of muscle confusion?,find_exercise
+Create a 12-week program for a beginner powerlifter.,generate_plan
+How to do a Pallof press with a resistance band.,find_exercise
+Design a workout program for an endomorph who wants to lose weight.,generate_plan
+I want a workout schedule that realistically fits a busy 9-to-5 job.,generate_plan
+Are lentils a good source of dietary fiber?,get_nutrition_info
+"Thanks a lot, I'll definitely give that a try next time.",general_chat
+Log that my stress level is high today.,log_feeling
+What is the capital of Canada?,out_of_scope
+Create a workout plan for someone with scoliosis.,generate_plan
+I feel so accomplished after finishing my weekly step goal.,log_feeling
+How do I properly engage my abs during leg raises?,find_exercise
+Find exercises for improving my deadlift lockout.,find_exercise
+I'm trying to find workouts that I genuinely enjoy.,general_chat
+How to do a mountain climber exercise with speed.,find_exercise
+Tell me about the benefits of eating ginger for digestion.,get_nutrition_info
+"Awesome, thanks for setting that new plan up for me.",general_chat
+Can you make a meal plan that helps with bloating?,generate_plan
+I think I'm starting to understand the importance of macros.,general_chat
+How to do a Bulgarian split squat without losing balance.,find_exercise
+I need a workout plan that's low-impact and easy on the joints.,generate_plan
+I think my form is more important than the weight I'm lifting.,general_chat
+I want a plan to help me get back into fitness after a long break.,generate_plan
+Find some exercises for improving my reaction time.,find_exercise
+Design a program for someone coming back from a shoulder injury.,generate_plan

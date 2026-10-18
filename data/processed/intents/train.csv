@@ -1,0 +1,961 @@
+text,label
+My energy levels are completely crashed after a long workweek.,log_feeling
+Generate a running plan that includes hill sprints and tempo runs.,generate_plan
+I'm curious about the history of bodybuilding.,general_chat
+Can you demonstrate the face pull exercise?,find_exercise
+Are cashews a good source of protein?,get_nutrition_info
+How to do a proper chest fly on a machine.,find_exercise
+Create a 1-month plan to improve my overall fitness.,generate_plan
+Can you help me with a gift idea for my mother?,out_of_scope
+I'm trying hard to avoid getting injured or burning out.,general_chat
+How do I begin to invest in cryptocurrency safely?,out_of_scope
+I feel like I'm in a really good rhythm with my habits.,log_feeling
+I think I'm ready to take it to the next level.,general_chat
+What are the core principles of the Mediterranean diet?,get_nutrition_info
+I'm really feeling the burn in my abs from that core routine.,log_feeling
+That was honestly the hardest workout I have ever done.,log_feeling
+"My run today was so therapeutic, it cleared my head.",log_feeling
+I'm feeling very present and mindful.,log_feeling
+I'm feeling really hopeful about my fitness plan.,log_feeling
+How many calories are in a standard glass of red wine?,get_nutrition_info
+I feel a sense of empowerment.,log_feeling
+How to do a clean and press with a barbell.,find_exercise
+Is drinking fruit juice as healthy as eating the whole fruit?,get_nutrition_info
+How much caffeine is in a cup of black tea?,get_nutrition_info
+Generate a meal plan that is low in cholesterol.,generate_plan
+Are there a lot of carbohydrates in boiled potatoes?,get_nutrition_info
+What is the current estimated population of China?,out_of_scope
+Make me a healthy eating plan suitable for my young kids.,generate_plan
+How to do a side plank correctly for core stability.,find_exercise
+What are some good sources of calcium for someone who is lactose intolerant?,get_nutrition_info
+Generate a workout schedule that avoids any jumping exercises.,generate_plan
+How much vitamin K is in kale?,get_nutrition_info
+I need a workout schedule that includes swimming.,generate_plan
+I'm feeling emotionally drained.,log_feeling
+I need a meal plan that is gluten-free.,generate_plan
+How do I build a campfire safely?,out_of_scope
+My body feels like it's buzzing with energy.,log_feeling
+Is fruit-on-the-bottom yogurt healthy?,get_nutrition_info
+Are there any dangers to a very low-carb diet?,get_nutrition_info
+What are the different types of wine?,out_of_scope
+My mind is racing and I can't relax.,log_feeling
+I feel like I have a good pump going.,log_feeling
+Are dried fruits a healthy snack?,get_nutrition_info
+Is skim milk a good choice for an athlete?,get_nutrition_info
+I'm glad we're doing this together.,general_chat
+What are some common yoga poses for beginners?,find_exercise
+Who was Joan of Arc?,out_of_scope
+I'm trying to be more consistent with my cool-downs.,general_chat
+"I'm mentally exhausted, not physically.",log_feeling
+What do you think about full-body splits vs the classic 'bro' splits?,general_chat
+How to do a seated calf raise.,find_exercise
+"My muscles feel tight, I need to foam roll.",log_feeling
+I want a workout plan that I can stick to consistently.,generate_plan
+My body is telling me it needs a break.,log_feeling
+I feel like I'm learning so much from you about all this.,general_chat
+I felt a little off and weak during my swim today.,log_feeling
+How to do a Cossack squat.,find_exercise
+I feel really good about the progress I've made this month.,log_feeling
+How do you keep up with all the latest fitness research?,general_chat
+How to perform a hanging leg raise.,find_exercise
+What's your opinion on fasted cardio?,general_chat
+Can you lay out a hydration strategy for a long endurance event?,generate_plan
+Design a workout focused on developing functional strength for daily life.,generate_plan
+Design a 3-day full-body workout routine.,generate_plan
+Generate a diet plan low in sodium.,generate_plan
+Can you create a simple meditation and mindfulness plan for a beginner?,generate_plan
+Tell me the nutrition facts for a plain bagel.,get_nutrition_info
+How do I start a small vegetable garden in my backyard?,out_of_scope
+What's my horoscope for today? I'm a Leo.,out_of_scope
+How much sugar is in a typical granola bar?,get_nutrition_info
+Generate a low-carb meal plan for the next 5 days.,generate_plan
+What’s the macronutrient breakdown of a whole egg?,get_nutrition_info
+Thanks for being so reliable.,general_chat
+Is molasses a healthier sweetener?,get_nutrition_info
+Can you create a simple workout plan I can do at home?,generate_plan
+How do you feel about tracking every single macro?,general_chat
+What do you think about using a weightlifting belt for heavy squats?,general_chat
+How many calories are in a bowl of plain oatmeal?,get_nutrition_info
+How to do a cable pull-through for glutes.,find_exercise
+I appreciate the straightforward advice.,general_chat
+Show me a cool-down routine for after a strength workout.,find_exercise
+Can you order a large pepperoni pizza for me?,out_of_scope
+I need a workout schedule that I can do on my lunch breaks.,generate_plan
+How to do a spider crawl exercise.,find_exercise
+That's exactly the kind of motivation I needed.,general_chat
+Tell me the nutrition facts for a bowl of ramen.,get_nutrition_info
+What is the philosophical meaning of life?,out_of_scope
+What is the stock symbol for Google?,out_of_scope
+How to do a skull crusher safely to avoid elbow injury.,find_exercise
+I need a workout schedule for someone who can only go to the gym twice a week.,generate_plan
+I'm not sure what my long-term goals are yet.,general_chat
+Create a meal plan that aligns with my macros.,generate_plan
+"I feel a bit lightheaded, maybe I didn't eat enough.",log_feeling
+I need a nutrition plan that completely avoids all processed foods.,generate_plan
+What are some key nutrients to look for during pregnancy?,get_nutrition_info
+I feel so much more powerful.,log_feeling
+I'm feeling very disciplined with my diet choices this week.,log_feeling
+"That's a good reminder, thank you.",general_chat
+Can you explain the concept of supply and demand?,out_of_scope
+Show me a workout for improving forearm and grip strength.,find_exercise
+How do I start to learn to play the acoustic guitar?,out_of_scope
+Generate a workout plan for someone with limited time.,generate_plan
+"I'm not a fan of early morning workouts, to be honest.",general_chat
+Nutritional profile of a Beyond Meat sausage.,get_nutrition_info
+How do you differentiate between good pain and bad pain?,general_chat
+How can I do a lunge without hurting my knees?,find_exercise
+"Thanks for the tips on my squat form, they really make a lot of sense!",general_chat
+I'm feeling particularly lazy and unmotivated to do anything.,log_feeling
+What was the Industrial Revolution?,out_of_scope
+Feeling particularly strong after my workout!,log_feeling
+My body feels well-rested and ready to go.,log_feeling
+Tell me about the nutritional value of nutritional yeast.,get_nutrition_info
+Tell me the approximate vitamin C content of one orange.,get_nutrition_info
+How should I be breathing during heavy weightlifting?,find_exercise
+Find a video on how to improve my grip strength for pull-ups.,find_exercise
+Do you think it's better to work out fasted or fed?,general_chat
+Show me a workout for improving my swimming strokes.,find_exercise
+What is the RPE scale in weightlifting?,find_exercise
+Make me a meal plan that is paleo-friendly.,generate_plan
+It's more about how you feel than what the scale says.,general_chat
+That's a very balanced perspective.,general_chat
+How to do a farmer's walk with heavy dumbbells.,find_exercise
+What are some good sources of plant-based iron?,get_nutrition_info
+Are sweet potatoes a good source of complex carbs?,get_nutrition_info
+"Thanks, that's a good way to look at it.",general_chat
+I'm trying to make this a permanent lifestyle change.,general_chat
+I need a program focused on improving my squat depth and form.,generate_plan
+What's the difference between an alligator and a crocodile?,out_of_scope
+My diet has been completely off track and I feel a bit guilty.,log_feeling
+How to do a preacher curl with a dumbbell.,find_exercise
+I need a workout program focused on improving my agility.,generate_plan
+What are complete vs incomplete proteins? Give me examples.,get_nutrition_info
+Tell me about the Amazon rainforest.,out_of_scope
+"My workout was mediocre, feeling 'meh' about it.",log_feeling
+I'm trying to find a form of cardio that I don't hate.,general_chat
+What's a good exercise for targeting the obliques?,find_exercise
+Generate a plan to get my first muscle-up.,generate_plan
+I really need some exercises for my lower back pain.,find_exercise
+My body feels strong and capable.,log_feeling
+What's the best way to get traffic updates for my commute?,out_of_scope
+Design a supplement plan for general health and wellness.,generate_plan
+Can you recommend a good Italian restaurant in Paris?,out_of_scope
+I'm craving junk food really badly today.,log_feeling
+How much sugar is in a typical glass of apple juice?,get_nutrition_info
+What is the difference between a refugee and an asylum seeker?,out_of_scope
+How to do a good morning exercise with a barbell.,find_exercise
+What's the best way to learn chess?,out_of_scope
+I'm thinking of finally getting a fitness tracker to monitor my progress.,general_chat
+Tell me about the nutrition of seaweed.,get_nutrition_info
+What are the main political parties in Germany today?,out_of_scope
+Who is the author of the Harry Potter book series?,out_of_scope
+Generate a meal plan that is certified as heart-healthy by cardiologists.,generate_plan
+asdfghjkl qwertyuiop,out_of_scope
+What’s the capital city of Brazil?,out_of_scope
+What are trans fats and why are they considered bad for you?,get_nutrition_info
+I'm trying to find healthy ways to manage stress.,general_chat
+What are the best exercises for thoracic spine mobility?,find_exercise
+I'm feeling distracted and can't focus.,log_feeling
+What's the best piece of advice you've ever given?,general_chat
+Create a cycling training plan for improving endurance.,generate_plan
+My legs are absolutely sore after yesterday’s leg day.,log_feeling
+What is the Zottman curl?,find_exercise
+What is a drop set?,find_exercise
+What machine at the gym works the calves best?,find_exercise
+My mind is quiet for the first time all day.,log_feeling
+Generate a plan for my off-season training.,generate_plan
+That was a very meditative and grounding practice.,log_feeling
+What’s the best way to do a bench press without a spotter?,find_exercise
+A bit disappointed in myself for missing my morning run.,log_feeling
+I need a plan to follow for a lean bulk.,generate_plan
+My energy is crashing hard this afternoon.,log_feeling
+I’m a bit more tired than usual after my HIIT workout.,log_feeling
+What’s a good book to read this month?,out_of_scope
+My lower back feels really stiff after sitting at my desk all day.,log_feeling
+How do I fix my laptop’s Wi-Fi connection?,out_of_scope
+I find that listening to a good podcast really helps my cardio sessions fly by.,general_chat
+That explanation was crystal clear.,general_chat
+How do I properly format a formal business letter?,out_of_scope
+I need a safe workout plan for a pregnant woman in her second trimester.,generate_plan
+What are the scientifically proven benefits of daily meditation?,out_of_scope
+What is the deal with gluten? Is it bad for everyone?,get_nutrition_info
+Design a workout for my upper body using only dumbbells.,generate_plan
+My core feels really solid and stable today.,log_feeling
+How much sugar is in a serving of ketchup?,get_nutrition_info
+What is the process of recycling plastic?,out_of_scope
+Make a plan to slowly and safely introduce exercise into my sedentary life.,generate_plan
+Make a meal plan that is dairy-free and high in protein.,generate_plan
+Can you explain how a four-stroke car engine works?,out_of_scope
+Design a workout for someone with a bad back.,generate_plan
+What are the main tourist attractions in Rome?,out_of_scope
+Show me how to do a renegade row.,find_exercise
+My sleep quality has been amazing this past week.,log_feeling
+What are the antioxidant benefits of drinking green tea?,get_nutrition_info
+I'm feeling a little discouraged by the number on the scale.,log_feeling
+What is the benefit of unilateral training?,find_exercise
+Show me a workout to do on a park bench.,find_exercise
+What's your take on cryotherapy for recovery?,general_chat
+I'm trying to be kinder to my body.,general_chat
+"That was very helpful, thanks a bunch!",general_chat
+Generate a meal prep plan for a busy workweek.,generate_plan
+Can you help me find my lost keys?,out_of_scope
+Can you generate a program specifically for improving my vertical jump?,generate_plan
+My muscles feel so pumped up and full right now.,log_feeling
+I need a nutrition plan to complement my HIIT workouts.,generate_plan
+I want a plan to get abs in 3 months.,generate_plan
+Show me some exercises for the adductor muscles.,find_exercise
+I'm feeling really good about today's session.,log_feeling
+Can you find cheap flights to Bali?,out_of_scope
+Find a workout routine specifically for toning arms.,find_exercise
+What are the benefits of eating walnuts for brain health?,get_nutrition_info
+Find exercises for improving my posture from sitting all day.,find_exercise
+How much caffeine is in a standard cup of coffee?,get_nutrition_info
+What is the actual capital of Australia?,out_of_scope
+What are the benefits of taking a multivitamin?,get_nutrition_info
+Find a tutorial on how to jump rope like a boxer.,find_exercise
+Can you build a 6-month plan to prepare for a bodybuilding competition?,generate_plan
+What's the best way to track my progress over time?,general_chat
+My computer is running very slowly today.,out_of_scope
+I'm feeling so much stronger than I was just a month ago.,log_feeling
+How many calories are there in 100g of cooked white rice?,get_nutrition_info
+I need a 3-week running plan for a 10k race.,generate_plan
+Can you make a plan to help me quit soda?,generate_plan
+Can you recommend a good TV show to binge-watch on Netflix?,out_of_scope
+Find a guide to proper breathing during yoga.,find_exercise
+How to do a dumbbell pullover.,find_exercise
+What's a good workout to do when you're short on time?,find_exercise
+My shoulders are feeling unusually tight and restricted.,log_feeling
+How to use resistance bands for a full body workout at home.,find_exercise
+What's the main difference between whey and casein protein?,get_nutrition_info
+How do I set up a new email account with Gmail?,out_of_scope
+Can you find a guide on the principle of progressive overload?,find_exercise
+I feel like my old self again after being sick.,log_feeling
+I appreciate how you explain things without jargon.,general_chat
+I'm really looking forward to my workout session later on.,log_feeling
+Which muscles do standard push-ups primarily work?,find_exercise
+I'm just happy to be moving my body.,general_chat
+I'm feeling very resilient today.,log_feeling
+How much cholesterol is in a shrimp serving?,get_nutrition_info
+Is sparkling water hydrating?,get_nutrition_info
+What are some good dietary sources of magnesium?,get_nutrition_info
+Tell me about the plot of the movie 'The Matrix'.,out_of_scope
+That was a great explanation of compound movements.,general_chat
+Are veggie chips healthier than potato chips?,get_nutrition_info
+My focus is off the charts today.,log_feeling
+My appetite is really low today.,log_feeling
+Create a meal plan for two people.,generate_plan
+Can you give me a good recipe for chocolate chip cookies?,out_of_scope
+"I'm feeling totally wiped, but in the best way possible.",log_feeling
+What are the benefits of drinking kombucha?,get_nutrition_info
+Who painted 'Starry Night'?,out_of_scope
+Create a nutrition plan for a teenager who is an athlete.,generate_plan
+"Wow, that workout plan you generated for me looks intense!",general_chat
+Find a tutorial on diaphragmatic breathing for core stability.,find_exercise
+What do you think about the carnivore diet?,general_chat
+That meditation session left me feeling grounded.,log_feeling
+How to do a standing barbell press.,find_exercise
+"Tell me the basics of intermittent fasting, like the 16/8 method.",get_nutrition_info
+I feel like my systems are all running smoothly.,log_feeling
+Create a routine of morning stretches to start my day.,generate_plan
+"I'm trying to focus on how I feel, not just how I look.",general_chat
+What effective exercises can I do with just a simple chair?,find_exercise
+"Who is the current CEO of Tesla, Inc.?",out_of_scope
+Create a meal plan for a family with picky eaters.,generate_plan
+Design a program to increase my flexibility for martial arts.,generate_plan
+What are some good food sources of potassium?,get_nutrition_info
+Are organic foods more nutritious?,get_nutrition_info
+I'm trying to celebrate the small wins along the way.,general_chat
+Find a yoga flow for morning energy.,find_exercise
+Can you help me with my travel itinerary for Japan?,out_of_scope
+1s9. Are rice cakes a good snack for weight loss?,get_nutrition_info
+My stomach feels upset.,log_feeling
+Tell me about the life of Nelson Mandela.,out_of_scope
+My legs feel like jelly.,log_feeling
+Generate a complete diet plan for a vegetarian athlete.,generate_plan
+Make me a workout plan that is fun and doesn't feel like a chore.,generate_plan
+How to activate my glutes before I start my workout?,find_exercise
+Can you help me with my kid's math homework?,out_of_scope
+My body feels like a well-oiled machine today.,log_feeling
+I think having a clear and measurable goal is really important.,general_chat
+Tell me about the digestive health benefits of ginger.,get_nutrition_info
+How do I properly tie a bow tie?,out_of_scope
+What's the deal with MCT oil?,get_nutrition_info
+What's an ideal post-workout meal for recovery?,get_nutrition_info
+Tell me about the macros for a serving of black beans.,get_nutrition_info
+Show me a tutorial on the muscle-up.,find_exercise
+Can you create a plan for me to get 8 hours of sleep every night?,generate_plan
+I feel so much more alert after my morning coffee and walk.,log_feeling
+I need a plan to train for a century bike ride.,generate_plan
+"Is quinoa healthier than brown rice, and why?",get_nutrition_info
+Find some exercises for improving ankle mobility.,find_exercise
+I need a workout program to follow after recovering from an injury.,generate_plan
+How much caffeine is in a can of Red Bull?,get_nutrition_info
+Tell me the nutritional profile of a portobello mushroom.,get_nutrition_info
+Is it really true that you can't out-train a bad diet?,general_chat
+Tell me about the DASH diet for lowering blood pressure.,get_nutrition_info
+How to do a bird-dog exercise for core stability.,find_exercise
+"Thank you, that was very insightful.",general_chat
+"Make a post-workout recovery plan for me, including stretching and nutrition.",generate_plan
+"I feel like I'm making real, tangible progress.",log_feeling
+Is it true that muscle weighs more than fat?,general_chat
+What's the current market price of gold per ounce?,out_of_scope
+What is the core difference between nuclear fission and fusion?,out_of_scope
+How many calories are in a glass of champagne?,get_nutrition_info
+I'm feeling a bit puffy today.,log_feeling
+Who is the current CEO of Microsoft?,out_of_scope
+Create a 10-day detox meal plan.,generate_plan
+Who is the main character in the 'Lord of the Rings' books?,out_of_scope
+I think I need to be more patient with myself.,general_chat
+I want a plan to increase the number of push-ups I can do.,generate_plan
+Is monk fruit sweetener a good sugar alternative?,get_nutrition_info
+I'm trying to find ways to make my workouts more fun.,general_chat
+Who was the famous Egyptian queen Cleopatra?,out_of_scope
+How many calories are in a falafel wrap?,get_nutrition_info
+I'm feeling a little bit fluffy from my weekend eating.,log_feeling
+What’s the plot of the latest Marvel movie?,out_of_scope
+"That makes perfect sense, thank you for clarifying that for me.",general_chat
+Can you generate a workout schedule for a frequent traveler?,generate_plan
+Create a workout plan focused on hypertrophy.,generate_plan
+I'm feeling a baseline level of anxiety today for some reason.,log_feeling
+That pre-workout supplement made me feel jittery.,log_feeling
+"Okay, I think I understand the concept now.",general_chat
+What are some foods that can help improve brain function?,get_nutrition_info
+Are air-popped popcorn a healthy snack?,get_nutrition_info
+Make me a meal plan for a liquid diet.,generate_plan
+What is the nutritional value of spirulina?,get_nutrition_info
+Can you explain the biomechanics of a good deadlift?,find_exercise
+"You're a great motivator, you know that?",general_chat
+Design a meal plan that helps reduce inflammation in the body.,generate_plan
+How many calories should I aim for daily to lose weight?,get_nutrition_info
+What's your unbiased opinion on pre-workout supplements?,general_chat
+I think setting realistic and achievable goals is key to success.,general_chat
+I want a plan to improve my deadlift by 50 pounds.,generate_plan
+Tell me the nutritional info for a bowl of pho.,get_nutrition_info
+How to do a cable crossover for chest.,find_exercise
+Tell me about the basic rules of the paleo diet.,get_nutrition_info
+"How much water should a person drink in a day, on average?",get_nutrition_info
+How much protein can the average person's body absorb in one meal?,get_nutrition_info
+"Create a detailed grocery list for a week of healthy, clean eating.",generate_plan
+I think I'm finally getting into a good routine.,general_chat
+Design a routine for improving ankle mobility for squats.,generate_plan
+Are almonds a good source of healthy fats and vitamin E?,get_nutrition_info
+"My muscles are aching today, but it's a good kind of pain.",log_feeling
+What are some good stretches for tight hamstrings?,find_exercise
+How many calories are in a small handful of walnuts?,get_nutrition_info
+What are the different types of cheese?,out_of_scope
+Design a workout routine for building bigger arms.,generate_plan
+Is coconut oil considered a healthy fat for cooking?,get_nutrition_info
+Tell me about the nutritional profile of artichokes.,get_nutrition_info
+Tell me the nutrition facts for a veggie burger patty.,get_nutrition_info
+Who’s performing at the music festival next week?,out_of_scope
+Are there any risks to drinking too much water?,get_nutrition_info
+I'm trying to focus on one habit at a time.,general_chat
+Tell me about the macros for a serving of cottage cheese.,get_nutrition_info
+I feel a renewed sense of motivation.,log_feeling
+Please translate 'good morning' into Spanish for me.,out_of_scope
+What is the nutritional value of wheatgrass?,get_nutrition_info
+What's the difference between a chin-up and a pull-up grip?,find_exercise
+I find it so hard to remember to drink enough water every single day.,general_chat
+Make a high-protein meal plan for a 2000-calorie diet.,generate_plan
+How do I negotiate a higher salary?,out_of_scope
+I need a detailed nutrition plan for my bulking season.,generate_plan
+What's the best way to get motivated to clean my house?,out_of_scope
+I need a program that focuses on explosive leg power.,generate_plan
+I feel a strong sense of purpose.,log_feeling
+Can you demonstrate a tricep dip using a bench?,find_exercise
+What do you think about working out with a personal trainer?,general_chat
+What are some foods that can help with sleep?,get_nutrition_info
+What exactly is functional training?,find_exercise
+Generate a workout schedule that incorporates both yoga and weightlifting.,generate_plan
+How to do a front squat with dumbbells.,find_exercise
+That workout completely wiped me out.,log_feeling
+Show me exercises to strengthen my core.,find_exercise
+How much iron is in a cup of cooked spinach?,get_nutrition_info
+I'm happy with how consistent I've been with my workouts.,log_feeling
+Find a guide on how to choose the right running shoes.,find_exercise
+Design a weekly routine for foam rolling and recovery.,generate_plan
+Design a supplement stack for a strength athlete.,generate_plan
+Who composed the 'Moonlight Sonata'?,out_of_scope
+This whole fitness journey is much tougher than I originally expected.,general_chat
+Find some simple exercises to improve my balance.,find_exercise
+What's the best way to brew coffee at home?,out_of_scope
+Tell me about the glycemic index of watermelon and what it means.,get_nutrition_info
+My muscles feel recovered and fresh.,log_feeling
+My neck is sore from looking at the computer.,log_feeling
+I'm glad I found an app like you.,general_chat
+Create a plan to improve my posture.,generate_plan
+My motivation is through the roof.,log_feeling
+Tell me something interesting about penguins.,out_of_scope
+Why do some people prefer to work out in the morning versus the evening?,general_chat
+What's a good way to warm up my shoulders before benching?,find_exercise
+Generate a workout plan for a home setup with just dumbbells and a bench.,generate_plan
+What are the main types of martial arts?,out_of_scope
+Thank you for making this less intimidating.,general_chat
+I'm trying to avoid comparing my progress to others.,general_chat
+I feel so much more flexible after just a week of daily stretching.,log_feeling
+Can you give me a brief overview of the keto diet?,get_nutrition_info
+What's the best way to do a cardio workout at home?,find_exercise
+Is it true that celery has negative calories?,get_nutrition_info
+I find that a workout partner keeps me accountable.,general_chat
+Tutorial for a proper push-up for beginners.,find_exercise
+What are your thoughts on active recovery days versus complete rest?,general_chat
+Show me how to do an incline dumbbell press.,find_exercise
+I feel like I'm floating after that swim.,log_feeling
+That's a great piece of advice.,general_chat
+Who invented the light bulb?,out_of_scope
+What are some common myths about weightlifting?,find_exercise
+I feel a bit of a sharp pain in my wrist when I do push-ups.,log_feeling
+I feel so good and clean when I eat whole foods.,log_feeling
+Generate a weekly workout schedule for a complete beginner.,generate_plan
+Generate a weekly calendar for my workouts and rest days.,generate_plan
+Is diet soda actually bad for your health?,get_nutrition_info
+What do you think about intuitive eating?,general_chat
+What is blockchain technology and how does it work?,out_of_scope
+I want a plan to improve my cardiovascular endurance.,generate_plan
+Show me a routine for post-run recovery.,find_exercise
+I feel a satisfying burn in my muscles.,log_feeling
+How to do a Zercher squat.,find_exercise
+I think it's important to have fun with fitness.,general_chat
+I’m proud of myself for sticking to my diet all week.,log_feeling
+My mood is fantastic after that relaxing yoga session.,log_feeling
+I think finding a community is really helpful.,general_chat
+Can you give me a good comeback for an insult?,out_of_scope
+I'm feeling really positive about my entire fitness journey right now.,log_feeling
+Are there any health risks associated with a high-protein diet?,get_nutrition_info
+"I'm trying to make fitness a real lifestyle, not just a temporary phase.",general_chat
+Note my soreness level is at an 8 out of 10.,log_feeling
+Do you really think it's necessary to count every single calorie?,general_chat
+How do I reset my router password?,out_of_scope
+That nutrition plan seems very sustainable.,general_chat
+Do you think a home gym is a good investment?,general_chat
+Do you think it's bad to listen to music while working out?,general_chat
+Show me a beginner-friendly yoga routine for flexibility.,find_exercise
+Correct form for an overhead military press.,find_exercise
+What are the main components of a cell?,out_of_scope
+What is Einstein's theory of general relativity in simple terms?,out_of_scope
+What are probiotics and where can I find them in food?,get_nutrition_info
+Generate a nightly yoga plan specifically for better sleep.,generate_plan
+Can you explain how to brace my core for heavy lifts?,find_exercise
+My posture feels like it's improving already.,log_feeling
+That's a very helpful way to frame the problem.,general_chat
+How do I do box jumps without scraping my shins?,find_exercise
+Is there such a thing as consuming too much protein in a day?,general_chat
+I'm feeling overwhelmed by all the information.,log_feeling
+How to do a T-bar row.,find_exercise
+Who is the current president of the United States of America?,out_of_scope
+How to use an ab wheel safely without hurting my back.,find_exercise
+"That was a killer session, I loved it.",log_feeling
+Tell me about the nutritional profile of Brussels sprouts.,get_nutrition_info
+What is the capital of South Korea?,out_of_scope
+I want a plan to build explosive power for sports like basketball.,generate_plan
+I'm trying to learn as much as I can.,general_chat
+Could you generate a workout focusing on chest and triceps?,generate_plan
+What are the macros for a serving of tempeh?,get_nutrition_info
+Who wrote the majority of the American Declaration of Independence?,out_of_scope
+I'm feeling very content with my current routine.,log_feeling
+Show me a workout for a pear-shaped body type.,find_exercise
+I feel like I have way more energy than usual today.,log_feeling
+Tell me about the benefits of eating fermented foods.,get_nutrition_info
+I need a nutrition plan for my 'cutting' phase to lose fat.,generate_plan
+I'm trying to find a reliable workout buddy.,general_chat
+Are artificial sweeteners like aspartame safe to consume?,get_nutrition_info
+I think the mental benefits of exercise are just as important as the physical ones.,general_chat
+What do you think about the 'no days off' mentality?,general_chat
+What are the benefits of eating pumpkin seeds?,get_nutrition_info
+I feel like I'm finally getting the hang of this.,log_feeling
+Can you make a simple meal plan for a college student?,generate_plan
+Can you find a stretching routine for people with desk jobs?,find_exercise
+What are the main ingredients in a classic margarita cocktail?,out_of_scope
+Design a flexibility and mobility routine for me.,generate_plan
+What is the approximate distance from the Earth to the Sun?,out_of_scope
+"My body feels completely wrecked, in a good way.",log_feeling
+Can you show me some mobility exercises for tight hips?,find_exercise
+I'm feeling pretty tired and might just take it easy today.,log_feeling
+What are some low-calorie but filling dinner options?,get_nutrition_info
+Can you make a meal plan for a shift worker?,generate_plan
+What do you think about body recomposition?,general_chat
+What's the best way to stretch my quads after a leg day?,find_exercise
+Who was Julius Caesar?,out_of_scope
+I'm feeling very clear-headed and sharp.,log_feeling
+I'm learning to be more forgiving with myself.,general_chat
+How do I write a thank-you note?,out_of_scope
+Make a progressive plan to help me achieve my first unassisted pull-up.,generate_plan
+I'm trying to get my family to be more active.,general_chat
+What is the chemical formula for table salt?,out_of_scope
+Where is my car parked?,out_of_scope
+What is the currency of Switzerland?,out_of_scope
+"Feeling a little bit flat, no energy.",log_feeling
+How to do an inverted row with a bar.,find_exercise
+Generate a nutrition plan for exam season to boost focus.,generate_plan
+That was a really mindful and intentional workout.,log_feeling
+What's the vitamin B12 content of nutritional yeast?,get_nutrition_info
+Create a workout plan that requires no equipment whatsoever.,generate_plan
+What are compound vs isolation exercises and when to use them?,find_exercise
+Show me a workout using just your bodyweight.,find_exercise
+Can you help me identify this type of plant from a description?,out_of_scope
+That's a question I've always wondered about.,general_chat
+I'm trying to build a much better and healthier relationship with food.,general_chat
+I need a plan for a caloric surplus.,generate_plan
+I'm feeling really in tune with my body's needs.,log_feeling
+What is a compound set?,find_exercise
+I think diet is probably 80% of the battle.,general_chat
+How to do a side lunge correctly.,find_exercise
+I need a specialized plan to help me increase my bench press max.,generate_plan
+Can you generate a plan to help me build a morning routine?,generate_plan
+Can you recommend a good mobile game to pass the time?,out_of_scope
+Is brown rice syrup a healthy alternative to sugar?,get_nutrition_info
+How to do a reverse fly with light dumbbells for my rear delts.,find_exercise
+Create a weekly meal prep guide for a single person living alone.,generate_plan
+Find me a guide on mind-muscle connection.,find_exercise
+I think sleep is the most underrated performance enhancer.,general_chat
+Can you set an alarm for 7 AM tomorrow?,out_of_scope
+How to do a dragon flag exercise.,find_exercise
+What's the recommended daily limit for sodium intake?,get_nutrition_info
+What's a good recipe for homemade lasagna?,out_of_scope
+How much sugar is in a typical energy drink?,get_nutrition_info
+How to do a close-grip bench press.,find_exercise
+Create a weekly schedule that outlines my active recovery days.,generate_plan
+How to perform a Turkish get-up with a kettlebell.,find_exercise
+What are some good workouts for the serratus anterior?,find_exercise
+"What are all the planets in our solar system, in order?",out_of_scope
+I'm frustrated with my lack of progress on the scale this month.,log_feeling
+Feeling really proud of my consistency.,log_feeling
+My right ankle feels a bit weak.,log_feeling
+I'm just trying to find a healthy balance that works for my life.,general_chat
+What are some exercises for improving hip internal rotation?,find_exercise
+What's your opinion on using apps to track calories?,general_chat
+Who was the leader of the Civil Rights Movement in the US?,out_of_scope
+I feel like I'm glowing from the inside out.,log_feeling
+What is a superset and how do I incorporate it?,find_exercise
+Design a program for an advanced calisthenics athlete.,generate_plan
+My workout was a bit boring today.,log_feeling
+Can you help me write a professional cover letter for a job application?,out_of_scope
+"That's a very good point, I hadn't considered that perspective.",general_chat
+nutritional information for a McDonald's Big Mac,get_nutrition_info
+My triceps are killing me from yesterday.,log_feeling
+I need a plan to train for an obstacle course race.,generate_plan
+protein in a single scoop of whey powder,get_nutrition_info
+Generate a 1-month push-up challenge.,generate_plan
+What does it mean to be in a calorie deficit?,get_nutrition_info
+I think taking progress pictures is a good idea.,general_chat
+I think tracking my workouts helps me stay on track.,general_chat
+Show me a workout routine for a v-taper back.,find_exercise
+I'm trying to unlearn a lot of bad habits.,general_chat
+"My joints feel great today, no pain or creakiness at all.",log_feeling
+How do I write a haiku?,out_of_scope
+That walk in the park was very calming.,log_feeling
+Is honey a healthier choice than table sugar?,get_nutrition_info
+That's a very comprehensive answer.,general_chat
+That was a tough but rewarding session.,log_feeling
+My energy levels are surprisingly high for a Monday.,log_feeling
+Can you recommend a good place for a first date?,out_of_scope
+I'm a little skeptical about some fitness trends.,general_chat
+How much caffeine is in a cup of green tea?,get_nutrition_info
+That was a satisfyingly tough workout.,log_feeling
+How do I code a simple 'hello world' website using HTML?,out_of_scope
+What is the Valsalva maneuver?,find_exercise
+Can you help me find a good plumber in my area?,out_of_scope
+How to learn to code in Python.,out_of_scope
+Show me a workout for improving my golf swing.,find_exercise
+What's the proper posture for a seated cable row?,find_exercise
+How do I book a cheap flight to London?,out_of_scope
+How do you handle misinformation about fitness?,general_chat
+How do I choose a ripe avocado at the store?,out_of_scope
+Can you generate a 2-week clean eating challenge plan?,generate_plan
+What are some naturally hydrating foods besides cucumber?,get_nutrition_info
+What's the best way to quickly get over jet lag?,out_of_scope
+I feel a deep sense of satisfaction.,log_feeling
+What's the proper way to use an elliptical machine?,find_exercise
+Design a routine of stretches for someone with a desk job.,generate_plan
+How to do a hip thrust with a barbell for glute development.,find_exercise
+Is it okay to eat two or three eggs every day?,get_nutrition_info
+I'm feeling some serious DOMS in my chest from two days ago.,log_feeling
+I need a workout program for someone who wants to get toned but not bulky.,generate_plan
+What are some healthy snack ideas under 200 calories?,get_nutrition_info
+How to do a lying tricep extension.,find_exercise
+What's the score of the cricket match?,out_of_scope
+Make a workout plan that I can do with a partner.,generate_plan
+I'm trying to be more mindful and present when I eat my meals.,general_chat
+Generate a diet plan rich in antioxidant foods.,generate_plan
+Generate a weekly schedule of different cardio activities.,generate_plan
+What are some common bench press errors to avoid?,find_exercise
+I feel amazing knowing I drank enough water yesterday.,log_feeling
+I'm really in the zone with my music and my workout today.,log_feeling
+What are some exercises for wrist health?,find_exercise
+Tell me about the benefits of soluble and insoluble fiber.,get_nutrition_info
+Who won the Nobel Prize in Physics last year?,out_of_scope
+What are your general thoughts on the CrossFit methodology?,general_chat
+What's the best dog breed for a small apartment lifestyle?,out_of_scope
+What are your thoughts on using lifting straps for heavy deadlifts?,general_chat
+Design a routine for an elderly person to maintain mobility.,generate_plan
+Can you help me plan a 10-day vacation to Italy?,out_of_scope
+I want a program to improve my posture and fix my rounded shoulders.,generate_plan
+Who built the pyramids of Giza?,out_of_scope
+How do you handle plateaus in training?,general_chat
+What's the deal with foam rolling? Does it actually work?,general_chat
+Find a video on proper rowing machine technique.,find_exercise
+That's a very diplomatic answer.,general_chat
+Could you write a short poem about the ocean?,out_of_scope
+What are the main benefits of holding a plank?,find_exercise
+What is periodization in a workout plan?,find_exercise
+Make me a cardio plan for improving heart health.,generate_plan
+What are some foods to avoid if you have high blood pressure?,get_nutrition_info
+Generate a safe and effective workout plan for someone over 50.,generate_plan
+I feel a dull ache in my lower back.,log_feeling
+How much fat is in one whole avocado?,get_nutrition_info
+Show me a stretching routine for before bed.,find_exercise
+What is a Tabata workout?,find_exercise
+What is the concept of bulking and cutting in bodybuilding?,get_nutrition_info
+I'm thinking about investing in a good pair of running shoes.,general_chat
+What is the SAID principle in training?,find_exercise
+"Make a list of healthy, high-protein snack ideas for the week.",generate_plan
+Show me some effective exercises using only a yoga mat.,find_exercise
+What's the best way to deal with a difficult coworker?,out_of_scope
+What are some common running injuries and how to prevent them?,find_exercise
+Are there any benefits to drinking celery juice?,get_nutrition_info
+Can you create a weekly mobility routine I can do in the morning?,generate_plan
+I think I actually prefer working out alone with my headphones.,general_chat
+I need a workout schedule for a mesomorph body type.,generate_plan
+Find some exercises for carpal tunnel syndrome.,find_exercise
+My breathing feels shallow and stressed.,log_feeling
+I honestly wish I had started this whole fitness journey years ago.,general_chat
+Can you create a meal plan that's both healthy and delicious?,generate_plan
+What are your thoughts on electrical muscle stimulation (EMS) training?,general_chat
+I feel very balanced and centered after my yoga practice.,log_feeling
+"I have a pounding headache, so I think I'm going to skip the gym.",log_feeling
+I just love how running completely clears my mind after a stressful day.,general_chat
+Can you make me a meal plan for a detox?,generate_plan
+What are the benefits of collagen peptides?,get_nutrition_info
+I want a workout plan that focuses on compound lifts.,generate_plan
+How to do a glute bridge to activate the glutes.,find_exercise
+Can you create a 4-week bodyweight exercise plan?,generate_plan
+Are BCAA supplements actually worth the money?,get_nutrition_info
+Create a 30-day squat challenge.,generate_plan
+How much sugar is in a ripe mango?,get_nutrition_info
+How to do a deficit deadlift.,find_exercise
+Find exercises to strengthen the rotator cuff.,find_exercise
+"I think I'm coming down with something, feeling a bit under the weather.",log_feeling
+I want a nutrition guide for a marathon runner.,generate_plan
+I want a workout plan I can do in my apartment without making noise.,generate_plan
+What is active recovery and what should I do on those days?,find_exercise
+What is the scientific name for the gray wolf?,out_of_scope
+Can you explain the rules of American football?,out_of_scope
+Create a workout schedule that includes two-a-day training sessions.,generate_plan
+Generate a 6-week strength training program.,generate_plan
+I always thought I needed to lift super heavy weights to build any muscle.,general_chat
+Exercises for fixing rounded shoulders and forward head posture.,find_exercise
+Is eating red meat linked to health problems?,get_nutrition_info
+That's a really inspiring story!,general_chat
+How many calories does a sedentary person burn a day?,get_nutrition_info
+Is Greek yogurt a good food for muscle recovery?,get_nutrition_info
+Find some warm-ups for a heavy squat day.,find_exercise
+Can you solve this riddle for me? What has an eye but cannot see?,out_of_scope
+What is the nutritional value of bone broth?,get_nutrition_info
+How do I grow my own herbs indoors?,out_of_scope
+How to do a single-leg Romanian deadlift for balance.,find_exercise
+Design a 'deload' week for my current strength program.,generate_plan
+How do I properly iron a dress shirt?,out_of_scope
+How do I make a reservation at that new restaurant downtown?,out_of_scope
+How much sugar is in a 12oz can of coke?,get_nutrition_info
+I'm so happy I finally completed that 30-day challenge.,log_feeling
+How do I learn to shuffle cards like a professional?,out_of_scope
+That was a very humbling workout.,log_feeling
+I think meal prepping is a game-changer.,general_chat
+I feel a little weak today.,log_feeling
+Who is generally credited with inventing the telephone?,out_of_scope
+What are some low-glycemic fruits?,get_nutrition_info
+What’s the weather forecast for New York this weekend?,out_of_scope
+"My body is just craving a good, long stretch session.",log_feeling
+I feel bloated and uncomfortable.,log_feeling
+Are rest days truly that important for building muscle?,general_chat
+I'm feeling optimistic about reaching my goals.,log_feeling
+My hip flexors are extremely tight.,log_feeling
+What are your thoughts on wearing a sauna suit to lose water weight?,general_chat
+Generate a plan for building a strong mind-muscle connection.,generate_plan
+Design a workout routine for an ectomorph body type.,generate_plan
+What's the best exercise for the vastus medialis?,find_exercise
+My body feels so much less tense.,log_feeling
+"That's a really good analogy, it helps me understand.",general_chat
+Show me how to use a foam roller for my IT band.,find_exercise
+What's the most overrated exercise in your professional opinion?,general_chat
+Create a nutrition plan for a breastfeeding mother.,generate_plan
+How do I get rid of hiccups?,out_of_scope
+My feet are aching after being on them all day.,log_feeling
+I'm trying to improve my mind-muscle connection.,general_chat
+How do I remove a virus from my computer?,out_of_scope
+That yoga class was exactly what I needed.,log_feeling
+What is the process of making beer?,out_of_scope
+Can you make a meal plan that is soy-free?,generate_plan
+Show me a full-body workout using a sandbag.,find_exercise
+Find a guide to proper running form to prevent injury.,find_exercise
+Is xylitol safe for human consumption?,get_nutrition_info
+I want a plan to help me stick to my New Year's resolutions.,generate_plan
+Is grass-fed butter healthier than regular margarine?,get_nutrition_info
+What are some exercises to fix anterior pelvic tilt?,find_exercise
+How many calories are in a sushi roll?,get_nutrition_info
+Create a meal plan for a student on a tight budget.,generate_plan
+What are some exercises for improving my posture?,find_exercise
+Is dark chocolate with high cocoa content actually good for you?,get_nutrition_info
+Can you find a tutorial for kettlebell swings?,find_exercise
+My run was really tough today but I'm glad I pushed through.,log_feeling
+Find some exercises to do with a partner.,find_exercise
+Is agave nectar a healthy sweetener?,get_nutrition_info
+How do I change a flat tire on my car?,out_of_scope
+"What is the difference between AI, machine learning, and deep learning?",out_of_scope
+What's the main difference between a virus and a bacteria?,out_of_scope
+Who wrote the song 'Bohemian Rhapsody'?,out_of_scope
+What are some common mistakes in the overhead press?,find_exercise
+How to do a single arm dumbbell row with proper form.,find_exercise
+Are protein bars actually a healthy snack?,get_nutrition_info
+What were the major events in the year 1066?,out_of_scope
+How many calories are in a standard serving of cooked pasta?,get_nutrition_info
+Can you give me a good icebreaker for a meeting?,out_of_scope
+I think my biggest challenge is my diet.,general_chat
+Can you tell me the current time?,out_of_scope
+My grip strength is noticeably improving on deadlifts.,log_feeling
+My confidence is way up after completing that workout.,log_feeling
+How to do a leg extension machine safely.,find_exercise
+"My wrist is feeling better, I think I can lift a bit heavier.",log_feeling
+My body feels light and free.,log_feeling
+I need a diet plan that is high in fiber.,generate_plan
+I feel so much better and looser after a good 20-minute stretch.,log_feeling
+I'm trying to stay positive even when I don't see results on the scale.,general_chat
+What's a good warm-up routine before lifting heavy?,find_exercise
+I'm a little bit scared to try the deadlift for the first time.,general_chat
+What are some exercises for flat feet?,find_exercise
+How many calories are in a medium plate of restaurant french fries?,get_nutrition_info
+How to do a seated good morning for lower back strength.,find_exercise
+Thanks for being so patient with all of my endless questions.,general_chat
+Find me a quick 15-minute ab workout I can do daily.,find_exercise
+Note: sleep quality was a 3 out of 5 last night.,log_feeling
+What are some good sources of vitamin E?,get_nutrition_info
+I'm trying to build healthier and more sustainable habits this time.,general_chat
+Do you think there's one 'best' diet out there?,general_chat
+How many carbs are in a corn tortilla?,get_nutrition_info
+I think rest and recovery are just as important as the workout itself.,general_chat
+What's the single most common mistake beginners make at the gym?,general_chat
+Tell me about the nutritional profile of canned chickpeas.,get_nutrition_info
+Log that I'm feeling dehydrated.,log_feeling
+I think it's all about finding what works for you as an individual.,general_chat
+What's the most effective way to learn a new language?,out_of_scope
+My calves are on fire after that long hike uphill.,log_feeling
+I'm feeling some serious muscle soreness in my quads.,log_feeling
+Tell me the calorie count of a Starbucks Pumpkin Spice Latte.,get_nutrition_info
+I feel a huge sense of relief after stretching.,log_feeling
+I'm a bit intimidated by all the complex machines at my gym.,general_chat
+Can you help me find a good deal on a new TV?,out_of_scope
+That makes me feel a lot better.,general_chat
+Can you make me a diet plan based on whole foods?,generate_plan
+Tell me about the significance of the Silk Road.,out_of_scope
+How many calories in a glazed donut from a bakery?,get_nutrition_info
+"I didn’t sleep well at all, so I’m feeling sluggish today.",log_feeling
+I feel so refreshed and recovered after my scheduled rest day.,log_feeling
+What are the four stages of metamorphosis for a butterfly?,out_of_scope
+I'm excited to see where I'll be in a few months if I stick to this.,general_chat
+I'm trying to build a healthier morning routine.,general_chat
+How much fiber should I eat per day?,get_nutrition_info
+The gym is always so crowded after work.,general_chat
+I'm trying to build a routine that I can stick to while traveling.,general_chat
+"It's all about small, consistent efforts.",general_chat
+How do I fix a leaky faucet in my kitchen sink?,out_of_scope
+How do I do a proper squat with good form?,find_exercise
+How do people find the time for two-a-day workouts?,general_chat
+Tell me about the macros in a serving of rolled oats.,get_nutrition_info
+How to do a calf raise correctly for maximum growth.,find_exercise
+Do you think yoga is better than Pilates for flexibility?,general_chat
+"What are the different types of clouds, like cumulus and stratus?",out_of_scope
+What's the best way to get a red wine stain out of a carpet?,out_of_scope
+How do I get more followers on Instagram?,out_of_scope
+My left knee is twinging a little bit when I do squats.,log_feeling
+Tell me about the life of Marie Curie.,out_of_scope
+1s8. How much caffeine is in a shot of espresso?,get_nutrition_info
+Tell me about the macros of a quest bar.,get_nutrition_info
+Can you tell me the calorie count for a slice of whole-grain bread?,get_nutrition_info
+Generate a plan to increase my daily activity level.,generate_plan
+Who was the Greek goddess of wisdom?,out_of_scope
+Can you create a meal plan that is both vegan and low-FODMAP?,generate_plan
+What are the different phases of the moon?,out_of_scope
+Create a workout routine I can do in a small hotel room with no gear.,generate_plan
+What are some good sources of omega-6 fatty acids?,get_nutrition_info
+My body just feels heavy and tired from the moment I woke up.,log_feeling
+How many carbs are in a glass of orange juice?,get_nutrition_info
+"I'm feeling a little bit 'off' today, can't put my finger on it.",log_feeling
+I need a program to train for a Spartan race.,generate_plan
+How do I take a good photograph with my phone?,out_of_scope
+Make a meal plan for a family of four.,generate_plan
+How do I create a personal budget and stick to it?,out_of_scope
+What are the benefits of apple cider vinegar?,get_nutrition_info
+Who is credited with discovering penicillin?,out_of_scope
+Who was the artist that painted the Mona Lisa?,out_of_scope
+Note that I'm feeling very self-disciplined.,log_feeling
+What are plyometric exercises for explosive power?,find_exercise
+"It's pretty hard to stay motivated all the time, week after week.",general_chat
+I'm so proud of myself for not skipping my scheduled workout.,log_feeling
+I find that meal prepping on Sunday is so helpful for my week.,general_chat
+Generate a 6-month marathon training plan.,generate_plan
+I'm feeling really uninspired by my workouts lately.,log_feeling
+What are some safe alternatives to the deadlift?,find_exercise
+I'm a big believer in a holistic approach to health.,general_chat
+What are some of the most common squat mistakes to avoid?,find_exercise
+That was a really fun workout! Feeling joyful.,log_feeling
+That's a really well-thought-out plan.,general_chat
+What's the best way to parallel park?,out_of_scope
+My body feels completely aligned after that chiropractic adjustment.,log_feeling
+I'm feeling uncomfortably bloated after that last meal.,log_feeling
+I didn't realize just how important core strength was for everything.,general_chat
+Find some exercises for vertigo and dizziness.,find_exercise
+I’m really excited to try that new shoulder exercise you suggested!,general_chat
+Can you generate a workout plan using only resistance bands?,generate_plan
+"Make a plan to help me increase my daily step count to 10,000.",generate_plan
+Who is the god of thunder in Norse mythology?,out_of_scope
+My hamstrings are so tight I can barely touch my toes.,log_feeling
+What is the capital of New Zealand?,out_of_scope
+Is brown sugar better than white sugar?,get_nutrition_info
+Can you create a weekly plan that alternates between running and strength training days?,generate_plan
+I'm feeling very impatient about seeing results.,log_feeling
+Can you create a meal plan for someone with a nut allergy?,generate_plan
+How would I go about building a custom gaming computer?,out_of_scope
+Is stevia a safe sugar substitute?,get_nutrition_info
+"That's awesome information, I really appreciate the help.",general_chat
+Make me a shopping list for a week of keto meals.,generate_plan
+That run in the rain was surprisingly refreshing.,log_feeling
+Best stretches for after a long distance run.,find_exercise
+I'm feeling very inflexible and tight in my hips today.,log_feeling
+What's the difference between saturated and unsaturated fats?,get_nutrition_info
+What are some benefits of eating spicy food?,get_nutrition_info
+What’s your take on intermittent fasting before workouts?,general_chat
+How many calories are in a medium-sized avocado?,get_nutrition_info
+I find that setting weekly goals is very effective for me.,general_chat
+I need a program for a home gym that has basic equipment.,generate_plan
+What's your professional opinion on having 'cheat meals'?,general_chat
+Make a meal plan based on my specific food preferences and dislikes.,generate_plan
+I need a beginner's guide to meal prepping.,generate_plan
+Make a meal plan that is affordable and budget-friendly.,generate_plan
+Can you give me a summary of Shakespeare's 'Hamlet'?,out_of_scope
+What are the benefits of ashwagandha?,get_nutrition_info
+Can you help me with this crossword puzzle clue? 'A four-letter word for a mythical beast'.,out_of_scope
+Is maple syrup healthier than sugar?,get_nutrition_info
+"Wow, I had never thought of it that way before.",general_chat
+I think I need to work on my discipline.,general_chat
+"That was a frustrating session, I couldn't lift what I usually do.",log_feeling
+What are some good sources of selenium?,get_nutrition_info
+Can you create a 2-month plan to get in shape for a wedding?,generate_plan
+How do I make a sourdough bread starter from scratch?,out_of_scope
+"Great, I will add that new exercise to my routine.",general_chat
+Make a meal plan that eliminates sugar.,generate_plan
+I find it fascinating how the body adapts to stress.,general_chat
+Show me a dumbbell-only shoulder workout routine.,find_exercise
+I'm feeling mentally drained from all the meetings.,log_feeling
+Best way to train biceps at home without weights.,find_exercise
+How to do a pike push-up.,find_exercise
+I'm feeling defeated because I couldn't finish my run.,log_feeling
+Create a nutrition guide for a young soccer player.,generate_plan
+Can you make a meal plan that is low-carb and high-fat?,generate_plan
+What's a good routine for a beginner at Planet Fitness?,find_exercise
+How many calories in a piece of baklava?,get_nutrition_info
+Who was the main architect of the Eiffel Tower?,out_of_scope
+What is creatine monohydrate and should I take it?,get_nutrition_info
+I want a workout plan that is under 30 minutes.,generate_plan
+Find a guide on how to use a BOSU ball.,find_exercise
+Can you recommend a documentary on space exploration?,out_of_scope
+I want a meal plan where all the recipes are easy and quick to cook.,generate_plan
+What is time under tension and how do I apply it?,find_exercise
+Can you tell me the latest stock market trends?,out_of_scope
+How many carbs in a cup of quinoa?,get_nutrition_info
+"Perfect, that's exactly what I was looking for in a plan.",general_chat
+What are the specific health benefits of blueberries?,get_nutrition_info
+What are electrolytes and why are they important for hydration?,get_nutrition_info
+Are there any side effects of taking too much caffeine?,get_nutrition_info
+"Thank you so much for the encouragement, it means a lot.",general_chat
+I'm feeling a bit stuck in a rut.,log_feeling
+You've certainly given me a lot to think about.,general_chat
+I want a plan for my first half-marathon.,generate_plan
+Make a balanced diet plan for someone with diabetes.,generate_plan
+Generate a workout program for building a stronger back.,generate_plan
+Make me a meal plan for a pre-diabetic person.,generate_plan
+Create a workout schedule that revolves around a 4-day work week.,generate_plan
+Create a plan to help me practice mindful eating.,generate_plan
+Are there calories in black coffee?,get_nutrition_info
+I'm proud that I chose the healthy option for dinner instead of takeout.,log_feeling
+Show me a stability ball core workout.,find_exercise
+How many carbohydrates are in a large banana?,get_nutrition_info
+What is the purpose of a deload week?,find_exercise
+What's a good bodyweight exercise for the upper chest?,find_exercise
+Thanks for not being judgmental.,general_chat
+How much dietary fiber is in a cup of fresh raspberries?,get_nutrition_info
+Do you think I need to buy a lot of supplements?,general_chat
+How much fat is in a tablespoon of peanut butter?,get_nutrition_info
+Create a meal plan for a low-inflammation diet.,generate_plan
+Can you create a 3-month strength and conditioning program?,generate_plan
+What are the basic rules of the game of chess?,out_of_scope
+Generate a workout plan that only requires a few kettlebells.,generate_plan
+What are some good sources of iodine?,get_nutrition_info
+"My joints are feeling a bit achy today, especially my knees.",log_feeling
+How should I do a plank to avoid lower back pain?,find_exercise
+Can you give me a brief summary of the book '1984' by George Orwell?,out_of_scope
+Design a workout routine for toning my entire body.,generate_plan
+My mind feels very scattered and unfocused today.,log_feeling
+What's the best way to cook vegetables to retain their nutrients?,get_nutrition_info
+Find a tutorial for pistol squats.,find_exercise
+What is the longest river in the world by length?,out_of_scope
+I think I finally understand what 'functional fitness' means.,general_chat
+Can you explain the basics of quantum computing in simple terms?,out_of_scope
+How to do a decline push-up.,find_exercise
+How much sugar is in a Frappuccino?,get_nutrition_info
+Who is the current Secretary-General of the United Nations?,out_of_scope
+Design a routine of dynamic stretches for before a game.,generate_plan
+What are some exercises for knee stability?,find_exercise
+I'm feeling some tension in my neck and shoulders.,log_feeling
+Can you recommend a good strategy board game?,out_of_scope
+Can you show me a basic Pilates routine for beginners?,find_exercise
+Generate a workout plan that specifically targets my legs and glutes.,generate_plan
+Who was the first woman to fly in space?,out_of_scope
+I'm trying to focus more on my form over just lifting heavy weight.,general_chat
+Show me some stretches for people who sit all day.,find_exercise
+The concept of mind-muscle connection is really interesting.,general_chat
+I want a workout plan that focuses on athletic performance.,generate_plan
+That's a relief to hear.,general_chat
+How many carbs are in a sweet potato?,get_nutrition_info
+What's the current weather like outside right now?,out_of_scope
+Tell me the macros for one cup of cooked lentils.,get_nutrition_info
+Do you think it's possible to be 'addicted' to exercise?,general_chat
+My body feels light and agile.,log_feeling
+How to do a Nordic hamstring curl.,find_exercise
+Find a tutorial on how to wrap your hands for boxing.,find_exercise
+I feel like I didn't push myself hard enough today.,log_feeling
+I want a plan to build my grip strength.,generate_plan
+Can you explain how to do a barbell row step-by-step?,find_exercise
+I'm feeling regretful about that cheat meal.,log_feeling
+I want a workout plan to improve my agility and speed.,generate_plan
+"What time is it currently in Tokyo, Japan?",out_of_scope
+How much protein do I need to eat per day to build muscle?,get_nutrition_info
+I want a 7-day meal plan that follows the principles of the Mediterranean diet.,generate_plan
+Show me a workout using only a single kettlebell.,find_exercise
+I'm feeling incredibly proud of my discipline.,log_feeling
+Sometimes I feel like I just don't have time for a full one-hour workout.,general_chat
+Can you give me walking directions to the nearest public library?,out_of_scope
+What's the difference between a conventional and sumo deadlift?,find_exercise
+Can you help me choose a new paint color for my living room?,out_of_scope
+How many calories in a serving of hummus?,get_nutrition_info
+What exercises target the glutes effectively?,find_exercise
+Show me some dynamic stretches to do before playing soccer.,find_exercise
+Who is the current monarch of the United Kingdom?,out_of_scope
+That's a pretty cool feature to have in an app.,general_chat
+Who is the Greek god of the sea and earthquakes?,out_of_scope
+I'm feeling burnt out from my routine.,log_feeling
+I think group fitness classes are a lot of fun and very motivating.,general_chat
+I feel like I could run a marathon right now.,log_feeling
+Find a tutorial on how to use battle ropes.,find_exercise
+I'm trying to improve my relationship with the scale.,general_chat
+What are the best bodyweight exercises for legs if I have no equipment?,find_exercise
+How do I perform CPR on an adult?,out_of_scope
+The music at my gym is always terrible.,general_chat
+My body feels like it needs more carbs for energy.,log_feeling
+Can you help me learn the basics of knitting?,out_of_scope
+I need a workout program to build a classic V-taper physique.,generate_plan
+I'm feeling overwhelmed by the complexity of my new workout plan.,log_feeling
+What are antioxidants and which foods are high in them?,get_nutrition_info
+What are the three primary colors in additive color models?,out_of_scope
+Who was the first human being to walk on the moon?,out_of_scope
+How do you say 'thank you' in Japanese?,out_of_scope
+How much sodium is typically in a tablespoon of soy sauce?,get_nutrition_info
