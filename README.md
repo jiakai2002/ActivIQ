@@ -44,6 +44,20 @@ model with:
 python scripts/evaluate_intent.py
 ```
 
+## Data sources
+
+ActivIQ uses the following public datasets:
+
+- **Intent classification:** [Fitness Intent Classification](https://huggingface.co/datasets/harshmakwana/fitness-intent), licensed as MIT by the source. The original train, validation, and test splits are preserved without augmentation.
+- **Exercise knowledge base:** [Free Exercise DB](https://github.com/yuhonas/free-exercise-db), licensed under the Unlicense. Exercise names, equipment, muscle groups, and instructions are normalized for local lookup.
+- **Primary nutrition data:** [USDA FoodData Central SR Legacy](https://fdc.nal.usda.gov/download-datasets/), April 2018 final SR Legacy release. Nutrition values are normalized into `data/processed/nutrition.json`.
+- **Secondary nutrition data:** USDA [Food and Nutrient Database for Dietary Studies (FNDDS) 2021–2023](https://fdc.nal.usda.gov/download-datasets/), retained separately for comparison or future fallback use.
+
+Dataset provenance and preparation details are documented in
+[`data/SOURCES.md`](data/SOURCES.md). Raw source archives remain excluded from
+GitHub; the prepared datasets used by the app are tracked in
+`data/processed/`.
+
 ## Getting started
 
 ActivIQ currently targets Python 3.11–3.13. Create a virtual environment and
@@ -108,7 +122,7 @@ fitbuddy/
 ├── data/
 │   ├── SOURCES.md
 │   ├── raw/                    # Downloaded source data; ignored by Git
-│   ├── processed/              # Prepared local datasets; ignored by Git
+│   ├── processed/              # Prepared datasets tracked by Git
 │   └── user_profiles/
 ├── models/
 │   └── intent_classifier/      # Local trained model; ignored by Git
@@ -201,5 +215,5 @@ replacement for a qualified trainer.
 No intent paraphrase augmentation is currently used. SR Legacy is the primary
 nutrition lookup source, while FNDDS remains separate because the datasets use
 different descriptions and serving conventions. Raw source archives and
-generated model/data artifacts are excluded from Git. Dataset provenance is
-recorded in [data/SOURCES.md](data/SOURCES.md).
+generated model artifacts are excluded from Git. Dataset provenance is recorded
+in [data/SOURCES.md](data/SOURCES.md).
