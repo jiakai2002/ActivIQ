@@ -17,7 +17,7 @@ except (ImportError, OSError):
 from src.config import PROCESSED_DATA_DIR
 
 
-ENTITY_TYPES = ("exercise", "body_part", "equipment", "goal", "level", "duration")
+ENTITY_TYPES = ("exercise", "body_part", "equipment", "goal", "level", "duration", "days")
 
 BODY_PARTS = {
     "chest": ["chest", "pecs", "pectorals"],
@@ -110,6 +110,8 @@ class FitnessEntityExtractor:
             text.casefold(),
         )
         entities["duration"] = list(dict.fromkeys(duration_matches))
+        day_matches = re.findall(r"\b([2-7])(?:\s|-)*days?\b", text.casefold())
+        entities["days"] = list(dict.fromkeys(day_matches))
         return entities
 
     @staticmethod

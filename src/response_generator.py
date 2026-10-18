@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 
 from src.knowledge_base import KnowledgeBase
-from src.planner import build_three_day_plan
+from src.planner import build_plan
 
 
 TEMPLATE_PATH = Path(__file__).resolve().parents[1] / "templates" / "responses.json"
@@ -76,8 +76,13 @@ class ResponseGenerator:
         level = (entities.get("level") or [profile.get("level", "beginner")])[0]
         equipment = (entities.get("equipment") or [profile.get("equipment")])[0]
         body_part = (entities.get("body_part") or [None])[0]
-        plan = build_three_day_plan(self.knowledge_base, level, equipment, body_part)
-        lines = [f"Here is a 3-day {level} full-body plan:"]
+        requested_days = (entities.get("days") or [profile.get("days", "3")])[0]
+        try:
+            number_of_days = max(1, min(int(requested_days), 7))
+        except (TypeError, ValueError):
+            number_of_days = 3
+        plan = build_plan(self.knowledge_base, level, equipment, body_part, number_of_days)
+        lines = [f"Here is a {number_of_days}-day {level} full-body plan:"]
         for day in plan:
             names = ", ".join(exercise["name"] for exercise in day["exercises"])
             if not names:
