@@ -27,6 +27,23 @@ Supported request types include workout plans, exercise instructions, nutrition
 information, workout-feeling check-ins, general fitness conversation, and
 out-of-scope requests.
 
+## Model results
+
+The current intent-classification model was evaluated on the untouched test
+split with six supported intent categories:
+
+| Metric | Result |
+| --- | ---: |
+| Accuracy | 91.67% |
+| Macro-F1 | 91.55% |
+
+Evaluation can be reproduced after preparing the local datasets and trained
+model with:
+
+```powershell
+python scripts/evaluate_intent.py
+```
+
 ## Getting started
 
 ActivIQ currently targets Python 3.11–3.13. Create a virtual environment and
