@@ -5,7 +5,29 @@ It classifies fitness questions, extracts fitness entities, maintains a small
 user profile, retrieves local fitness data, and responds with controlled
 templates.
 
-## Phase 1 setup
+## App overview
+
+ActivIQ is a local-first fitness assistant for workout planning, exercise
+guidance, nutrition lookup, and simple workout check-ins. It uses a Streamlit
+chat interface and keeps conversation preferences in the current session.
+
+The app can:
+
+- Create personalized 1–7 day workout plans
+- Explain exercises using local exercise data and step-by-step instructions
+- Look up calories, protein, carbohydrates, and fat for foods
+- Remember preferences such as level, equipment, goal, and workout duration
+- Handle follow-up questions using the current session profile
+- Respond safely to medical and unsupported requests
+
+Responses are grounded in local datasets and controlled application logic. The
+app does not call an external LLM API or provide medical advice.
+
+Supported request types include workout plans, exercise instructions, nutrition
+information, workout-feeling check-ins, general fitness conversation, and
+out-of-scope requests.
+
+## Getting started
 
 ActivIQ currently targets Python 3.11–3.13. Create a virtual environment and
 install the dependencies:
@@ -30,70 +52,13 @@ release as its primary dataset.
 
 See `CS425_G1T3_Proposal_Submission.pdf` for the project requirements and evaluation targets.
 
-## Project overview
+Run the app with:
 
-ActivIQ is designed to be reproducible and safe for student-level delivery.
-It does not call an external LLM API, generate unrestricted text, or provide
-medical advice.
-
-### Objectives
-
-- Classify six fitness intents with at least 90% accuracy and 85% macro-F1.
-- Extract exercises, body parts, equipment, goals, levels, and durations with
-  at least 85% F1.
-- Personalise follow-up replies using a session profile.
-- Respond in under one second on a laptop CPU after the model is loaded.
-- Refuse medical and unsupported requests safely.
-
-Supported intents:
-
-```text
-generate_plan
-find_exercise
-get_nutrition_info
-log_feeling
-general_chat
-out_of_scope
+```powershell
+streamlit run app.py
 ```
 
-## Current status
-
-### Phase 1 - completed
-
-- Original intent splits preserved without augmentation: 960 train, 120
-  validation, and 120 test utterances.
-- Six balanced intent labels with no cross-split utterance leakage.
-- 876 normalized exercise records from Free Exercise DB.
-- 7,793 USDA FoodData Central SR Legacy records as the primary nutrition
-  dataset.
-- 5,432 FNDDS records retained separately as a secondary nutrition dataset.
-
-### Phase 2 - completed baseline
-
-- DistilBERT intent classifier trained on CPU.
-- Rule-based fitness entity extraction implemented.
-- Medical and out-of-scope safety routing implemented.
-- Multi-turn dialogue profile implemented.
-
-Held-out test results:
-
-```text
-Accuracy: 91.67%
-Macro-F1: 91.55%
-```
-
-### Phase 3 - completed
-
-- Knowledge-base retrieval.
-- Response templates and slot filling.
-- Workout planning.
-- End-to-end pipeline integration.
-- Streamlit interface.
-
-The Phase 3 pipeline is available with `streamlit run app.py`. It routes safety
-requests, classifies the message, extracts and inherits session slots, queries
-the local exercise/nutrition databases, and renders deterministic controlled
-responses. It continues to run with empty local datasets and reports a useful
+ActivIQ continues to run with empty local datasets and reports a useful
 fallback instead of fabricating exercise or nutrition facts.
 
 ## Architecture
