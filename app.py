@@ -1,13 +1,13 @@
-"""Streamlit interface for FitBuddy."""
+"""Streamlit interface for ActivIQ."""
 
 import streamlit as st
 
 from src.pipeline import FitBuddyPipeline
 
 
-st.set_page_config(page_title="FitBuddy", page_icon="💪")
-st.title("FitBuddy")
-st.caption("Offline fitness guidance using local data. FitBuddy is not a medical professional.")
+st.set_page_config(page_title="ActivIQ", page_icon="💪")
+st.title("ActivIQ")
+st.caption("Offline fitness guidance using local data. ActivIQ is not a medical professional.")
 
 if "pipeline" not in st.session_state:
     st.session_state.pipeline = FitBuddyPipeline()

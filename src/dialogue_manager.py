@@ -1,4 +1,4 @@
-"""Minimal multi-turn profile state for FitBuddy."""
+"""Minimal multi-turn profile state for ActivIQ."""
 
 from __future__ import annotations
 

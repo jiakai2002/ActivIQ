@@ -1,4 +1,4 @@
-"""Validate and prepare FitBuddy's Phase 1 data.
+"""Validate and prepare ActivIQ's Phase 1 data.
 
 The script intentionally does not download data. Raw source files must be
 placed under data/raw so that dataset provenance remains explicit and runs are

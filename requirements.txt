@@ -1,4 +1,4 @@
-# FitBuddy targets Python 3.11–3.13. Python 3.14 compatibility is not yet assumed.
+# ActivIQ targets Python 3.11–3.13. Python 3.14 compatibility is not yet assumed.
 accelerate>=0.26,<2
 datasets>=2.19,<4
 pandas>=2.2,<3

@@ -1,4 +1,4 @@
-"""Fine-tune DistilBERT on the untouched FitBuddy intent splits."""
+"""Fine-tune DistilBERT on the untouched ActivIQ intent splits."""
 
 from __future__ import annotations
 

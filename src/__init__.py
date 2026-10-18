@@ -1,2 +1,2 @@
-"""FitBuddy application package."""
+"""ActivIQ application package."""
 

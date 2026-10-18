@@ -1,13 +1,13 @@
-# FitBuddy
+# ActivIQ
 
-FitBuddy is an offline personal fitness chatbot based on the project proposal.
+ActivIQ is an offline personal fitness chatbot based on the project proposal.
 It classifies fitness questions, extracts fitness entities, maintains a small
 user profile, retrieves local fitness data, and responds with controlled
 templates.
 
 ## Phase 1 setup
 
-FitBuddy currently targets Python 3.11–3.13. Create a virtual environment and
+ActivIQ currently targets Python 3.11–3.13. Create a virtual environment and
 install the dependencies:
 
 ```powershell
@@ -32,7 +32,7 @@ See `proposal.md` for the project requirements and evaluation targets.
 
 ## Project overview
 
-FitBuddy is designed to be reproducible and safe for student-level delivery.
+ActivIQ is designed to be reproducible and safe for student-level delivery.
 It does not call an external LLM API, generate unrestricted text, or provide
 medical advice.
 
@@ -214,7 +214,7 @@ recreated with the training script.
 
 Medical keywords such as pain, injury, medication, diagnosis, and symptoms are
 routed to a fixed refusal message. Unsupported topics receive a fixed
-fitness-scope response. FitBuddy is not a doctor, diagnostic tool, or
+fitness-scope response. ActivIQ is not a doctor, diagnostic tool, or
 replacement for a qualified trainer.
 
 No intent paraphrase augmentation is currently used. SR Legacy is the primary

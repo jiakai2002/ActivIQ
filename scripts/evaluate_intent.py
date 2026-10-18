@@ -1,4 +1,4 @@
-"""Evaluate a trained FitBuddy intent classifier on the untouched test split."""
+"""Evaluate a trained ActivIQ intent classifier on the untouched test split."""
 
 from __future__ import annotations
 

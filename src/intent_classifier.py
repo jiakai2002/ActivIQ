@@ -1,4 +1,4 @@
-"""DistilBERT intent classification for FitBuddy."""
+"""DistilBERT intent classification for ActivIQ."""
 
 from __future__ import annotations
 

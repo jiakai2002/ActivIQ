@@ -14,7 +14,7 @@
 - License stated by source: Unlicense
 - Input: combined `dist/exercises.json`
 - Local preparation removes duplicate names and converts camelCase muscle fields
-  to snake_case names used by FitBuddy.
+  to snake_case names used by ActivIQ.
 
 ## Nutrition data
 

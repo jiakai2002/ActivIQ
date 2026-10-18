@@ -1,4 +1,4 @@
-"""End-to-end FitBuddy conversation pipeline."""
+"""End-to-end ActivIQ conversation pipeline."""
 
 from __future__ import annotations
 
