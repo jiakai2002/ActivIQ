@@ -28,7 +28,7 @@ files under `data/processed/` and reports missing inputs without silently
 inventing or augmenting data. Nutrition uses the complete local USDA SR Legacy
 release as its primary dataset.
 
-See `proposal.md` for the project requirements and evaluation targets.
+See `CS425_G1T3_Proposal_Submission.pdf` for the project requirements and evaluation targets.
 
 ## Project overview
 
@@ -147,8 +147,7 @@ fitbuddy/
 │   ├── response_generator.py
 │   └── pipeline.py
 ├── app.py
-├── proposal.docx
-├── proposal.md
+├── CS425_G1T3_Proposal_Submission.pdf
 ├── project_guidelines.pdf
 ├── requirements.txt
 └── README.md

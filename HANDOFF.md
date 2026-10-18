@@ -126,8 +126,8 @@ For behavior changes, manually check at least these prompts in the UI:
 
 1. Add automated tests for safety routing, entity extraction, plan day counts,
    profile inheritance, and empty-data fallbacks.
-2. Resolve the documentation mismatch where older README text references
-   `proposal.md` while the repository currently contains `proposal.docx`.
+2. Keep the project documentation aligned with
+   `CS425_G1T3_Proposal_Submission.pdf` as requirements evolve.
 3. Improve the UI with clearer loading/error states and a small example-prompt
    panel.
 4. Re-run the intent evaluation after any classifier, data, or preprocessing
