@@ -55,9 +55,14 @@
   },
   "nutrition": {
     "source": "SR Legacy",
-    "path": "C:\\Users\\jiakai\\Projects\\pt\\data\\raw\\nutrition\\sr-legacy",
-    "output": "C:\\Users\\jiakai\\Projects\\pt\\data\\processed\\nutrition.json",
+    "release": "2018-04",
+    "archive_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+    "archive_sha256": "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+    "path": "data/raw/nutrition/sr-legacy",
+    "output": "data/processed/nutrition.json",
     "records": 7793,
+    "distinct_nutrients": 149,
+    "nutrient_values": 644125,
     "problems": []
   }
 }

@@ -21,8 +21,13 @@ Primary branch: `main`
 - Phase 3 knowledge-base retrieval, response templates, configurable workout
   plans, pipeline integration, and the Streamlit UI are complete.
 - The app branding is `ActivIQ`.
-- Workout plans support 1–7 days; each day currently contains up to three
-  exercises.
+- Workout plans support 1–7 days and up to six distinct exercises per day,
+  constrained by equipment, difficulty, focus, goal and estimated session time.
+- Task regression tests live in `tests/test_task_correctness.py` and run with
+  `python -m unittest discover -s tests -v` without trained model weights.
+- Nutrition preparation now retains micronutrients and source units. The tracked
+  nutrition JSON was rebuilt from official SR Legacy CSVs and contains 7,793
+  foods, 149 distinct nutrient fields and 644,125 nutrient values.
 - The internal pipeline class is still named `FitBuddyPipeline` for import/API
   stability. Do not rename it casually without checking all callers.
 - The last committed change is the branding update. The working tree should be
@@ -40,9 +45,9 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-If local datasets or the trained model are absent, the application is designed
-to start and return useful fallback responses. To prepare data when raw source
-files are available:
+Empty knowledge bases receive controlled fallback responses. The trained intent
+model is required for normal application startup; missing-model fallback is not
+implemented. To prepare data when raw source files are available:
 
 ```powershell
 python scripts/prepare_data.py
@@ -59,10 +64,12 @@ scientific Python dependencies.
 app.py                         Streamlit entry point and session UI
 src/pipeline.py                End-to-end routing and response orchestration
 src/safety.py                  Medical and out-of-scope fixed responses
-src/intent_classifier.py       DistilBERT classifier with fallback behavior
+src/intent_classifier.py       DistilBERT classifier (requires local model)
 src/entity_extractor.py        spaCy rules plus transparent regex fallback
 src/dialogue_manager.py        Session profile and slot inheritance
 src/knowledge_base.py          Local exercise/nutrition retrieval
+src/vocabulary.py             Shared muscle, equipment and exercise vocabulary
+src/nutrition.py               Food, nutrient and quantity rules
 src/planner.py                 Deterministic 1–7 day workout plans
 src/response_generator.py      Controlled response generation
 templates/responses.json       Response templates
@@ -108,6 +115,7 @@ Before committing:
 
 ```powershell
 python -m compileall -q src app.py scripts
+python -m unittest discover -s tests -v
 git diff --check
 streamlit run app.py
 ```

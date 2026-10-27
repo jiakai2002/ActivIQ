@@ -15,10 +15,54 @@ The app can:
 
 - Create personalized 1–7 day workout plans
 - Explain exercises using local exercise data and step-by-step instructions
-- Look up calories, protein, carbohydrates, and fat for foods
+- Look up calories, macronutrients, vitamins and minerals where source values exist
 - Remember preferences such as level, equipment, goal, and workout duration
 - Handle follow-up questions using the current session profile
 - Respond safely to medical and unsupported requests
+
+## Task behaviour and limits
+
+Workout requests accept numeric or written day counts from 1 to 7 (including
+`one-day`). Muscle groups such as legs, arms, back and core map to the exercise
+database's individual muscles. Specific requests such as quads remain specific.
+Equipment choices and difficulty are preserved even when only a few matching
+exercises exist: the bot returns fewer exercises or asks which constraint to
+change, rather than silently substituting other equipment or levels.
+
+Plans use goal-specific sets, repetitions and rest rules. A session duration
+sets an estimated time budget, including a five-minute warm-up and transitions;
+up to six distinct exercises are selected per day. Exercises may repeat across
+days when needed, with an explicit note. Bodyweight is the stated default when
+equipment is omitted. These are deterministic application heuristics, not a
+validated coaching model, and estimated times need not fill the entire budget.
+
+Nutrition requests separate the food, nutrient and serving weight. Ambiguous
+foods prompt for a preparation or exact description. Gram, kilogram and ounce
+weights scale the database's values per 100 g; household measures such as cups
+prompt for a gram weight. Missing nutrients are reported as unavailable, never
+replaced with unrelated macro values or inferred from another food.
+
+The nutrition JSON contains 7,793 foods and 149 distinct nutrient fields from
+the official SR Legacy source, including vitamins and minerals. Source units
+are retained; missing values remain unavailable rather than being inferred.
+The preparation script writes one food per line and uses JSON `null` for missing
+portion fields. The runtime also accepts the older macro-only JSON format.
+
+Conversation preferences persist within the session. Short follow-ups such as
+`Make it 5 days`, `What about chest?`, `And vitamin K?`, or `200g` reuse the
+relevant task context. Changing the muscle clears the previous exercise filter;
+changing tasks does not carry food or exercise slots into the new task.
+
+Run the task regression suite without a trained classifier or Streamlit server:
+
+```powershell
+python -m unittest discover -s tests -v
+```
+
+These tests use a controlled classifier and local fixtures to verify routing,
+extraction, retrieval, planning, nutrition and conversation behaviour. They do
+not measure trained-model accuracy, entity F1, or full-system latency. Normal
+application startup still requires a trained model in `models/intent_classifier/`.
 
 Responses are grounded in local datasets and controlled application logic. The
 app does not call an external LLM API or provide medical advice.
@@ -51,7 +95,7 @@ ActivIQ uses the following public datasets:
 - **Intent classification:** [Fitness Intent Classification](https://huggingface.co/datasets/harshmakwana/fitness-intent), licensed as MIT by the source. The original train, validation, and test splits are preserved without augmentation.
 - **Exercise knowledge base:** [Free Exercise DB](https://github.com/yuhonas/free-exercise-db), licensed under the Unlicense. Exercise names, equipment, muscle groups, and instructions are normalized for local lookup.
 - **Primary nutrition data:** [USDA FoodData Central SR Legacy](https://fdc.nal.usda.gov/download-datasets/), April 2018 final SR Legacy release. Nutrition values are normalized into `data/processed/nutrition.json`.
-- **Secondary nutrition data:** USDA [Food and Nutrient Database for Dietary Studies (FNDDS) 2021–2023](https://fdc.nal.usda.gov/download-datasets/), retained separately for comparison or future fallback use.
+- **Secondary nutrition data:** USDA [Food and Nutrient Database for Dietary Studies (FNDDS) 2021–2023](https://fdc.nal.usda.gov/download-datasets/), supported separately by preparation code for comparison or future integration.
 
 Dataset provenance and preparation details are documented in
 [`data/SOURCES.md`](data/SOURCES.md). Raw source archives remain excluded from

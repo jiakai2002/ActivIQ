@@ -28,6 +28,7 @@ from src.config import (
     RAW_DATA_DIR,
     TEXT_COLUMNS,
 )
+from src.nutrition import nutrient_key
 
 
 def find_column(columns: list[str], candidates: tuple[str, ...]) -> str | None:
@@ -228,11 +229,8 @@ def prepare_sr_legacy(sr_root: Path, processed_dir: Path, food_path: Path) -> di
         dtype={"fdc_id": "string", "nutrient_id": "string"},
     )
     nutrient_lookup = pd.read_csv(nutrient_lookup_path, dtype={"id": "string"})
-    nutrient_ids = {
-        str(row.id): str(row.name)
-        for row in nutrient_lookup.itertuples()
-        if row.id in {"1003", "1004", "1005", "1008"}
-    }
+    nutrient_ids = {str(row.id): str(row.name) for row in nutrient_lookup.itertuples()}
+    nutrient_units = {str(row.id): str(row.unit_name) for row in nutrient_lookup.itertuples()}
     nutrients = nutrients[nutrients["nutrient_id"].isin(nutrient_ids)]
     nutrients["nutrient_name"] = nutrients["nutrient_id"].map(nutrient_ids)
     nutrient_groups = nutrients.groupby("fdc_id", sort=False)
@@ -244,9 +242,10 @@ def prepare_sr_legacy(sr_root: Path, processed_dir: Path, food_path: Path) -> di
     if portion_path is not None:
         portions = pd.read_csv(portion_path, dtype={"fdc_id": "string"})
         for fdc_id, group in portions.groupby("fdc_id", sort=False):
-            portions_by_food[fdc_id] = group[
+            fields = group[
                 ["amount", "measure_unit_id", "portion_description", "modifier", "gram_weight"]
-            ].where(pd.notna(group), None).to_dict("records")
+            ].astype(object)
+            portions_by_food[fdc_id] = fields.where(pd.notna(fields), None).to_dict("records")
 
     normalized: list[dict[str, Any]] = []
     for food in foods.itertuples(index=False):
@@ -254,9 +253,10 @@ def prepare_sr_legacy(sr_root: Path, processed_dir: Path, food_path: Path) -> di
         food_nutrients: dict[str, dict[str, Any]] = {}
         if food_id in nutrient_groups.groups:
             for nutrient in nutrient_groups.get_group(food_id).itertuples(index=False):
-                food_nutrients[nutrient.nutrient_name] = {
+                key = nutrient_key(nutrient.nutrient_name, nutrient_units[nutrient.nutrient_id])
+                food_nutrients[key] = {
                     "amount": None if pd.isna(nutrient.amount) else float(nutrient.amount),
-                    "unit": "g" if nutrient.nutrient_name != "Energy" else "kcal",
+                    "unit": nutrient_units[nutrient.nutrient_id],
                 }
         normalized.append(
             {
@@ -270,7 +270,7 @@ def prepare_sr_legacy(sr_root: Path, processed_dir: Path, food_path: Path) -> di
 
     output_path = processed_dir / "nutrition.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(normalized, indent=2), encoding="utf-8")
+    write_nutrition_records(normalized, output_path)
     return {
         "source": "SR Legacy",
         "path": str(sr_root),
@@ -298,13 +298,9 @@ def prepare_fndds(source: Path, processed_dir: Path) -> dict[str, Any]:
         for item in food.get("foodNutrients", []):
             nutrient = item.get("nutrient", {})
             name = nutrient.get("name")
-            if name in {
-                "Energy",
-                "Protein",
-                "Total lipid (fat)",
-                "Carbohydrate, by difference",
-            }:
-                nutrients[name] = {
+            if name:
+                key = nutrient_key(name, nutrient.get("unitName") or "")
+                nutrients[key] = {
                     "amount": item.get("amount"),
                     "unit": nutrient.get("unitName"),
                 }
@@ -321,7 +317,7 @@ def prepare_fndds(source: Path, processed_dir: Path) -> dict[str, Any]:
 
     output_path = processed_dir / "nutrition_fndds.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(normalized, indent=2), encoding="utf-8")
+    write_nutrition_records(normalized, output_path)
     return {
         "path": str(source),
         "source": "FNDDS",
@@ -329,6 +325,15 @@ def prepare_fndds(source: Path, processed_dir: Path) -> dict[str, Any]:
         "records": len(normalized),
         "problems": [],
     }
+
+
+def write_nutrition_records(records: list[dict[str, Any]], output_path: Path) -> None:
+    """One food per line keeps the expanded generated dataset compact.
+
+    Missing source values must be null; reject non-standard JSON NaN values.
+    """
+    content = ",\n".join(json.dumps(record, allow_nan=False, separators=(",", ":")) for record in records)
+    output_path.write_text("[\n" + content + "\n]\n", encoding="utf-8")
 
 
 def write_report(report: dict[str, Any], processed_dir: Path) -> Path:

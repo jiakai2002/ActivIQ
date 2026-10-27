@@ -1,11 +1,11 @@
-"""Controlled response generation for supported intents."""
+"""Controlled responses that preserve user constraints and dataset limits."""
 
 from __future__ import annotations
 
 import json
-from typing import Any
+import math
 from pathlib import Path
-import re
+from typing import Any
 
 from src.knowledge_base import KnowledgeBase
 from src.planner import build_plan
@@ -31,90 +31,109 @@ class ResponseGenerator:
         return "Could you rephrase that as a fitness or nutrition question?"
 
     def _template_response(self, intent: str, entities, profile) -> str:
-        """Choose a contextual template without relying on random output."""
-
         options = TEMPLATES.get(intent, [])
         if not options:
             return "How can I help with your fitness goal?"
         context = sum(len(str(value)) for value in profile.values()) + len(entities)
         response = options[context % len(options)]
-        level = profile.get("level")
-        goal = profile.get("goal")
-        if intent == "log_feeling" and level:
-            response += f" Since you’re training at a {level} level, adjust the intensity to match your recovery."
-        if intent == "general_chat" and goal:
-            response += f" I can help you work toward your {goal} goal."
+        if intent == "log_feeling" and profile.get("level"):
+            response += f" Since you’re training at a {profile['level']} level, adjust the intensity to match your recovery."
+        if intent == "general_chat" and profile.get("goal"):
+            response += f" I can help you work toward your {profile['goal']} goal."
         return response
 
     def _exercise_response(self, entities, profile) -> str:
         exercise = (entities.get("exercise") or [None])[0]
-        body_part = (entities.get("body_part") or [None])[0]
-        equipment = (entities.get("equipment") or [None])[0]
+        body_parts = entities.get("body_part")
+        equipment = entities.get("equipment")
         level = (entities.get("level") or ["beginner"])[0]
-        results = self.knowledge_base.find_exercises(exercise, body_part, equipment, level, limit=1)
-        # An explicit exercise request should still return instructions when
-        # the database labels that exercise intermediate/advanced.
+        if not exercise and not body_parts:
+            return "Which exercise or muscle group would you like instructions for?"
+        results = self.knowledge_base.find_exercises(exercise, body_parts, equipment, level, limit=1)
         if not results and exercise:
-            results = self.knowledge_base.find_exercises(exercise, body_part, equipment, None, limit=1)
+            # An explicit how-to may explain a harder exercise, but its actual
+            # database level must be shown, rather than relabelled beginner.
+            results = self.knowledge_base.find_exercises(exercise, body_parts, equipment, None, limit=1)
         if not results:
-            return "I could not find that exercise. Could you provide another exercise name or muscle group?"
+            return "I could not find an exercise matching those constraints. Please give another exercise name, muscle group, or equipment choice."
         item = results[0]
+        target = ", ".join(item.get("primary_muscles", [])) or "unspecified muscles"
+        intro = (f"{item['name']} targets {target} and uses {item.get('equipment') or 'bodyweight'}. "
+                 f"The local database lists its level as {item.get('level') or 'unspecified'}.")
         instructions = item.get("instructions", [])
-        steps = " ".join(f"{index + 1}. {step}" for index, step in enumerate(instructions[:4]))
-        target = ", ".join(item.get("primary_muscles", [])) or "the requested muscles"
-        item_equipment = item.get("equipment") or "bodyweight"
-        intro = f"Here’s a {level}-friendly approach to {item['name']}"
-        if body_part:
-            intro += f", focusing on your {body_part}"
-        intro += f". It targets {target} and uses {item_equipment}."
-        closing = "Keep the movement controlled and stop if you feel pain."
-        return f"{intro}\n\n{steps or 'Use a comfortable range of motion and controlled form.'}\n\n{closing}"
+        steps = "\n".join(f"{i + 1}. {step}" for i, step in enumerate(instructions))
+        return f"{intro}\n\n{steps or 'No instructions are available for this record.'}\n\nKeep the movement controlled and stop if you feel pain."
 
     def _nutrition_response(self, entities) -> str:
-        query = " ".join(entities.get("food", []) or entities.get("exercise", []))
-        query = re.sub(
-            r"\b(?:how many calories are in|how much protein is in|nutrition facts for|nutrition information for|what are the nutrients in)\b",
-            "",
-            query,
-            flags=re.IGNORECASE,
-        ).strip(" ?.!,")
-        query = re.sub(r"^(?:a|an|the)\s+", "", query, flags=re.IGNORECASE)
-        if not query:
-            return "Which food would you like nutrition information for?"
-        results = self.knowledge_base.search_food(query, limit=1)
+        foods = entities.get("food", [])
+        if not foods:
+            return "Which food would you like nutrition information for? Include its preparation, such as raw or cooked."
+        if len(foods) > 1:
+            return "Please ask about one food at a time, including its preparation."
+        if entities.get("serving"):
+            return "Please give the serving weight in grams (for example, 200 g). Household serving sizes vary by food and preparation."
+        try:
+            grams = float((entities.get("quantity_g") or ["100"])[0])
+        except (ValueError, TypeError):
+            grams = 0
+        if not math.isfinite(grams) or grams <= 0:
+            return "Please give a food weight greater than zero in grams."
+        results = self.knowledge_base.search_food(foods[0], limit=6)
         if not results:
-            return "I could not find that food in the local nutrition database."
+            return "I could not find that food and preparation in the local nutrition database. Please give a more specific food name."
+        if len(results) > 1:
+            choices = "\n".join(f"- {item['description']}" for item in results[:5])
+            return f"Several foods match. Which exact food and preparation do you mean?\n{choices}\nReply with the food name and preparation."
         item = results[0]
         values = item.get("nutrients", {})
-        energy = values.get("Energy", {}).get("amount", "unknown")
-        protein = values.get("Protein", {}).get("amount", "unknown")
-        fat = values.get("Total lipid (fat)", {}).get("amount", "unknown")
-        carbs = values.get("Carbohydrate, by difference", {}).get("amount", "unknown")
-        return (
-            f"For 100 g of {item['description']}: {energy} kcal, {protein} g protein, "
-            f"{carbs} g carbohydrates, and {fat} g fat. "
-            "Values can vary by preparation and serving size."
-        )
+        requested = entities.get("nutrient") or ["Energy", "Protein", "Carbohydrate, by difference", "Total lipid (fat)"]
+        lines = [f"For {grams:g} g of {item['description']}:"]
+        for nutrient in requested:
+            value = values.get(nutrient, {})
+            amount, unit = value.get("amount"), value.get("unit")
+            if not isinstance(amount, (int, float)) or not math.isfinite(amount) or not unit:
+                lines.append(f"- {nutrient}: not available in the local dataset.")
+            else:
+                display_unit = {"G": "g", "MG": "mg", "UG": "mcg", "KCAL": "kcal", "KJ": "kJ"}.get(unit.upper(), unit)
+                lines.append(f"- {nutrient}: {amount * grams / 100:.4g} {display_unit}")
+        lines.append("Values are scaled from the database's 100 g basis; preparation and serving size matter.")
+        return "\n".join(lines)
 
     def _plan_response(self, entities, profile) -> str:
-        level = (entities.get("level") or [profile.get("level", "beginner")])[0]
-        equipment = (entities.get("equipment") or [profile.get("equipment")])[0]
-        body_part = (entities.get("body_part") or [None])[0]
-        requested_days = (entities.get("days") or [profile.get("days", "3")])[0]
+        for slot, label in (("level", "experience level"), ("goal", "main goal"), ("days", "number of workout days")):
+            if len(entities.get(slot, [])) > 1:
+                return f"Please choose one {label} for this plan."
+        level = (entities.get("level") or ["beginner"])[0]
+        equipment = entities.get("equipment") or ["bodyweight"]
+        body_parts = entities.get("body_part")
+        goal = (entities.get("goal") or [None])[0]
+        duration = " ".join(entities.get("duration", [])) or None
         try:
-            number_of_days = max(1, min(int(requested_days), 7))
+            days = int((entities.get("days") or ["3"])[0])
         except (TypeError, ValueError):
-            number_of_days = 3
-        plan = build_plan(self.knowledge_base, level, equipment, body_part, number_of_days)
-        focus = f"focused on {body_part}" if body_part else "full-body"
-        equipment_note = f" using {equipment}" if equipment else " with your available equipment"
-        lines = [f"Here’s a {number_of_days}-day {level} {focus} plan{equipment_note}:"]
+            return "Please choose a whole number between 1 and 7 workout days."
+        try:
+            plan = build_plan(self.knowledge_base, level, equipment, body_parts, days, goal, duration)
+        except (TypeError, ValueError) as error:
+            return str(error)
+        if not any(day["exercises"] for day in plan):
+            if not self.knowledge_base.exercises:
+                return "The local exercise database is empty. Add exercise data before creating a plan."
+            if any(day["limitation"] == "duration" for day in plan):
+                return "That session duration is too short for this workout template, including its warm-up. Please choose a longer session."
+            return "No local exercises match all those constraints. Would you like to change the equipment, muscle focus, level, or goal?"
+        focus = ", ".join(body_parts) if body_parts else "a mix of available muscle groups"
+        lines = [f"Here’s a {days}-day {level} plan for {focus}, using {', '.join(equipment)}."]
+        if not entities.get("equipment"):
+            lines.append("I assumed bodyweight equipment; tell me if you have other equipment.")
+        lines.append(f"Goal: {goal or 'general fitness'}. " + (f"Session budget: {duration}." if duration else "No session time limit specified."))
         for day in plan:
-            names = ", ".join(exercise["name"] for exercise in day["exercises"])
-            if not names:
-                names = "No matching local exercises found"
-            sets = day["exercises"][0]["sets"] if day["exercises"] else (3 if level == "beginner" else 4)
-            lines.append(f"Day {day['day']}: {names} — {sets} sets of 8-12 reps, 60-90 seconds rest.")
-        lines.append("Start with a warm-up, rest between sessions, and stop if you feel pain.")
-        lines.append("Tell me your available equipment or preferred focus if you want me to refine it.")
+            lines.append(f"\nDay {day['day']} (estimated {day['estimated_minutes']:g} minutes, including warm-up):")
+            for exercise in day["exercises"]:
+                lines.append(f"- {exercise['name']}: {exercise['sets']} sets of {exercise['repetitions']}; rest {exercise['rest']}.")
+        names = [exercise["name"] for day in plan for exercise in day["exercises"]]
+        if len(names) != len(set(names)):
+            lines.append("Some matching exercises repeat across days; each day uses distinct exercises.")
+        lines.append("Estimated times include five minutes for warm-up and one minute per exercise for transitions; actual times may vary.")
+        lines.append("Spread workout days across your schedule with recovery between sessions; stop if you feel pain.")
         return "\n".join(lines)
