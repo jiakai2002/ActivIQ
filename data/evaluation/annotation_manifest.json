@@ -1,0 +1,27 @@
+{
+  "purpose": "Blank human annotation templates; not evaluation results or machine-generated gold labels",
+  "sampling_seed": 42,
+  "required_slots": [
+    "exercise",
+    "body_part",
+    "equipment",
+    "goal",
+    "level",
+    "duration",
+    "food",
+    "nutrient"
+  ],
+  "sources": {
+    "validation": {
+      "path": "data\\processed\\intents\\validation.csv",
+      "sha256": "c7c09982f3210e56a8496078556685fd0c743002a49bbd587ef252b6a444a05a",
+      "rows_selected": 100
+    },
+    "test": {
+      "path": "data\\processed\\intents\\test.csv",
+      "sha256": "bc8b320090834109b5c02c09f70189ae51bec9de947105f84c0a10abf5cb9378",
+      "rows_selected": 120
+    }
+  },
+  "policy": "Use validation labels for development. Freeze rules before scoring the test labels. Do not turn extractor predictions into reference labels."
+}

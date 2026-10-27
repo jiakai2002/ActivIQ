@@ -25,6 +25,11 @@ Primary branch: `main`
   constrained by equipment, difficulty, focus, goal and estimated session time.
 - Task regression tests live in `tests/test_task_correctness.py` and run with
   `python -m unittest discover -s tests -v` without trained model weights.
+- System evaluation is available through `python scripts/evaluate_system.py`:
+  real-model task/safety transcripts and CPU timings, plus entity metrics once
+  human annotations exist. Development examples and blank validation/test
+  annotation templates live in `data/evaluation/`; read its README before scoring.
+  Draft/development labels must not be presented as held-out results.
 - Nutrition preparation now retains micronutrients and source units. The tracked
   nutrition JSON was rebuilt from official SR Legacy CSVs and contains 7,793
   foods, 149 distinct nutrient fields and 644,125 nutrient values.
@@ -76,6 +81,9 @@ templates/responses.json       Response templates
 scripts/prepare_data.py        Raw-to-processed data preparation
 scripts/train_intent.py        Local intent-model training
 scripts/evaluate_intent.py     Held-out evaluation
+scripts/evaluate_system.py     Entity/task/safety/latency reports
+scripts/prepare_entity_annotations.py  Blank human annotation templates
+src/evaluation.py              Metrics and observable task outcome checks
 data/SOURCES.md                Dataset provenance
 ```
 
@@ -132,8 +140,10 @@ For behavior changes, manually check at least these prompts in the UI:
 
 ## Suggested next work
 
-1. Add automated tests for safety routing, entity extraction, plan day counts,
-   profile inheritance, and empty-data fallbacks.
+1. Have teammates annotate and review entity validation/test sets; use validation
+   for rule/prompt development and keep the test set frozen for final scoring.
+   Address safety failures found by the development suite without removing the
+   failed cases. Collect independent human-authored task/safety test scenarios.
 2. Keep the project documentation aligned with
    `CS425_G1T3_Proposal_Submission.pdf` as requirements evolve.
 3. Improve the UI with clearer loading/error states and a small example-prompt

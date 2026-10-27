@@ -79,7 +79,18 @@ split with six supported intent categories:
 | Metric | Result |
 | --- | ---: |
 | Accuracy | 91.67% |
-| Macro-F1 | 91.55% |
+| Macro-F1 | 91.62% |
+
+The latest training/evaluation run reported these correct predictions per class:
+
+| Intent | Correct / test utterances |
+| --- | ---: |
+| find_exercise | 17 / 20 |
+| general_chat | 16 / 20 |
+| generate_plan | 20 / 20 |
+| get_nutrition_info | 19 / 20 |
+| log_feeling | 20 / 20 |
+| out_of_scope | 18 / 20 |
 
 Evaluation can be reproduced after preparing the local datasets and trained
 model with:
@@ -87,6 +98,44 @@ model with:
 ```powershell
 python scripts/evaluate_intent.py
 ```
+
+## System evaluation
+
+Run entity, multi-turn task, safety and CPU latency evaluations with:
+
+```powershell
+python scripts/evaluate_system.py
+```
+
+The trained local model is required for conversation, safety and latency runs.
+Each run saves a JSON report and a readable Markdown report with conversation
+transcripts under `reports/evaluation/`. This machine-specific output directory
+is ignored by Git. Input, model and code hashes, package versions, hardware and
+thread settings are recorded so results can be reproduced.
+
+The supplied suites include 20 development conversation scenarios and 34 safety
+cases. Scenario success requires every turn to pass; the proposal's task-success
+threshold is checked only over multi-turn scenarios. Plans are checked against
+actual exercise database properties. Safety reports medical misses, unrelated
+requests and false refusals separately. These assistant-authored development
+examples are not an independent held-out benchmark, even when all cases pass.
+
+Entity scoring needs human labels. Blank annotation templates contain 100
+validation utterances and all 120 original test utterances. Unlabelled data is
+reported as pending, rather than used to invent an F1 result. A separate set of
+20 draft entity examples can be scored provisionally with `--allow-draft`.
+
+```powershell
+python scripts/evaluate_system.py --component entities --entity-data data/evaluation/entities_dev.jsonl --allow-draft --output-dir reports/evaluation/entity_dev
+```
+
+Latency uses 120 queries, three measured repeats, excluded warm-up and separate
+startup reporting by default. Median, p95, p99, maximum and per-intent results
+are saved. The sub-second target uses the maximum measured response, including
+all pipeline work but excluding Streamlit/browser rendering.
+
+See [the evaluation and annotation protocol](data/evaluation/README.md) for label
+conventions, component commands, benchmark limitations and human review steps.
 
 ## Data sources
 
