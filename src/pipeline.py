@@ -8,7 +8,9 @@ from src.dialogue_manager import DialogueState
 from src.entity_extractor import FitnessEntityExtractor
 from src.knowledge_base import KnowledgeBase
 from src.response_generator import ResponseGenerator
-from src.safety import MEDICAL_RESPONSE, OUT_OF_SCOPE_RESPONSE, safety_route
+from src.safety import MEDICAL_RESPONSE, OUT_OF_SCOPE_RESPONSE, safety_decision
+from src.scope import (CLARIFICATION_RESPONSE, ambiguous_fragment, fitness_scope_evidence,
+                       is_social_message, workout_plan_request)
 
 
 class FitBuddyPipeline:
@@ -31,11 +33,13 @@ class FitBuddyPipeline:
         message = message.strip()
         if not message:
             return {"text": "Please enter a fitness or nutrition question.", "route": "empty"}
-        route = safety_route(message)
-        if route == "medical":
-            return {"text": MEDICAL_RESPONSE, "route": route}
-        if route == "out_of_scope":
-            return {"text": OUT_OF_SCOPE_RESPONSE, "route": route}
+        decision = safety_decision(message)
+        if decision.route == "medical":
+            return {"text": MEDICAL_RESPONSE, "route": decision.route, "routing_reason": decision.reason,
+                    "classifier_used": False}
+        if decision.route == "out_of_scope":
+            return {"text": OUT_OF_SCOPE_RESPONSE, "route": decision.route, "intent": "out_of_scope",
+                    "intent_source": "scope", "routing_reason": decision.reason, "classifier_used": False}
         if message.casefold() in {"reset", "reset profile", "forget my preferences"}:
             self.state.reset()
             return {"text": "Your profile has been reset.", "route": "reset"}
@@ -53,12 +57,33 @@ class FitBuddyPipeline:
             intent = rule_intent or prediction["intent"]
             source = "rule" if rule_intent else "model"
         metadata = {"intent": intent, "intent_source": source,
-                    "classifier_intent": prediction["intent"], "confidence": prediction["confidence"]}
+                    "classifier_intent": prediction["intent"], "confidence": prediction["confidence"],
+                    "classifier_used": True}
+        evidence = fitness_scope_evidence(message, entities, self.knowledge_base, followup)
+        if evidence is None:
+            if ambiguous_fragment(message):
+                return {"text": CLARIFICATION_RESPONSE, **metadata, "route": "clarification",
+                        "routing_reason": "insufficient_fitness_context", "entities": entities,
+                        "profile": self.state.snapshot()["profile"]}
+            return {"text": OUT_OF_SCOPE_RESPONSE, **metadata, "route": "out_of_scope",
+                    "intent": "out_of_scope", "intent_source": "scope",
+                    "routing_reason": "no_supported_fitness_evidence", "profile": self.state.snapshot()["profile"]}
+        metadata["scope_evidence"] = evidence
         # Rule/context evidence is independent of whether it happens to agree
         # with the classifier label. Rejected messages must not alter state.
         if prediction["confidence"] < 0.60 and source == "model":
-            return {"text": "I’m not sure I understood. Are you asking for a workout plan, exercise instructions, or nutrition information?",
-                    **metadata, "entities": entities, "profile": self.state.snapshot()["profile"]}
+            return {"text": CLARIFICATION_RESPONSE, **metadata, "route": "clarification",
+                    "routing_reason": "low_model_confidence", "entities": entities,
+                    "profile": self.state.snapshot()["profile"]}
+        if intent == "generate_plan" and not workout_plan_request(
+            message, entities, followup and self.state.last_intent == "generate_plan"
+        ):
+            return {"text": CLARIFICATION_RESPONSE, **metadata, "route": "clarification",
+                    "routing_reason": "workout_plan_not_requested", "entities": entities,
+                    "profile": self.state.snapshot()["profile"]}
+        if intent == "out_of_scope":
+            return {"text": OUT_OF_SCOPE_RESPONSE, **metadata, "route": "out_of_scope",
+                    "routing_reason": "model_out_of_scope", "profile": self.state.snapshot()["profile"]}
 
         if followup and intent == "get_nutrition_info":
             modifier = re.fullmatch(r"(?:and |what about |how about |actually |instead )?(raw|cooked|boiled|grilled|roasted|steamed)[?.!]*", message.casefold())
@@ -70,8 +95,7 @@ class FitBuddyPipeline:
                     if self.state.last_entities.get(key):
                         entities[key] = list(self.state.last_entities[key])
         merged = self.state.inherit(entities, intent, followup)
-        if intent != "out_of_scope":
-            self.state.update(intent, merged)
+        self.state.update(intent, merged)
         text = self.generator.generate(intent, merged, self.state.profile)
         return {"text": text, **metadata, "entities": merged, "profile": self.state.snapshot()["profile"]}
 
@@ -112,7 +136,7 @@ class FitBuddyPipeline:
             return "generate_plan"
         if entities.get("body_part") and re.search(r"\b(exercises?|train|work)\b", lowered):
             return "find_exercise"
-        if re.fullmatch(r"(?:thanks|thank you|hello|hi|hey)[!. ]*", lowered):
+        if is_social_message(message):
             return "general_chat"
         return None
 

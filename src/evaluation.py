@@ -289,12 +289,18 @@ def evaluate_latency(queries: list[dict], bot, repeats: int = 3, warmup: int = 1
             response = bot.respond(query["text"])
             elapsed = time.perf_counter() - start
             samples.append({"id": query["id"], "repeat": repeat + 1, "category": query.get("label", "other"),
-                            "seconds": elapsed, "route": response.get("route"), "intent": response.get("intent")})
+                            "seconds": elapsed, "route": response.get("route"), "intent": response.get("intent"),
+                            "classifier_used": response.get("classifier_used", "classifier_intent" in response
+                                or response.get("route") not in {"medical", "out_of_scope", "empty", "reset"})})
         if progress:
             progress(f"Latency repeat {repeat + 1}/{repeats} complete")
-    routes = {route: timing_summary([row["seconds"] for row in samples
-                                    if (row["route"] in {"medical", "out_of_scope"}) == (route == "safety_shortcut")])
-              for route in ("safety_shortcut", "classifier_path")}
+    routes = {
+        "safety_shortcut": timing_summary([row["seconds"] for row in samples
+            if not row["classifier_used"] and row["route"] in {"medical", "out_of_scope"}]),
+        "classifier_path": timing_summary([row["seconds"] for row in samples if row["classifier_used"]]),
+        "control_path": timing_summary([row["seconds"] for row in samples
+            if not row["classifier_used"] and row["route"] not in {"medical", "out_of_scope"}]),
+    }
     summary = timing_summary([row["seconds"] for row in samples])
     return {"status": "complete", "warmup_queries_excluded": warmup, "repeats": repeats, "summary": summary,
             "by_category": {label: timing_summary([row["seconds"] for row in samples if row["category"] == label])

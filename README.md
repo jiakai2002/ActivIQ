@@ -300,10 +300,41 @@ recreated with the training script.
 
 ## Safety and data policy
 
-Medical keywords such as pain, injury, medication, diagnosis, and symptoms are
-routed to a fixed refusal message. Unsupported topics receive a fixed
-fitness-scope response. ActivIQ is not a doctor, diagnostic tool, or
-replacement for a qualified trainer.
+Medical routing uses explicit phrase patterns for injuries, symptoms and medical
+requests, including plurals and a small documented set of spelling variants.
+Clear denials are interpreted within their clause: `no pain` can proceed, while
+`no pain, but my arm is numb` still receives the fixed medical response.
+Uncertainty (`not sure why it hurts`) and double negation (`not pain-free`) are
+not treated as denials. `Medicine ball` and limited scheduling idioms are not
+treated as medical concerns. The rules are bounded language heuristics, not a
+diagnostic or triage model; uncommon wording and complex negation may be missed.
+
+Explicit requests for software, creative writing, finance and other unsupported
+tasks receive a fixed fitness-scope response, even when they mention workouts.
+Background context such as bad weather can accompany a valid indoor workout
+request. A second scope check requires fitness language, recognised knowledge-base
+content, a supported social/feeling message, or a bounded profile/follow-up
+fragment. An arbitrarily confident model label cannot supply that evidence.
+Unclear short fragments and low-confidence fitness messages receive clarification
+without updating the profile. Workout generation also requires evidence that a
+plan was requested. Routing decisions expose reason codes and whether inference
+actually ran for evaluation; they do not add implementation text to chat replies.
+
+Inference truncates to the same 64-token limit used during training. Medical and
+explicit unsupported-task checks inspect the full message before inference.
+Both the trained checkpoint and the fixed medical disclaimer remain in use.
+ActivIQ is not a doctor, diagnostic tool, or replacement for a qualified trainer.
+
+The original 34-case development safety suite is retained. An additional 52-case
+regression suite covers mixed clauses, negation, spelling, unsupported tasks with
+fitness words and ambiguous topic overlap:
+
+```powershell
+python scripts/evaluate_system.py --component safety --safety-data data/evaluation/safety_hardening_dev.jsonl --output-dir reports/evaluation/safety_hardening/regression
+```
+
+These development cases guide implementation and regression testing; results on
+them do not establish safety for all queries or an independent held-out score.
 
 No intent paraphrase augmentation is currently used. SR Legacy is the primary
 nutrition lookup source, while FNDDS remains separate because the datasets use

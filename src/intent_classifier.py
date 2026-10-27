@@ -25,7 +25,9 @@ class IntentClassifier:
         )
 
     def predict(self, text: str) -> dict[str, Any]:
-        result = self.predictor(text, top_k=1)[0]
+        # Match the training token limit and avoid positional-embedding errors
+        # on long messages. Safety checks inspect the complete text first.
+        result = self.predictor(text, top_k=1, truncation=True, max_length=64)[0]
         label = result["label"]
         if label.startswith("LABEL_"):
             label = self.model.config.id2label[int(label.split("_")[-1])]

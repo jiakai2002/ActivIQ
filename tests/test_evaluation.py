@@ -187,6 +187,13 @@ class TimingTests(unittest.TestCase):
         self.assertFalse(report["target_met_on_this_run"])
         self.assertEqual(report["by_route"]["classifier_path"]["samples"], 2)
 
+    def test_post_classifier_rejection_is_not_counted_as_a_safety_shortcut(self):
+        bot = Bot({"unknown": {"text": "Out of scope", "route": "out_of_scope",
+                              "classifier_used": True, "classifier_intent": "generate_plan"}})
+        report = evaluate_latency([{"id": "q", "text": "unknown"}], bot, repeats=1, warmup=0)
+        self.assertEqual(report["by_route"]["classifier_path"]["samples"], 1)
+        self.assertEqual(report["by_route"]["safety_shortcut"]["samples"], 0)
+
 
 class AnnotationFileTests(unittest.TestCase):
     def test_blank_templates_preserve_original_splits_and_refuse_overwrite(self):

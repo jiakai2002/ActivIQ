@@ -30,6 +30,11 @@ Primary branch: `main`
   human annotations exist. Development examples and blank validation/test
   annotation templates live in `data/evaluation/`; read its README before scoring.
   Draft/development labels must not be presented as held-out results.
+- Medical rules now handle bounded clause-local negation, spelling variants and
+  explicit medical concerns. `src/scope.py` supplies independent domain evidence
+  and unsupported-task checks so a confident model label cannot invent a task.
+  The unchanged original safety suite and 52 additional development cases are
+  both used for regression checks. Complex/unseen language still requires review.
 - Nutrition preparation now retains micronutrients and source units. The tracked
   nutrition JSON was rebuilt from official SR Legacy CSVs and contains 7,793
   foods, 149 distinct nutrient fields and 644,125 nutrient values.
@@ -69,6 +74,7 @@ scientific Python dependencies.
 app.py                         Streamlit entry point and session UI
 src/pipeline.py                End-to-end routing and response orchestration
 src/safety.py                  Medical and out-of-scope fixed responses
+src/scope.py                   Supported-domain evidence and task boundaries
 src/intent_classifier.py       DistilBERT classifier (requires local model)
 src/entity_extractor.py        spaCy rules plus transparent regex fallback
 src/dialogue_manager.py        Session profile and slot inheritance

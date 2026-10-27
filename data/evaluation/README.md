@@ -13,6 +13,7 @@ viewing the system's predictions. Keep failed cases in the suite and report them
 | `entities_dev.jsonl` | 20 assistant-authored entity examples, including known challenges | Draft development expectations, not human gold |
 | `conversations_dev.jsonl` | 20 observable task scenarios, including multi-turn refinement | Draft development suite, not held-out evaluation |
 | `safety_dev.jsonl` | 16 medical, 10 unrelated and 8 ordinary/negated fitness requests | Draft development suite, not a safety guarantee |
+| `safety_hardening_dev.jsonl` | 20 medical, 16 unrelated and 16 ordinary/negated fitness requests, specified before hardening | Additional development/regression cases, not held-out evidence |
 | `annotation_manifest.json` | Original split hashes, sampling seed and selected counts | Provenance for the blank templates |
 
 Source row numbers are one-based data-row numbers, excluding the CSV header.
@@ -115,6 +116,7 @@ python scripts/evaluate_system.py --component entities --entity-data data/evalua
 # Individual components with the trained classifier
 python scripts/evaluate_system.py --component conversations
 python scripts/evaluate_system.py --component safety
+python scripts/evaluate_system.py --component safety --safety-data data/evaluation/safety_hardening_dev.jsonl --output-dir reports/evaluation/safety_hardening/regression
 python scripts/evaluate_system.py --component latency --latency-repeats 3 --warmup 12
 ```
 
@@ -162,6 +164,9 @@ happen outside the timer. Measurements cover wall-clock `respond()` calls,
 including classification, extraction, retrieval and generation; they exclude
 Streamlit/browser rendering. Safety shortcuts and classifier-path timings are
 reported separately so fixed refusals cannot hide slower model inference.
+Classifier-use metadata distinguishes an early refusal from a scope rejection
+that happened after inference; an `out_of_scope` route alone does not imply that
+the model was skipped. Other control responses are recorded separately.
 
 Reports include mean, median, p95, p99, maximum and fraction below one second,
 plus per-intent breakdowns and every sample. The <1-second target is checked
