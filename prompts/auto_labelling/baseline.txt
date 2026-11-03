@@ -1,0 +1,8 @@
+Assign the primary intent and extract only the attributes actually expressed in
+this utterance. Follow the fixed task contract and the ten seed examples.
+Pay attention to negation, named exercise variants and preparation-specific food
+phrases. Canonicalise aliases without broadening specific requests. Keep food
+and nutrient entities separate. Do not infer an exercise's muscles as explicitly
+stated body-part entities, and do not confuse workout days with session duration.
+Use empty lists for absent entities. Check that all eight fields are present and
+return only the required intent/entities JSON object.

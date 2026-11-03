@@ -1,0 +1,32 @@
+{
+  "purpose": "Ten blank training-seed annotations; no machine-generated gold",
+  "sampling_seed": 42,
+  "source_hashes": {
+    "train": "ca21d2832a8e18b5dd4e2827a6b361d08dd4efe1bea59b3a02f1d830264faae3",
+    "validation": "c7c09982f3210e56a8496078556685fd0c743002a49bbd587ef252b6a444a05a",
+    "test": "bc8b320090834109b5c02c09f70189ae51bec9de947105f84c0a10abf5cb9378"
+  },
+  "counts": {
+    "train": 960,
+    "validation": 120,
+    "test": 120
+  },
+  "seed_intents": {
+    "find_exercise": 1,
+    "general_chat": 3,
+    "generate_plan": 1,
+    "out_of_scope": 2,
+    "get_nutrition_info": 1,
+    "log_feeling": 2
+  },
+  "required_slots": [
+    "exercise",
+    "body_part",
+    "equipment",
+    "goal",
+    "level",
+    "duration",
+    "food",
+    "nutrient"
+  ]
+}

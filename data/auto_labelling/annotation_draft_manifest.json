@@ -1,0 +1,42 @@
+{
+  "author": "OpenAI Codex assistant",
+  "created_date": "2026-11-03",
+  "method": "Assistant-authored semantic drafts from utterances and documented conventions; no extractor predictions or Qwen experiment used.",
+  "human_reviewed": false,
+  "test_file": "data\\evaluation\\entities_test.jsonl",
+  "test_sha256": "d619e9a798a02ce1512792ba956592b903465e353b46e926736d9641e8813658",
+  "files": [
+    {
+      "path": "data\\auto_labelling\\seeds.jsonl",
+      "records": 10,
+      "before_sha256": "cae6ba80d39626fb6c4460c08de310970b55e9b312a20c7b0df21ac17e7f7f0e",
+      "draft_sha256": "ce5c70a841b7c708d15a2bd6a4bd2dcee1096654a2f55026ebb4a6118c5bc9b3",
+      "draft_entity_support": {
+        "exercise": 3,
+        "body_part": 0,
+        "equipment": 0,
+        "goal": 1,
+        "level": 0,
+        "duration": 0,
+        "food": 1,
+        "nutrient": 3
+      }
+    },
+    {
+      "path": "data\\evaluation\\entities_validation.jsonl",
+      "records": 100,
+      "before_sha256": "1071ccc1305f4982ed872f34e3364042b2e4e42937f478c6f2d4ee85f5fba363",
+      "draft_sha256": "3dcb2730d2e92a6ec41f58b6f281745108a90a116fc7cd9e51c562826e94bd0d",
+      "draft_entity_support": {
+        "exercise": 16,
+        "body_part": 6,
+        "equipment": 5,
+        "goal": 5,
+        "level": 1,
+        "duration": 0,
+        "food": 17,
+        "nutrient": 22
+      }
+    }
+  ]
+}

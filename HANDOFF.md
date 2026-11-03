@@ -35,6 +35,11 @@ Primary branch: `main`
   and unsupported-task checks so a confident model label cannot invent a task.
   The unchanged original safety suite and 52 additional development cases are
   both used for regression checks. Complex/unseen language still requires review.
+- Local auto-labelling/APE infrastructure is available via `scripts/auto_label.py`.
+  Read `data/auto_labelling/README.md`: ten training seeds and 100 validation
+  records still need actual human labels/review. No real Qwen quality experiment
+  or LoRA training has been completed. Use the separate research requirements,
+  local checkpoints and new resumable run directories under reports/auto_labelling.
 - Nutrition preparation now retains micronutrients and source units. The tracked
   nutrition JSON was rebuilt from official SR Legacy CSVs and contains 7,793
   foods, 149 distinct nutrient fields and 644,125 nutrient values.
@@ -89,6 +94,9 @@ scripts/train_intent.py        Local intent-model training
 scripts/evaluate_intent.py     Held-out evaluation
 scripts/evaluate_system.py     Entity/task/safety/latency reports
 scripts/prepare_entity_annotations.py  Blank human annotation templates
+scripts/prepare_autolabelling.py  Ten blank, stratified training seed annotations
+scripts/auto_label.py          Local candidate generation/validation selection/train labelling
+src/auto_labelling/            Contracts, split fences, local inference and resumable workflow
 src/evaluation.py              Metrics and observable task outcome checks
 data/SOURCES.md                Dataset provenance
 ```
@@ -150,6 +158,8 @@ For behavior changes, manually check at least these prompts in the UI:
    for rule/prompt development and keep the test set frozen for final scoring.
    Address safety failures found by the development suite without removing the
    failed cases. Collect independent human-authored task/safety test scenarios.
+   Also review the ten training-seed annotations, freeze the baseline prompt, and
+   run the local APE comparison before generating labels for the LoRA experiment.
 2. Keep the project documentation aligned with
    `CS425_G1T3_Proposal_Submission.pdf` as requirements evolve.
 3. Improve the UI with clearer loading/error states and a small example-prompt

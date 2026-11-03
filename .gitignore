@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-llm/
 venv/
 .env
 .streamlit/secrets.toml
@@ -20,4 +21,7 @@ data/user_profiles/*
 
 # Machine-specific evaluation runs; benchmark inputs remain tracked.
 reports/evaluation/
+
+# Local LLM experiment logs, caches and generated training annotations.
+reports/auto_labelling/
 

@@ -8,7 +8,7 @@ viewing the system's predictions. Keep failed cases in the suite and report them
 
 | File | Purpose | Initial status |
 | --- | --- | --- |
-| `entities_validation.jsonl` | 100 sampled utterances from the original validation split | Unlabelled; for development and later APE prompt selection |
+| `entities_validation.jsonl` | 100 sampled utterances from the original validation split | AI draft annotations; human review required before APE prompt selection |
 | `entities_test.jsonl` | All 120 utterances from the original test split | Unlabelled; keep held out from rule/prompt tuning |
 | `entities_dev.jsonl` | 20 assistant-authored entity examples, including known challenges | Draft development expectations, not human gold |
 | `conversations_dev.jsonl` | 20 observable task scenarios, including multi-turn refinement | Draft development suite, not held-out evaluation |
@@ -31,7 +31,14 @@ The script refuses to overwrite existing annotation files.
 
 ## Human entity annotation
 
-Replace `entities: null` in each annotation record with a dictionary explicitly
+For validation, review/correct the existing AI drafts using the
+[review sheet](../auto_labelling/ANNOTATION_REVIEW.md). Preserve their AI
+provenance after review and disclose AI assistance in the report. The original
+test templates remain unlabelled: independently annotate them without viewing
+extractor predictions or AI draft answers. AI drafts are excluded by default;
+`--allow-draft` permits provisional diagnostics only (see script help).
+
+Replace `entities: null` in each unlabelled annotation record with a dictionary explicitly
 containing all eight proposal slots, using lists of strings. Use `[]` for an
 absent slot. Mark the record `label_status: "human_reviewed"` and enter the
 responsible person's name in `annotator` only after a person has labelled and

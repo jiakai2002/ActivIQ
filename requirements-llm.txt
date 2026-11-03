@@ -1,0 +1,5 @@
+# Separate research environment: do not install over the baseline chatbot venv.
+torch>=2.4,<3
+transformers>=5.3,<6
+accelerate>=1,<2
+safetensors>=0.5,<1

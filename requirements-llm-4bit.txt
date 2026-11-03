@@ -1,0 +1,2 @@
+-r requirements-llm.txt
+bitsandbytes>=0.46,<1

@@ -137,6 +137,38 @@ all pipeline work but excluding Streamlit/browser rendering.
 See [the evaluation and annotation protocol](data/evaluation/README.md) for label
 conventions, component commands, benchmark limitations and human review steps.
 
+## Local auto-labelling and APE infrastructure
+
+The separate research workflow prepares ten training-seed annotations, generates
+candidate labelling instructions with a local model, compares them and a baseline
+against 100 reviewed validation examples, and labels the original training split
+with the selected prompt. It uses direct local Transformers inference, including
+optional CUDA NF4 4-bit loading, with no LLM API/server.
+
+```powershell
+python scripts/auto_label.py check
+```
+
+Ten blank seed records are available in `data/auto_labelling/seeds.jsonl`. Both
+those seeds and the existing validation entity annotations need human review
+before the real experiment can be completed. Preflight reports missing labels
+without loading a model. The baseline prompt is an assistant-authored starting
+template for team review, not an already-validated manual prompt.
+
+`propose`, `score` and `label` subcommands provide strict JSON/schema validation,
+bounded format retries, raw attempt logs, input/model/code fingerprints, atomic
+per-query checkpoints and explicit resume. Scoring keeps invalid generations in
+the measurements. Training export preserves original intents alongside model
+predictions and marks accepted output as machine-generated; it never overwrites
+human gold or annotates validation/test data as training data.
+
+Qwen3.5 uses the separate `requirements-llm.txt` / `requirements-llm-4bit.txt`
+environment; the baseline application dependency file is retained. Local model
+weights must be supplied explicitly. No Qwen quality results or LoRA training
+are implied by the infrastructure tests. Read the
+[setup, experiment and provenance guide](data/auto_labelling/README.md) before
+running the experiment.
+
 ## Data sources
 
 ActivIQ uses the following public datasets:
