@@ -7,9 +7,9 @@ Implementation is infrastructure, not completed Qwen/APE/LoRA research results.
 
 ## What is ready
 
-1. Ten AI-draft training-seed annotations in `seeds.jsonl`, sampled with seed 42 and
+1. Ten training-seed annotations in `seeds.jsonl`, sampled with seed 42 and
    covering all six intents. Sampling metadata and original split hashes are in
-   `seed_manifest.json`. These labels require human review before use.
+   `seed_manifest.json`. They started as AI drafts and are now human reviewed.
 2. Direct local inference, greedy annotation, optional CUDA NF4 4-bit loading,
    disabled thinking in the chat template, explicit context limits and full
    checkpoint/tokenizer fingerprints.
@@ -36,24 +36,24 @@ The pipeline is:
                        -> report agreement and export accepted machine labels
 ```
 
-## Human inputs needed first
+## Human inputs (done)
 
-Review and correct the ten AI-draft `entities` dictionaries in `seeds.jsonl`, following the
+The seed and validation labels are human reviewed (reviewer recorded as `annotator`).
+For any new seed file, review and correct the AI-draft `entities` dictionaries, following the
 [existing annotation conventions](../evaluation/README.md). Keep each source
 intent and text unchanged. Record the actual annotator and set `label_status` to
 `human_reviewed` only after a person has reviewed the labels.
 
-The existing `data/evaluation/entities_validation.jsonl` also needs 100 reviewed
-entity annotations before prompt scoring. Candidate generation can start once
-the ten seeds are ready; it does not require the validation labels yet.
+`data/evaluation/entities_validation.jsonl` holds the 100 reviewed validation
+annotations used for prompt scoring.
 
-AI-assisted drafts now exist for all 110 seed/validation records. Use
+AI-assisted drafts existed for all 110 seed/validation records before review. Use
 [ANNOTATION_REVIEW.md](ANNOTATION_REVIEW.md) for the row-by-row review sheet,
 ambiguous decisions, and draft coverage. `annotation_draft_manifest.json` records
 file hashes and authorship; each JSONL record retains its original draft labels
 in `annotation_provenance`. Keep this provenance after human correction/review.
-`annotator` remains null and `label_status` remains `ai_draft` until a person
-reviews that individual record. The preflight still rejects these drafts.
+All 110 records now carry the reviewer's name and `label_status: human_reviewed`,
+and the preflight passes. A new unreviewed draft stays `ai_draft` and is rejected.
 The held-out test annotations remain untouched. These are annotations of existing
 utterances, not newly generated synthetic utterances or completed quality results.
 

@@ -36,8 +36,9 @@ Primary branch: `main`
   The unchanged original safety suite and 52 additional development cases are
   both used for regression checks. Complex/unseen language still requires review.
 - Local auto-labelling/APE infrastructure is available via `scripts/auto_label.py`.
-  Read `data/auto_labelling/README.md`: ten training seeds and 100 validation
-  records still need actual human labels/review. No real Qwen quality experiment
+  Read `data/auto_labelling/README.md`: the ten training seeds and 100 validation
+  records were AI-drafted, then human reviewed by a team member (all 110 are
+  `human_reviewed`; the 120 test labels are still blank). No real Qwen quality experiment
   or LoRA training has been completed. Use the separate research requirements,
   local checkpoints and new resumable run directories under reports/auto_labelling.
 - Nutrition preparation now retains micronutrients and source units. The tracked

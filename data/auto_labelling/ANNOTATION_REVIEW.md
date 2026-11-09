@@ -1,8 +1,8 @@
 # AI-assisted entity annotation review
 
-These 110 labels are AI drafts on existing utterances, not new synthetic utterances or human gold. Every row needs human review, including rows with empty entity lists. Source intents are preserved, not independently verified.
+**Status: human reviewed.** These 110 labels started as AI drafts on existing utterances (not new synthetic utterances). A team member (Qixun, recorded as `annotator`) then reviewed every row and corrected 5 labels (validation 003, 047, 055, 059, 114). All 110 records have `label_status: human_reviewed`. The AI drafts are kept in `annotation_provenance`, and the report must disclose that the reviewed labels were AI-assisted. Source intents are preserved, not independently verified.
 
-Edit the JSONL files directly. For each row, check the utterance and all eight slots, correct the labels, put your real name in annotator, and change label_status to human_reviewed only after review. Keep annotation_provenance and the original draft snapshot for disclosure. Do not batch-approve unchecked rows. Resolve taxonomy choices consistently across seeds and validation before freezing.
+The instructions below describe the review that was done. Use them again for any new annotation file: check the utterance and all eight slots, correct the labels, put your real name in annotator, and change label_status to human_reviewed only after review. Keep annotation_provenance and the original draft snapshot for disclosure. Do not batch-approve unchecked rows. Resolve taxonomy choices consistently across seeds and validation before freezing.
 
 The test file was not read for annotation or modified. Do not use it for prompt tuning.
 
@@ -134,3 +134,27 @@ Draft entity-value counts: exercise=3, body_part=0, equipment=0, goal=1, level=0
 
 Draft entity-value counts: exercise=16, body_part=6, equipment=5, goal=5, level=1, duration=0, food=17, nutrient=22
 
+
+## AI review pass (2026-11-09)
+
+An AI assistant (Claude) re-checked all 10 seed and 100 validation drafts against
+the conventions in `data/evaluation/README.md`. This is a second AI check, not
+human review. A person (Qixun) later reviewed all rows; see the status at the top of this file.
+
+**Changed (1 label)**
+- `entity-validation-114` ("...importance of macros."): the AI pass changed nutrient to `[]`. The human reviewer restored the three macro nutrients, so the human label is final.
+
+**Left unchanged, but judgment calls the reviewer should confirm**
+- Macros expand to `Protein`, `Total lipid (fat)`, `Carbohydrate, by difference`
+  (seed `train-0352`, validation 020, 068, 086). This is consistent across all four.
+- Out-of-scope rows keep stated entities: validation 053 (`swim`), 076 (`pasta`).
+- Sports and programmes are labelled as exercises: validation 028 (`triathlon`),
+  043 (`basketball`), 055 (`german volume training`).
+- Validation 023: "core strength" gives body part `core` and goal `strength`.
+- Validation 005, 074, 081: a named exercise with equipment inside its name also gets
+  an equipment label.
+- Validation 047: `Sugars, total` matches the dataset's `Sugars, Total` because scoring
+  ignores case.
+- Day counts (validation 007, 008) are not durations, so `duration` stays `[]`.
+
+All other rows were checked and agree with the conventions.
