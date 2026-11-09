@@ -71,6 +71,26 @@ Supported request types include workout plans, exercise instructions, nutrition
 information, workout-feeling check-ins, general fitness conversation, and
 out-of-scope requests.
 
+## Project status and results
+
+The chatbot, the DistilBERT intent model, the spaCy entity rules and the
+auto-labelling/LoRA experiment (proposal section 4.6) are all implemented and the
+experiment has been run. Full tables, caveats and remaining work are in
+[HANDOFF.md](HANDOFF.md); raw outputs are in `ActivIQ_runs/`. Headline results on the
+120-utterance human-labelled test set:
+
+| System | Intent acc | Entity micro-F1 | Median latency |
+| --- | ---: | ---: | ---: |
+| DistilBERT + spaCy (the chatbot) | 0.917 | 0.455 | 0.018 s |
+| Qwen3.5-2B + LoRA on machine labels | 0.917 | 0.571 | 2.9 s (A100) |
+| Qwen3.5-9B zero-shot | 0.800 | 0.408 | 4.1 s (A100) |
+
+The intent target (>= 0.90) is met. The entity target (>= 0.85) is **not** met by the
+spaCy rules (0.455), and the best auto-labelling prompt scored 0.700 against its 0.80
+validation target (intent agreement 0.904 met its 0.85 target). Still open: independent
+multi-turn task/safety evaluation, laptop latency run, and the report. Reproduce the
+experiment with `notebooks/activiq_end_to_end.ipynb` on a Colab A100.
+
 ## Model results
 
 The current intent-classification model was evaluated on the untouched test
@@ -120,10 +140,11 @@ actual exercise database properties. Safety reports medical misses, unrelated
 requests and false refusals separately. These assistant-authored development
 examples are not an independent held-out benchmark, even when all cases pass.
 
-Entity scoring needs human labels. Blank annotation templates contain 100
-validation utterances and all 120 original test utterances. Unlabelled data is
-reported as pending, rather than used to invent an F1 result. A separate set of
-20 draft entity examples can be scored provisionally with `--allow-draft`.
+Entity scoring needs human labels. The 100 validation utterances and all 120
+original test utterances are human reviewed (AI-drafted first; disclose this).
+Unlabelled or draft data is reported as pending or provisional, rather than used
+to invent an F1 result. A separate set of 20 draft entity examples can be scored
+provisionally with `--allow-draft`.
 
 ```powershell
 python scripts/evaluate_system.py --component entities --entity-data data/evaluation/entities_dev.jsonl --allow-draft --output-dir reports/evaluation/entity_dev

@@ -27,20 +27,19 @@ Primary branch: `main`
   `python -m unittest discover -s tests -v` without trained model weights.
 - System evaluation is available through `python scripts/evaluate_system.py`:
   real-model task/safety transcripts and CPU timings, plus entity metrics once
-  human annotations exist. Development examples and blank validation/test
-  annotation templates live in `data/evaluation/`; read its README before scoring.
+  human annotations exist. Development examples and the human-reviewed entity
+  annotations live in `data/evaluation/`; read its README before scoring.
   Draft/development labels must not be presented as held-out results.
 - Medical rules now handle bounded clause-local negation, spelling variants and
   explicit medical concerns. `src/scope.py` supplies independent domain evidence
   and unsupported-task checks so a confident model label cannot invent a task.
   The unchanged original safety suite and 52 additional development cases are
   both used for regression checks. Complex/unseen language still requires review.
-- Local auto-labelling/APE infrastructure is available via `scripts/auto_label.py`.
-  Read `data/auto_labelling/README.md`: the ten training seeds and 100 validation
-  records were AI-drafted, then human reviewed by a team member (all 110 are
-  `human_reviewed`; the 120 test labels are still blank). No real Qwen quality experiment
-  or LoRA training has been completed. Use the separate research requirements,
-  local checkpoints and new resumable run directories under reports/auto_labelling.
+- Auto-labelling/APE and LoRA experiment (proposal section 4.6) has been **run on
+  Colab and the results are committed** under `ActivIQ_runs/`. See "Experiment
+  results" below. The ten training seeds, 100 validation records and all 120 test
+  records were AI-drafted, then human reviewed (`label_status: human_reviewed`).
+  Disclose the AI assistance in the report.
 - Nutrition preparation now retains micronutrients and source units. The tracked
   nutrition JSON was rebuilt from official SR Legacy CSVs and contains 7,793
   foods, 149 distinct nutrient fields and 644,125 nutrient values.
@@ -48,6 +47,93 @@ Primary branch: `main`
   stability. Do not rename it casually without checking all callers.
 - The last committed change is the branding update. The working tree should be
   clean before starting new work.
+
+## Experiment results (captured)
+
+Everything below was produced by `notebooks/activiq_end_to_end.ipynb` on a Colab
+A100-SXM4-40GB (about 117 minutes in total; 9B in bf16, 2B in bf16). Raw outputs
+are in `ActivIQ_runs/`. Pinned model revisions are in `ActivIQ_runs/model_revisions.json`
+(Qwen3.5-9B `c202236...`, Qwen3.5-2B `15852e8...`).
+
+### Scorecard against the proposal targets
+
+| Target (proposal section 5) | Result | Met? |
+| --- | --- | --- |
+| Intent accuracy and macro-F1 >= 0.90 | 0.917 / 0.916 (DistilBERT, test) | Yes |
+| Entity F1 >= 0.85 (spaCy rules) | **0.455** (test, human-reviewed labels) | **No** |
+| Auto-labelling entity F1 >= 0.80 (validation) | 0.700 (best prompt `ape-002`) | No |
+| Auto-labelling intent agreement >= 0.85 | 0.904 on 960 training rows | Yes |
+| LoRA vs DistilBERT + spaCy comparison | Done, table below | Report only |
+| End-to-end task success >= 80%, safety 100%, latency < 1 s | Not yet measured on an independent held-out set | Open |
+
+### Test-set comparison (120 utterances, human-reviewed entity labels)
+
+| System | Intent acc | Intent macro-F1 | Entity micro-F1 | Median latency | Invalid outputs |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| DistilBERT + spaCy | 0.917 | 0.916 | 0.455 | 0.018 s | 0 |
+| Qwen3.5-2B + LoRA (machine labels) | 0.917 | 0.919 | 0.571 | 2.9 s | 0 |
+| Qwen3.5-9B zero-shot | 0.800 | 0.808 | 0.408 | 4.1 s | 5 |
+
+Per-slot entity F1 (test support in brackets):
+
+| Slot | DistilBERT + spaCy | LoRA 2B | 9B zero-shot |
+| --- | ---: | ---: | ---: |
+| exercise (25) | 0.34 | 0.63 | 0.49 |
+| body_part (8) | 0.77 | 0.56 | 0.71 |
+| equipment (4) | 0.00 | 0.50 | 0.00 |
+| goal (8) | 0.84 | 0.60 | 0.30 |
+| level (2) | 1.00 | 0.50 | 0.00 |
+| duration (3) | 0.00 | 0.60 | 0.00 |
+| food (17) | 0.12 | 0.88 | 0.65 |
+| nutrient (11) | 0.75 | 0.31 | 0.17 |
+
+Reading the table: the LoRA 2B ties DistilBERT on intent and beats the spaCy rules
+on entity F1, but is far slower (different hardware, so not a like-for-like timing), so the chatbot keeps DistilBERT + spaCy.
+The spaCy extractor misses its 0.85 target by a wide margin, mostly on `food`,
+`exercise`, `equipment` and `duration`. Some of this may be label-convention
+mismatch (how a phrase is worded) rather than a missing rule; check per-utterance
+errors in `ActivIQ_runs/evaluation/lora_2b/lora_comparison.json` before changing rules.
+
+### APE prompt selection (100 validation rows; selection scores, not held-out)
+
+| Prompt | Entity micro-F1 | Valid output | Intent agreement |
+| --- | ---: | ---: | ---: |
+| ape-002 (selected) | 0.700 | 1.00 | 0.92 |
+| ape-003 | 0.671 | 1.00 | 0.93 |
+| baseline (team prompt) | 0.659 | 1.00 | 0.92 |
+| ape-004 | 0.647 | 1.00 | 0.92 |
+| ape-001 | 0.643 | 1.00 | 0.92 |
+
+The best APE prompt beat the baseline by about 0.04 F1. Validation has no `duration`
+examples, so that slot is not covered by the selection score.
+
+### Auto-labelling and LoRA training
+
+- The selected prompt labelled all 960 training utterances: 960 accepted, 0 rejected,
+  intent agreement 0.904 (0.903 excluding the ten seeds). Training entity accuracy is
+  unknown because there are no independent human labels for the training split.
+- LoRA: Qwen3.5-2B, 960 machine-labelled examples, 3 epochs, batch size 8, learning
+  rate 2e-4, rank 16, alpha 32, dropout 0.05, bf16, about 275 s. Mean epoch loss
+  0.063, 0.020, 0.0085. The adapter weights (93 MB) are **not in Git**: keep them on
+  the team Drive (`ActivIQ_runs/lora/adapter_v1/`).
+
+### Caveats to state in the report
+
+- Seeds, validation and test entity labels were AI-drafted and then human reviewed
+  (reviewers recorded in `annotator`). State this once, separately.
+- Validation scores are prompt-selection scores. The test set was never used for
+  prompt selection, rule tuning or training.
+- The test set is small (120 rows; as few as 2 to 4 examples for `level`,
+  `equipment` and `duration`), so per-slot scores are noisy.
+- The DistilBERT baseline in the Colab run was retrained with `scripts/train_intent.py`
+  (one-line argument patch), not loaded from the team's original weights. Its intent
+  numbers equal the README's.
+- Qwen latency is GPU time on an A100; DistilBERT latency is not comparable hardware.
+  Do not present it as a like-for-like speed test.
+- The baseline labelling prompt (`prompts/auto_labelling/baseline.txt`) was
+  assistant-authored; confirm the team reviewed it before calling it the team's prompt.
+- The `note` field inside `lora_comparison.json` still says entity scores are pending;
+  that text is stale, as the test labels are human reviewed.
 
 ## Start here
 
@@ -94,7 +180,7 @@ scripts/prepare_data.py        Raw-to-processed data preparation
 scripts/train_intent.py        Local intent-model training
 scripts/evaluate_intent.py     Held-out evaluation
 scripts/evaluate_system.py     Entity/task/safety/latency reports
-scripts/prepare_entity_annotations.py  Blank human annotation templates
+scripts/prepare_entity_annotations.py  Blank annotation template generator (templates now filled and reviewed)
 scripts/prepare_autolabelling.py  Ten blank, stratified training seed annotations
 scripts/auto_label.py          Local candidate generation/validation selection/train labelling
 src/auto_labelling/            Contracts, split fences, local inference and resumable workflow
@@ -155,17 +241,20 @@ For behavior changes, manually check at least these prompts in the UI:
 
 ## Suggested next work
 
-1. Have teammates annotate and review entity validation/test sets; use validation
-   for rule/prompt development and keep the test set frozen for final scoring.
-   Address safety failures found by the development suite without removing the
-   failed cases. Collect independent human-authored task/safety test scenarios.
-   Also review the ten training-seed annotations, freeze the baseline prompt, and
-   run the local APE comparison before generating labels for the LoRA experiment.
-2. Keep the project documentation aligned with
+1. **Entity extractor (priority).** spaCy rules score 0.455 test F1 against the 0.85
+   target. Inspect per-utterance errors, improve rules using the **validation** set
+   only, and keep the test set frozen; a rerun on test after tuning is no longer
+   untouched and must be described that way.
+2. Collect independent human-authored multi-turn task and safety scenarios, then run
+   `scripts/evaluate_system.py` for task success (>= 80%), safety (100%) and CPU
+   latency (< 1 s) on the target laptop. Keep failed development cases in the suite.
+3. Write the report: scorecard above, the caveats above, the pipeline diagram
+   (seeds -> 9B + APE -> machine labels -> 2B LoRA -> compared with DistilBERT + spaCy).
+4. Keep the project documentation aligned with
    `CS425_G1T3_Proposal_Submission.pdf` as requirements evolve.
-3. Improve the UI with clearer loading/error states and a small example-prompt
+5. Improve the UI with clearer loading/error states and a small example-prompt
    panel.
-4. Re-run the intent evaluation after any classifier, data, or preprocessing
+6. Re-run the intent evaluation after any classifier, data, or preprocessing
    change and record the result in the README.
 
 ## Git collaboration instructions

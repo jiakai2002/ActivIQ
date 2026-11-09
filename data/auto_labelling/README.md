@@ -3,7 +3,7 @@
 This is an offline research experiment alongside the existing chatbot. It uses
 direct Transformers inference on a **local checkpoint**, with no LLM API/server,
 and never changes the chatbot's production classifier or human reference labels.
-Implementation is infrastructure, not completed Qwen/APE/LoRA research results.
+The experiment has been run on Colab; results are summarised in `HANDOFF.md` and stored in `ActivIQ_runs/`.
 
 ## What is ready
 
@@ -54,8 +54,9 @@ file hashes and authorship; each JSONL record retains its original draft labels
 in `annotation_provenance`. Keep this provenance after human correction/review.
 All 110 records now carry the reviewer's name and `label_status: human_reviewed`,
 and the preflight passes. A new unreviewed draft stays `ai_draft` and is rejected.
-The held-out test annotations remain untouched. These are annotations of existing
-utterances, not newly generated synthetic utterances or completed quality results.
+The 120 test annotations were drafted separately and are also human reviewed; they were
+never used for prompt selection or training. These are annotations of existing
+utterances, not newly generated synthetic utterances.
 
 ```powershell
 python scripts/auto_label.py check
