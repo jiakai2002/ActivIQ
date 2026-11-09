@@ -1,0 +1,26 @@
+Assign the primary intent and extract entities in the required JSON schema.
+Decide the intent separately from the entities. A named food or exercise can
+appear in a feeling log, general chat, or an out-of-scope utterance.
+
+For each value, find the supporting words in this utterance. The example
+utterances teach the format. Their goals, levels and equipment do not carry over.
+Leave the slot empty when the wording does not support a value.
+
+- Duration is time for one workout or exercise session. Include explicit
+  seconds, minutes or hours. Exclude weekly frequency, programme length,
+  race distance and work hours.
+- Keep named exercise variants. Equipment must be stated as equipment, and
+  body parts must be stated as anatomy or a target. Do not infer either from
+  an exercise name. Gym is a location. Returning after a break does not give
+  an experience level. Leave out explicitly excluded muscles or equipment.
+- Keep the food phrase in its original word order, including its preparation
+  or cut. Remove serving units and quantities. Do not use a nutrient name as
+  a food or invent a specific food when the user asks for foods high in a nutrient.
+- A request for macros means Protein, Total lipid (fat), and Carbohydrate, by
+  difference. Add Energy only when the user explicitly asks about calories
+  or energy. A generic request for nutrition facts leaves the nutrient slot
+  empty. Use exact USDA names for requested nutrients. Examples are "Zinc, Zn",
+  "Calcium, Ca", "Fiber, total dietary", "Sugars, Total", and "Cholesterol".
+
+Check that the response has one valid intent and all eight entity lists.
+Return only the JSON object.

@@ -111,6 +111,7 @@ class TaskTests(unittest.TestCase):
     def test_compound_duration_and_training_days_are_separate(self):
         entities = self.extractor.extract("Create a 3-day workout plan for 1 hour 30 minutes")
         self.assertEqual(entities["duration"], ["1 hour", "30 minutes"])
+        self.assertEqual(self.extractor.extract("A 25-minute workout")["duration"], ["25 minutes"])
         self.assertEqual(entities["days"], ["3"])
 
     def test_short_duration_asks_for_longer_session(self):
@@ -206,6 +207,19 @@ class TaskTests(unittest.TestCase):
 
     def test_unsupported_household_portion_asks_for_weight(self):
         self.assertIn("serving weight in grams", self.bot.respond("How much protein is in one cup kale raw?")["text"])
+
+    def test_food_boundaries_keep_preparation_and_drop_serving_words(self):
+        entities = self.extractor.extract("How much protein is in a standard serving of kale raw?")
+        self.assertEqual(entities["food"], ["kale raw"])
+        self.assertEqual(entities["serving"], ["a standard serving"])
+
+        entities = self.extractor.extract("Is kale raw a good source of protein?")
+        self.assertEqual(entities["food"], ["kale raw"])
+        self.assertEqual(entities["nutrient"], ["Protein"])
+
+        entities = self.extractor.extract("What are some foods high in protein?")
+        self.assertEqual(entities["food"], [])
+        self.assertEqual(entities["nutrient"], ["Protein"])
 
     def test_nonpositive_food_quantity_is_rejected(self):
         for grams in ("0", "-10"):

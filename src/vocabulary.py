@@ -19,7 +19,7 @@ BODY_PARTS = {
     "lats": ["lats", "latissimus"],
     "lower back": ["lower back"],
     "middle back": ["middle back"],
-    "shoulders": ["shoulders", "delts", "deltoids"],
+    "shoulders": ["shoulder", "shoulders", "delts", "deltoids"],
     "arms": ["arms"],
     "biceps": ["biceps"],
     "triceps": ["triceps"],
@@ -40,6 +40,7 @@ EQUIPMENT = {
     "kettlebell": ["kettlebell", "kettlebells"],
     "cable": ["cable", "cables"],
     "machine": ["machine", "machines"],
+    "medicine ball": ["medicine ball", "medicine balls", "med ball", "med balls"],
 }
 
 EXERCISE_ALIASES = {
@@ -50,6 +51,13 @@ EXERCISE_ALIASES = {
     "plank": ["plank", "planks"],
     "deadlift": ["deadlift", "deadlifts"],
     "bench press": ["bench press", "bench presses"],
+    "sit up": ["sit up", "sit ups", "sit-up", "sit-ups", "situp", "situps"],
+    "leg raise": ["leg raise", "leg raises"],
+    "leg press": ["leg press", "leg presses", "leg press machine"],
+    "yoga": ["yoga"],
+    "run": ["run", "runs", "running"],
+    "swim": ["swim", "swims", "swimming"],
+    "cycling": ["cycling", "bike ride", "bike rides"],
 }
 
 

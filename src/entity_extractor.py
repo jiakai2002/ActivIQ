@@ -20,7 +20,8 @@ from src.vocabulary import BODY_PARTS, EQUIPMENT, EXERCISE_ALIASES, tokens
 
 ENTITY_TYPES = ("exercise", "body_part", "equipment", "goal", "level", "duration", "days")
 GOALS = {
-    "muscle gain": ["muscle gain", "build muscle", "hypertrophy", "bulk"],
+    "muscle gain": ["muscle gain", "build muscle", "building muscle", "gain muscle", "gaining muscle",
+                    "hypertrophy", "bulk"],
     "fat loss": ["fat loss", "lose fat", "weight loss", "lose weight", "cut"],
     "strength": ["strength", "get stronger"],
     "endurance": ["endurance", "stamina", "conditioning"],
@@ -102,19 +103,27 @@ class FitnessEntityExtractor:
             for kind, values in found.items()
         }
         duration_matches = re.findall(
-            r"(?<![\w.])-?\d+(?:\.\d+)?(?:\s|-)*(?:seconds?|minutes?|mins?|hours?)\b",
+            r"(?<![\w.])(-?\d+(?:\.\d+)?)(?:\s|-)*(seconds?|minutes?|mins?|hours?)\b",
             text.casefold(),
         )
-        entities["duration"] = list(dict.fromkeys(duration_matches))
+        durations = []
+        for amount, unit in duration_matches:
+            unit = "minute" if unit.startswith("min") else unit.rstrip("s")
+            durations.append(f"{amount} {unit}{'' if abs(float(amount)) == 1 else 's'}")
+        entities["duration"] = list(dict.fromkeys(durations))
         numbers = {name: str(i) for i, name in enumerate(("zero", "one", "two", "three", "four", "five", "six", "seven"))}
         day_matches = re.findall(r"(?<![\w.])(-?\d+(?:\.\d+)?|zero|one|two|three|four|five|six|seven)(?:\s|-)*days?\b", text.casefold())
         entities["days"] = list(dict.fromkeys(numbers.get(value, value) for value in day_matches))
         # Capture unknown exercise names in explicit how-to requests so they
         # produce a lookup failure rather than an arbitrary recommendation.
-        explicit = re.search(r"\b(?:how (?:do i|to) (?:do |perform )|how to |demonstrate )(.+?)(?:[?.!]|$)", text.casefold())
+        explicit = re.search(
+            r"\b(?:how (?:do i|to) (?:do |perform |use )|how to |demonstrate )(.+?)(?:[?.!]|$)",
+            text.casefold(),
+        )
         if explicit:
             name = re.sub(r"^(?:a|an|the)\s+", "", explicit[1]).strip()
-            name = re.split(r"\s+(?:with|using|for)\s+", name, maxsplit=1)[0]
+            name = re.sub(r"^proper\s+", "", name)
+            name = re.split(r"\s+(?:with|without|using|for)\s+", name, maxsplit=1)[0]
             name = re.sub(r"\s+(?:at home|properly|correctly|safely)$", "", name)
             for canonical, aliases in EXERCISE_ALIASES.items():
                 if name in aliases:
