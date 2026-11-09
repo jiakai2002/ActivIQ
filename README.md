@@ -216,7 +216,8 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Prepare local raw data with:
+The repository includes processed intent, exercise, and nutrition data. To
+rebuild it after placing the source datasets under `data/raw/`, run:
 
 ```powershell
 python scripts/prepare_data.py
@@ -229,7 +230,9 @@ release as its primary dataset.
 
 See `CS425_G1T3_Proposal_Submission.pdf` for the project requirements and evaluation targets.
 
-Run the app with:
+Before launching a fresh checkout, create the local DistilBERT checkpoint with
+`python scripts/train_intent.py` or restore the trained checkpoint into
+`models/intent_classifier/`. Then run the app:
 
 ```powershell
 streamlit run app.py

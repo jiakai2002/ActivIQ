@@ -91,8 +91,9 @@ Reading the table: the LoRA 2B ties DistilBERT on intent and beats the spaCy rul
 on entity F1, but is far slower (different hardware, so not a like-for-like timing), so the chatbot keeps DistilBERT + spaCy.
 The spaCy extractor misses its 0.85 target by a wide margin, mostly on `food`,
 `exercise`, `equipment` and `duration`. Some of this may be label-convention
-mismatch (how a phrase is worded) rather than a missing rule; check per-utterance
-errors in `ActivIQ_runs/evaluation/lora_2b/lora_comparison.json` before changing rules.
+mismatch (how a phrase is worded) rather than a missing rule. The LoRA comparison
+JSON contains aggregate entity scores. Use the system entity evaluation's
+per-utterance predictions on validation data to develop extractor changes.
 
 ### APE prompt selection (100 validation rows; selection scores, not held-out)
 
@@ -100,7 +101,7 @@ errors in `ActivIQ_runs/evaluation/lora_2b/lora_comparison.json` before changing
 | --- | ---: | ---: | ---: |
 | ape-002 (selected) | 0.700 | 1.00 | 0.92 |
 | ape-003 | 0.671 | 1.00 | 0.93 |
-| baseline (team prompt) | 0.659 | 1.00 | 0.92 |
+| baseline (assistant-authored prompt) | 0.659 | 1.00 | 0.92 |
 | ape-004 | 0.647 | 1.00 | 0.92 |
 | ape-001 | 0.643 | 1.00 | 0.92 |
 

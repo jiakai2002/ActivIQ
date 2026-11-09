@@ -9,8 +9,8 @@ from src.entity_extractor import FitnessEntityExtractor
 from src.knowledge_base import KnowledgeBase
 from src.response_generator import ResponseGenerator
 from src.safety import MEDICAL_RESPONSE, OUT_OF_SCOPE_RESPONSE, safety_decision
-from src.scope import (CLARIFICATION_RESPONSE, ambiguous_fragment, fitness_scope_evidence,
-                       is_social_message, workout_plan_request)
+from src.scope import (CLARIFICATION_RESPONSE, FITNESS_PLAN_PHRASE, ambiguous_fragment,
+                       fitness_scope_evidence, is_social_message, normalise_text, workout_plan_request)
 
 
 class FitBuddyPipeline:
@@ -130,6 +130,8 @@ class FitBuddyPipeline:
             return "get_nutrition_info"
         if entities.get("food") and not entities.get("exercise"):
             return "get_nutrition_info"
+        if FITNESS_PLAN_PHRASE.search(normalise_text(message)):
+            return "generate_plan"
         if re.search(r"\b(plan|routine|schedule|program)\b", lowered) and re.search(
             r"\b(workout|training|fitness|exercise|full[- ]body)\b", lowered
         ):

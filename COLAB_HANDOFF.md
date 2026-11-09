@@ -7,14 +7,16 @@ Read this file only to rerun or extend the experiment.
 
 ## Rerun
 
-1. Open `notebooks/activiq_end_to_end.ipynb` in Colab (File > Open notebook > GitHub,
-   branch `main`), choose an **A100** runtime and Run all (about two hours).
-2. Results are written to Google Drive (`MyDrive/ActivIQ_runs`) and finished stages
-   are reused after a disconnect (`--resume`). To redo a stage, use a new run
-   directory; do not push code changes between sessions of one run, because resume is
-   refused when the experiment code changed.
-3. Set `PROMPT_FROZEN = True` only after the team has read
-   `prompts/auto_labelling/baseline.txt`.
+1. Open `notebooks/activiq_end_to_end.ipynb` in a fresh Colab A100 runtime.
+   The notebook clones `main` and downloads the Qwen revisions in
+   `ActivIQ_runs/model_revisions.json`.
+2. Read `prompts/auto_labelling/baseline.txt`. Set `PROMPT_FROZEN = True` in the
+   first code cell once the team has approved that prompt, then select Run all
+   (the original A100 run took about two hours).
+3. New results go to `MyDrive/ActivIQ_runs_pinned`. Use the same project revision
+   and run directory to resume after a disconnect. Change the Drive directory
+   for a new experiment. The saved notebook outputs and tracked `ActivIQ_runs/`
+   document the original run.
 
 The notebook stages: zero-shot 9B benchmark, APE `propose` and `score` (10 reviewed
 seeds, 100 reviewed validation rows), `label` the 960 training rows, LoRA-train Qwen3.5-2B,
@@ -27,6 +29,8 @@ earlier, partial versions superseded by the end-to-end notebook.
 ## Not in Git (keep on the team Drive)
 
 - LoRA adapter weights `ActivIQ_runs/lora/adapter_v1/adapter_model.safetensors` (93 MB).
+  Share the full adapter directory with reviewers or provide the rerun instructions
+  above so they can regenerate it.
 - DistilBERT weights `models/intent_classifier/` (retrain with `scripts/train_intent.py`).
 - Qwen checkpoints (downloaded by the notebook; revisions in `ActivIQ_runs/model_revisions.json`).
 

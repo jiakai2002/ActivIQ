@@ -20,6 +20,10 @@ _CONTRACTIONS = {
 }
 _CONTRACTION_PATTERN = re.compile(r"\b(?:" + "|".join(map(re.escape, _CONTRACTIONS)) + r")\b")
 
+FITNESS_PLAN_PHRASE = re.compile(
+    r"\b(?:strength|resistance|cardio|weightlifting) (?:plans?|routines?|programs?|schedules?)\b"
+)
+
 FITNESS_LANGUAGE = re.compile(
     r"\b(?:workouts?|fitness|exercises?|gym|bodybuilding|bodyweight|weightlifting|"
     r"lifting|cardio|warm\s*ups?|cool\s*downs?|repetitions?|reps|squats?|lunges?|"
@@ -27,7 +31,8 @@ FITNESS_LANGUAGE = re.compile(
     r"nutrition|nutrients?|macros?|macronutrients?|calories?|kcal|protein|carbs?|"
     r"carbohydrates?|vitamins?|minerals?|medicine balls?)\b|"
     r"\b(?:strength|resistance|endurance|flexibility|weight) training\b|"
-    r"\btraining (?:plans?|routines?|weeks?|sessions?|programs?|splits?|schedules?)\b"
+    r"\btraining (?:plans?|routines?|weeks?|sessions?|programs?|splits?|schedules?)\b|"
+    + FITNESS_PLAN_PHRASE.pattern
 )
 _TOPICS = re.compile(
     r"\b(?:weather|forecasts?|politics?|elections?|stock market|bitcoin|cryptocurrency|"

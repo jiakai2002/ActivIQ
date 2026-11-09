@@ -82,7 +82,10 @@ class ScopePipelineTests(unittest.TestCase):
         cls.root = Path(cls.temp.name)
         exercises = [{"id": "squat", "name": "Squat", "level": "beginner", "equipment": "body only",
                       "primary_muscles": ["quadriceps"], "secondary_muscles": [], "category": "strength",
-                      "instructions": ["Bend and extend your knees."]}]
+                      "instructions": ["Bend and extend your knees."]},
+                     {"id": "dumbbell-squat", "name": "Dumbbell Squat", "level": "beginner", "equipment": "dumbbell",
+                      "primary_muscles": ["quadriceps"], "secondary_muscles": [], "category": "strength",
+                      "instructions": ["Hold the dumbbells and squat."]}]
         foods = [{"description": "Kale, raw", "nutrients": {"Protein": {"amount": 3, "unit": "g"}}}]
         for name, data in (("exercises", exercises), ("nutrition", foods)):
             (cls.root / f"{name}.json").write_text(json.dumps(data))
@@ -167,6 +170,24 @@ class ScopePipelineTests(unittest.TestCase):
         self.assertIn("Squat targets", self.bot.respond("How do I do squats?")["text"])
         self.assertIn("Protein: 3 g", self.bot.respond("How much protein is in kale raw?")["text"])
         self.assertIn("Protein: 6 g", self.bot.respond("200g")["text"])
+
+    def test_strength_plan_and_equipment_followup(self):
+        self.classifier.intent = "out_of_scope"
+        result = self.bot.respond("Build me a 3-day strength plan for a beginner using dumbbells.")
+        self.assertEqual(result["intent"], "generate_plan")
+        self.assertIn("3-day beginner", result["text"])
+        self.assertIn("Goal: strength", result["text"])
+        self.assertIn("Dumbbell Squat", result["text"])
+
+        result = self.bot.respond("What about bodyweight only?")
+        self.assertEqual(result["intent"], "generate_plan")
+        self.assertIn("3-day beginner", result["text"])
+        self.assertIn("Goal: strength", result["text"])
+        self.assertEqual(result["entities"]["equipment"], ["bodyweight"])
+        self.assertNotIn("Dumbbell Squat", result["text"])
+
+        result = self.bot.respond("Write a poem about this strength plan.")
+        self.assertEqual(result["route"], "out_of_scope")
 
     def test_missing_food_is_still_a_valid_nutrition_question(self):
         self.assertIn("Which food", self.bot.respond("How much protein?")["text"])
