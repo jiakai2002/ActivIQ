@@ -25,3 +25,10 @@ reports/evaluation/
 # Local LLM experiment logs, caches and generated training annotations.
 reports/auto_labelling/
 
+
+# Colab run artifacts too large for Git (share via Drive)
+ActivIQ_runs/lora/adapter_v1/adapter_model.safetensors
+ActivIQ_runs/lora/adapter_v1/tokenizer.json
+
+# macOS
+.DS_Store
