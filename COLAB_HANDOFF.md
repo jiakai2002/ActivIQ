@@ -66,10 +66,11 @@ bare 9B). Print the intent and entity tables for the user.
 1. `data/evaluation/entities_test.jsonl` is entirely `unlabelled`, so **entity
    F1 on the test split is `pending_human_annotation`**. Intent metrics are
    valid now. Do not fabricate or auto-fill test entity labels.
-2. `entities_validation.jsonl` (100 rows) is `ai_draft`, not human-reviewed.
-   Any entity score against it is provisional ("validation selection score",
-   not held-out performance). `scripts/auto_label.py check/score` refuses
-   unreviewed drafts by design; do not bypass the preflight.
+2. `entities_validation.jsonl` (100 rows) and `seeds.jsonl` (10 rows) were AI
+   drafted, then human reviewed (`label_status: human_reviewed`, reviewer in
+   `annotator`). Disclose the AI assistance in the report. Scores against the
+   validation rows are "validation selection scores", not held-out performance.
+   `scripts/auto_label.py check` now passes; never bypass the preflight.
 3. The prompt in `src/lora.py` (`SYSTEM_PROMPT`) is a zero-shot instruction. A
    few-shot or APE-selected prompt (`prompts/auto_labelling/baseline.txt`,
    `scripts/auto_label.py propose/score`) is a separate experiment.

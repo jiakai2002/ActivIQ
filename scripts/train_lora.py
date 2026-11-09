@@ -24,10 +24,8 @@ from src.evaluation import file_hash
 from src.lora import load_base_model, pick_device, render_prompt, target_json
 
 
-def load_examples(path: Path, allow_ai_draft: bool = False) -> list[dict]:
-    """Default: machine-generated training labels only. The opt-in flag also
-    accepts AI-draft validation/seed rows for exploratory runs. The test split
-    is never accepted."""
+def load_examples(path: Path) -> list[dict]:
+    """Machine-generated training labels only. Test-split rows are never accepted."""
     rows = []
     for line in path.read_text(encoding="utf-8").splitlines():
         if not line.strip():
@@ -35,8 +33,7 @@ def load_examples(path: Path, allow_ai_draft: bool = False) -> list[dict]:
         row = json.loads(line)
         if row.get("split") == "test":
             raise ValueError(f"{path}: test-split rows must never be used for training ({row.get('id')})")
-        strict = row.get("label_status") == "machine_generated" and row.get("split", "train") == "train"
-        if not strict and not (allow_ai_draft and row.get("label_status") in {"ai_draft", "human_reviewed"}):
+        if row.get("label_status") != "machine_generated" or row.get("split", "train") != "train":
             raise ValueError(f"{path}: only machine-generated training labels may be used, got {row.get('id')}")
         rows.append(row)
     if not rows:
@@ -69,8 +66,6 @@ def main() -> int:
     parser.add_argument("--dropout", type=float, default=0.05)
     parser.add_argument("--max-length", type=int, default=384)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--allow-ai-draft", action="store_true",
-                        help="Exploratory only: also accept AI-draft/reviewed seed and validation rows")
     args = parser.parse_args()
 
     import torch
@@ -81,7 +76,7 @@ def main() -> int:
     random.seed(args.seed)
     torch.manual_seed(args.seed)
     device = pick_device(args.device)
-    rows = load_examples(args.labels, args.allow_ai_draft)
+    rows = load_examples(args.labels)
     model, tokenizer, dtype = load_base_model(args.model_path, device, args.quantization)
     if args.quantization == "4bit":
         model = prepare_model_for_kbit_training(model)
@@ -130,8 +125,7 @@ def main() -> int:
               "lora_rank": args.rank, "lora_alpha": args.alpha, "lora_dropout": args.dropout,
               "max_length": args.max_length, "seed": args.seed, "epoch_losses": log,
               "train_seconds": time.perf_counter() - start,
-              "allow_ai_draft": args.allow_ai_draft,
-              "note": "Trained on machine-generated labels only unless allow_ai_draft is true. Evaluate with scripts/evaluate_lora.py."}
+              "note": "Trained on machine-generated labels only. Evaluate with scripts/evaluate_lora.py."}
     (args.output_dir / "training_report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(f"Saved adapter to {args.output_dir}")
     return 0
