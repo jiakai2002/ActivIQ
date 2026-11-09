@@ -34,8 +34,8 @@ The script refuses to overwrite existing annotation files.
 For validation, review/correct the existing AI drafts using the
 [review sheet](../auto_labelling/ANNOTATION_REVIEW.md). Preserve their AI
 provenance after review and disclose AI assistance in the report. The original
-test templates remain unlabelled: independently annotate them without viewing
-extractor predictions or AI draft answers. AI drafts are excluded by default;
+test annotations were AI-drafted without viewing extractor predictions and then
+human reviewed by Hsien Ray (see `TEST_ANNOTATION_REVIEW.md`). AI drafts are excluded by default;
 `--allow-draft` permits provisional diagnostics only (see script help).
 
 Replace `entities: null` in each unlabelled annotation record with a dictionary explicitly
