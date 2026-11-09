@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0506",
+  "request_sha256": "cb2e9b89b56267b5636609d83079ab7b19504dc8e4e9fc3d0c5f4cb383fc4c1f",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "reverse fly"
+      ],
+      "body_part": [
+        "shoulders"
+      ],
+      "equipment": [
+        "dumbbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 5092,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"reverse fly\"], \"body_part\": [\"shoulders\"], \"equipment\": [\"dumbbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.376728293999804,
+        "input_tokens": 1577,
+        "output_tokens": 59,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "d8761405714d15f2ab711284f1d2c29ed9c5731823a813a70f1e3d3a0e7bc7ab"
+}

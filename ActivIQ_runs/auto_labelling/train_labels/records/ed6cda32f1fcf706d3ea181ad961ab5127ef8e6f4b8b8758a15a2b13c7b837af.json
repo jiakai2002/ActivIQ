@@ -1,0 +1,38 @@
+{
+  "key": "train/train-0340",
+  "request_sha256": "c8036a43ea7eed4887a0f28d85c124113eb48c8ffdd570338ed08ba539dad003",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "almonds"
+      ],
+      "nutrient": [
+        "Total lipid (fat)",
+        "Vitamin E (alpha-tocopherol)"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3432,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"almonds\"], \"nutrient\": [\"Total lipid (fat)\", \"Vitamin E (alpha-tocopherol)\"]}}\n",
+        "seconds": 4.066524180000215,
+        "input_tokens": 1572,
+        "output_tokens": 71,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "93bc2e769fd4ed7571459f773a28503a2a5c90c636b0523869be366140d3db61"
+}

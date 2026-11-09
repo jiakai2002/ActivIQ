@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0059",
+  "request_sha256": "d0cee3d89ab6ee6bdd388a6f9ad325bd940bba173fa65928aba68c7df3b07b19",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "hanging leg raise"
+      ],
+      "body_part": [
+        "core"
+      ],
+      "equipment": [
+        "bodyweight"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 622,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"hanging leg raise\"], \"body_part\": [\"core\"], \"equipment\": [\"bodyweight\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.3737911089997397,
+        "input_tokens": 1568,
+        "output_tokens": 59,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "7f4771ce94e7e5b472d19848558d3b856125a3f86eb4f8104dd893af8661797d"
+}

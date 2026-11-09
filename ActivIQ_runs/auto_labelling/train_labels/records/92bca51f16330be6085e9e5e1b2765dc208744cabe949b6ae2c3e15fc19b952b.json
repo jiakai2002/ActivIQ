@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0076",
+  "request_sha256": "958513bdbca42829ed41defe77a12d1ca0a39abb6ff2f83f669f635af0d3cc7c",
+  "valid": true,
+  "payload": {
+    "intent": "general_chat",
+    "entities": {
+      "exercise": [
+        "squat"
+      ],
+      "body_part": [],
+      "equipment": [
+        "weightlifting belt"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 792,
+      "generation": {
+        "text": "{\"intent\": \"general_chat\", \"entities\": {\"exercise\": [\"squat\"], \"body_part\": [], \"equipment\": [\"weightlifting belt\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.142980245000217,
+        "input_tokens": 1575,
+        "output_tokens": 55,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "e6a13746da80633542bab5ea2fe0182ba9f02f903a60a239348b53e359f59c46"
+}

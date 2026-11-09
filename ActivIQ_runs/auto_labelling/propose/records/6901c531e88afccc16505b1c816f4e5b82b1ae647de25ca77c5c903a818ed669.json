@@ -1,0 +1,23 @@
+{
+  "key": "candidate-2",
+  "request_sha256": "cfbd180c89692884aac5e8ead9348a590abff0bc739dd808fac004a2c83d87a6",
+  "valid": true,
+  "payload": {
+    "instruction": "Label independent fitness-chat utterances by determining the user's primary intent and extracting relevant entities. Intent must be one of: generate_plan (workout planning), find_exercise (seeking exercise instructions/options), get_nutrition_info (food/nutrient facts), log_feeling (workout check-ins), general_chat (opinions, greetings, thanks), or out_of_scope (unrelated requests). Entities must be extracted for exercise, body_part, equipment, goal, level, duration, food, and nutrient, returning empty lists if absent. Extract stated or requested attributes strictly from the text, handling negation and named variants without inventing facts or inferring profile context. Normalize exercise names to lowercase families (e.g., 'push-ups' to 'push up') while keeping specific variations; map body parts to standard categories or explicit muscle names; classify equipment as specific tools or 'bodyweight' if none is mentioned (note: absence of one tool does not imply availability of others); map goals to standard terms (muscle gain, fat loss, etc.) and levels (beginner, intermediate, expert); extract session durations as lowercased time phrases; extract food phrases retaining preparation/cut but excluding questions/quantities; and map nutrients to USDA canonical names. Output exactly one JSON object with keys 'intent' and 'entities'."
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 62,
+      "generation": {
+        "text": "{\n\"instruction\": \"Label independent fitness-chat utterances by determining the user's primary intent and extracting relevant entities. Intent must be one of: generate_plan (workout planning), find_exercise (seeking exercise instructions/options), get_nutrition_info (food/nutrient facts), log_feeling (workout check-ins), general_chat (opinions, greetings, thanks), or out_of_scope (unrelated requests). Entities must be extracted for exercise, body_part, equipment, goal, level, duration, food, and nutrient, returning empty lists if absent. Extract stated or requested attributes strictly from the text, handling negation and named variants without inventing facts or inferring profile context. Normalize exercise names to lowercase families (e.g., 'push-ups' to 'push up') while keeping specific variations; map body parts to standard categories or explicit muscle names; classify equipment as specific tools or 'bodyweight' if none is mentioned (note: absence of one tool does not imply availability of others); map goals to standard terms (muscle gain, fat loss, etc.) and levels (beginner, intermediate, expert); extract session durations as lowercased time phrases; extract food phrases retaining preparation/cut but excluding questions/quantities; and map nutrients to USDA canonical names. Output exactly one JSON object with keys 'intent' and 'entities'.\"\n}\n",
+        "seconds": 15.618209065999963,
+        "input_tokens": 1281,
+        "output_tokens": 281,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "4790a572ff1414cd1826102b0d847216fef9e56d297f2089f6e09f3984e53c1d"
+}

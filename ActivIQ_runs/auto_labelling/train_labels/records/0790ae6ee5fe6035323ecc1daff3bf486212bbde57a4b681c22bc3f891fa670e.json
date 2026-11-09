@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0081",
+  "request_sha256": "cf0e03dff1fba9992b9a24826d7e8d27cf760f95434825bc60d0e1a8e1e76f0e",
+  "valid": true,
+  "payload": {
+    "intent": "out_of_scope",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "pepperoni pizza"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 842,
+      "generation": {
+        "text": "{\"intent\": \"out_of_scope\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"pepperoni pizza\"], \"nutrient\": []}}\n",
+        "seconds": 3.071459404000052,
+        "input_tokens": 1571,
+        "output_tokens": 54,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "de1075e022081f50fcdcb64d6f36eff494bcb0719963ffbfbca5688880386c93"
+}

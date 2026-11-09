@@ -1,0 +1,37 @@
+{
+  "key": "baseline/entity-validation-014",
+  "request_sha256": "39d08680f02053415527c24341b4183a14f18c4e7b5d523790fe4283069c4a1b",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "pad thai"
+      ],
+      "nutrient": [
+        "Energy"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 162,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"pad thai\"], \"nutrient\": [\"Energy\"]}}\n",
+        "seconds": 3.140959544999987,
+        "input_tokens": 1417,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "784be6ea07a993566b5b842d375fe42fc9888414d92484dacff82e60fd94bd52"
+}

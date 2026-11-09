@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0707",
+  "request_sha256": "a87201bc4d2e6dd977fc2e47a66711d835a13d6744c834cc7019f80e322a72fc",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "single arm dumbbell row"
+      ],
+      "body_part": [
+        "back"
+      ],
+      "equipment": [
+        "dumbbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 7102,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"single arm dumbbell row\"], \"body_part\": [\"back\"], \"equipment\": [\"dumbbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.5034947559997818,
+        "input_tokens": 1573,
+        "output_tokens": 61,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "4c5edd4e6329ac1f6ada46be77847d408ee0e76d1b1c40283a9799bb98698edd"
+}

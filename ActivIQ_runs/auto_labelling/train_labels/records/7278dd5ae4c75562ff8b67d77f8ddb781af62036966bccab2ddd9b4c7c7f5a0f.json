@@ -1,0 +1,33 @@
+{
+  "key": "train/train-0795",
+  "request_sha256": "f8084aae0d96920e7b7169dc3cd788be1fef7c01648d69ac6eb391735a702a9b",
+  "valid": true,
+  "payload": {
+    "intent": "log_feeling",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 7982,
+      "generation": {
+        "text": "{\"intent\": \"log_feeling\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 2.823685416000444,
+        "input_tokens": 1571,
+        "output_tokens": 49,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "dafe129061f0dd17bf495dadc8ab58533041977e3d6636bc1a7ee1d1733715b6"
+}

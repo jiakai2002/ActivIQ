@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0006",
+  "request_sha256": "434f4e051827761e318abbee0aee288bc3f64f646edba003458e581ffbeed606",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "chest fly"
+      ],
+      "body_part": [
+        "chest"
+      ],
+      "equipment": [
+        "machine"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 92,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"chest fly\"], \"body_part\": [\"chest\"], \"equipment\": [\"machine\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.208235651999985,
+        "input_tokens": 1571,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "f814eb6b1e88e6f741ff4c944ab215b7282852bed90b7cd48e0fa020161ebef3"
+}

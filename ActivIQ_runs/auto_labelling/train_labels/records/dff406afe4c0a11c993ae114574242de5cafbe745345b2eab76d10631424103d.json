@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0372",
+  "request_sha256": "454112953f26b69b7471c37822b7e45fafd3caba39a376a9c201a28715838165",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "cooked spinach"
+      ],
+      "nutrient": [
+        "Iron, Fe"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3752,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"cooked spinach\"], \"nutrient\": [\"Iron, Fe\"]}}\n",
+        "seconds": 3.3095374499998798,
+        "input_tokens": 1571,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "fb7e874e133449f7069745d4317c7a5cdfb5146d3ce9e7269242d6fd491cc12e"
+}

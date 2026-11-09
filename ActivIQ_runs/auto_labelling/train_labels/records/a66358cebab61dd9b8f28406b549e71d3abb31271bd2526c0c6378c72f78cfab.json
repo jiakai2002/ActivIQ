@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0730",
+  "request_sha256": "c6956656d595fc049de5665caa19ab4a3afd4730c74c80d04f9ce3e1f26880f4",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": [
+        "Vitamin E (tocopherol)"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 7332,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": [\"Vitamin E (tocopherol)\"]}}\n",
+        "seconds": 3.5683787509997273,
+        "input_tokens": 1569,
+        "output_tokens": 60,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "7aa015c30d06f5928e1d7455debf2fae66b0b48b4c9c2ce458e7083cd1d5bbfe"
+}

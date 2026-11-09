@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0505",
+  "request_sha256": "c871ae79d80d2b0e7c1fc877b657b7f64f1f82f2ba841c92af64c93e309fc121",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "brown rice syrup"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 5082,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"brown rice syrup\"], \"nutrient\": []}}\n",
+        "seconds": 3.1907618029999867,
+        "input_tokens": 1570,
+        "output_tokens": 55,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "2f8cc2d2eb07df48482c417906dde5f95c731e98025ea727999b82a1aefe6add"
+}

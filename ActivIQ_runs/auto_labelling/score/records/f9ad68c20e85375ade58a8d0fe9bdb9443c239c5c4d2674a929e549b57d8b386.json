@@ -1,0 +1,43 @@
+{
+  "key": "ape-004/entity-validation-026",
+  "request_sha256": "4dde5af7fed49d3d1999df2ba7cc88978f723d2a172b70ed8f021fd410001f23",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "cheese pizza"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference",
+        "Vitamin K (phylloquinone)",
+        "Calcium",
+        "Iron"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 272,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"cheese pizza\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\", \"Vitamin K (phylloquinone)\", \"Calcium\", \"Iron\"]}}\n",
+        "seconds": 5.131801278000239,
+        "input_tokens": 1407,
+        "output_tokens": 93,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "a4e399acc1e821536dfa44de2e30050fcdcbee8598caa70b5d493ed75fbf97b8"
+}

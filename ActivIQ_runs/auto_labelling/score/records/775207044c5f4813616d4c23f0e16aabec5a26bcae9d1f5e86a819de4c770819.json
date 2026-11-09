@@ -1,0 +1,43 @@
+{
+  "key": "baseline/entity-validation-086",
+  "request_sha256": "deb189c8cec736a39b9339e899c0756e3411233a845c3f5b67ad92f76b52c933",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "skinless chicken thigh"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference",
+        "Vitamin K (phylloquinone)",
+        "Calcium",
+        "Iron"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 782,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"skinless chicken thigh\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\", \"Vitamin K (phylloquinone)\", \"Calcium\", \"Iron\"]}}\n",
+        "seconds": 5.246410180000112,
+        "input_tokens": 1417,
+        "output_tokens": 94,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "ed0cf95fe0fccbc1a27dd6cb065ff57560cff83502d3566f43b203dd69c5e09e"
+}

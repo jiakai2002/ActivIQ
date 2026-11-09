@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0309",
+  "request_sha256": "ff80efb472c4d341c8bc9dd7580d84f590ab3a1d6c90d9a02d4ee17f49efadc2",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "monk fruit sweetener"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3122,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"monk fruit sweetener\"], \"nutrient\": []}}\n",
+        "seconds": 3.253460527000243,
+        "input_tokens": 1570,
+        "output_tokens": 57,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "e65d9fdb3bad5e735579c16ec81342485c5f8880da1f7ede800d6a44336746cc"
+}

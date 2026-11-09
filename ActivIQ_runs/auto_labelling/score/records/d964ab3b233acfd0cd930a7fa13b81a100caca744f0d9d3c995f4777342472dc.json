@@ -1,0 +1,39 @@
+{
+  "key": "ape-004/entity-validation-068",
+  "request_sha256": "bcd58da3c79f682e2330fdbda715ed3e5fdc130f972f4fe7c0832fa19fc17aa8",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "tuna"
+      ],
+      "nutrient": [
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 642,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"tuna\"], \"nutrient\": [\"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\"]}}\n",
+        "seconds": 3.9652952490000644,
+        "input_tokens": 1407,
+        "output_tokens": 71,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "8f4a5ccb318f76dc972699cd60981a55b9a1d4e4cf35e710e893ee843e7b0101"
+}

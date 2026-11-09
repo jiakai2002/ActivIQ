@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0678",
+  "request_sha256": "bc2066e78ae6f0a0bbda018282c847b81b2ced994034f25b7a696202d90241c2",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "foam roller"
+      ],
+      "body_part": [
+        "legs"
+      ],
+      "equipment": [
+        "foam roller"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 6812,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"foam roller\"], \"body_part\": [\"legs\"], \"equipment\": [\"foam roller\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.3839853939998648,
+        "input_tokens": 1573,
+        "output_tokens": 59,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "632596903b6fd3219d112eb122b19495403347aa52a7bc71a46478088241be5d"
+}

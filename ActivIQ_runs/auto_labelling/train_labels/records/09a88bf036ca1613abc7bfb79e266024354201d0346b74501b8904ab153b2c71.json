@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0819",
+  "request_sha256": "eaabcd21b42aa889c7b90826f6a84eb51a2fe3859d89a702742bdc05a24aed13",
+  "valid": true,
+  "payload": {
+    "intent": "generate_plan",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "keto meals"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 8222,
+      "generation": {
+        "text": "{\"intent\": \"generate_plan\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"keto meals\"], \"nutrient\": []}}\n",
+        "seconds": 3.0041642280002634,
+        "input_tokens": 1572,
+        "output_tokens": 52,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "39f4d01c18e433896c0f2039aac18a7df9d60925608e9616305630bad2ba296c"
+}

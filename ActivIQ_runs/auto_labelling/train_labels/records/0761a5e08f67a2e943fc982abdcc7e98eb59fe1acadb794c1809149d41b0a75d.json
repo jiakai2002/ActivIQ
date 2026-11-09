@@ -1,0 +1,44 @@
+{
+  "key": "train/train-0292",
+  "request_sha256": "576eee8783622406065a252ab1e14620943ea71847dafb506f53d92ff595b41e",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "portobello mushroom"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference",
+        "Dietary fiber",
+        "Vitamin K (phylloquinone)",
+        "Calcium",
+        "Iron"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 2952,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"portobello mushroom\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\", \"Dietary fiber\", \"Vitamin K (phylloquinone)\", \"Calcium\", \"Iron\"]}}\n",
+        "seconds": 5.605736207000064,
+        "input_tokens": 1572,
+        "output_tokens": 100,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "fde948ce06bd80b61d61807d74af6882eb457ac85acd8c044081884a8752a758"
+}

@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0584",
+  "request_sha256": "0e0f50bcae887f2944dee27e6c24d28c1c92eb4974affb4f67ccc21ffb911994",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": [
+        "Dietary fiber"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 5872,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": [\"Dietary fiber\"]}}\n",
+        "seconds": 3.2323016540003664,
+        "input_tokens": 1572,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "e83055dcb811b7b6920b013d34539b928da6628ca55c22dde2b0c1ee09f7fb1b"
+}

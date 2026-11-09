@@ -1,0 +1,37 @@
+{
+  "key": "ape-004/entity-validation-041",
+  "request_sha256": "68dcf4ca36be88b2ec7ed0afe549d1c1ed20d26f7a52fbf158221528a2c3445a",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "watermelon"
+      ],
+      "nutrient": [
+        "Carbohydrate, by difference"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 402,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"watermelon\"], \"nutrient\": [\"Carbohydrate, by difference\"]}}\n",
+        "seconds": 3.3713178409998363,
+        "input_tokens": 1405,
+        "output_tokens": 61,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "7157bfa240590035d954d70ae409d2c9fcb1f2e8fe8daccbfa9b7a938ec250b5"
+}

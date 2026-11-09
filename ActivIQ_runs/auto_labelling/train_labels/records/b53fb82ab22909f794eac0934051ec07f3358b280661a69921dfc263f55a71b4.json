@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0205",
+  "request_sha256": "b4ea7e79c4987033597c909e9387eb853113b8f4a950596186833a8b070ab1d6",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [],
+      "body_part": [
+        "adductor muscles"
+      ],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 2082,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [], \"body_part\": [\"adductor muscles\"], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.035963865999747,
+        "input_tokens": 1570,
+        "output_tokens": 53,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "7a488ce03751da9a7e04e4884a7a19a8ae06377e2db556bb2032f05abc7344fe"
+}

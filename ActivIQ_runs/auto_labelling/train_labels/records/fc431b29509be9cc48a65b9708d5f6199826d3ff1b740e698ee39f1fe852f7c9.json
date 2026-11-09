@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0517",
+  "request_sha256": "530d3e239a605bc0720713989c471fca1dbed6e66e6795a672aab0edc3ac3ea5",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "turkish get-up"
+      ],
+      "body_part": [],
+      "equipment": [
+        "kettlebell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 5202,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"turkish get-up\"], \"body_part\": [], \"equipment\": [\"kettlebell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.309392580000349,
+        "input_tokens": 1572,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "1f6a44b5e7a7f301f3a04628e45a261fee99d708c6de1db7ebd45b2dcdba6cbd"
+}

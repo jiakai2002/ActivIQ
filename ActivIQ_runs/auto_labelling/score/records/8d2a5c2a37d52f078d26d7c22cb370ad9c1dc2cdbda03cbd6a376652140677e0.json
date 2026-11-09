@@ -1,0 +1,37 @@
+{
+  "key": "ape-002/entity-validation-015",
+  "request_sha256": "0cf9857c1d6b13814a37de12ae834915338b695869f2ecf4d30eddc9dbc361ae",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "almond milk"
+      ],
+      "nutrient": [
+        "Calcium"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 172,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"almond milk\"], \"nutrient\": [\"Calcium\"]}}\n",
+        "seconds": 3.2671402299999954,
+        "input_tokens": 1569,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "c8d2428b034ab905dbdb77db21beb4915a2bd95eb31638d12c63eade9e4343c0"
+}

@@ -149,10 +149,10 @@ optional CUDA NF4 4-bit loading, with no LLM API/server.
 python scripts/auto_label.py check
 ```
 
-Ten blank seed records are available in `data/auto_labelling/seeds.jsonl`. Both
-those seeds and the existing validation entity annotations need human review
-before the real experiment can be completed. Preflight reports missing labels
-without loading a model. The baseline prompt is an assistant-authored starting
+Ten seed records are in `data/auto_labelling/seeds.jsonl`. These seeds and the
+100 validation entity annotations started as AI drafts and have been reviewed by
+a team member (`label_status: human_reviewed`); disclose the AI assistance in the
+report. Preflight reports missing labels without loading a model. The baseline prompt is an assistant-authored starting
 template for team review, not an already-validated manual prompt.
 
 `propose`, `score` and `label` subcommands provide strict JSON/schema validation,

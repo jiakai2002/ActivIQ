@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0432",
+  "request_sha256": "cd772da360bca7fb94e42fbdcb38983af7ba68a31aaf6dee5cf1372321d34722",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "overhead military press"
+      ],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 4352,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"overhead military press\"], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.12840276299994,
+        "input_tokens": 1568,
+        "output_tokens": 54,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "7a039ffbbe5fddaa9d2077a4a9e78d6f672fc62b254a2ca38196d322d0e2bae9"
+}

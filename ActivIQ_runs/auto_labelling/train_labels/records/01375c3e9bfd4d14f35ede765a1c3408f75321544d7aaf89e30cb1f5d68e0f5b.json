@@ -1,0 +1,38 @@
+{
+  "key": "train/train-0228",
+  "request_sha256": "9affb9dcca83df68541155481e89d9c8f23781e9a6c3929fd87eefe309463c87",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "whey protein",
+        "casein protein"
+      ],
+      "nutrient": [
+        "Protein"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 2312,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"whey protein\", \"casein protein\"], \"nutrient\": [\"Protein\"]}}\n",
+        "seconds": 3.5888087469998027,
+        "input_tokens": 1573,
+        "output_tokens": 63,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "62c890ec715a6ec7a12f644f4ca26525c31c9d306c3934f56d83ccb7b6efe8c0"
+}

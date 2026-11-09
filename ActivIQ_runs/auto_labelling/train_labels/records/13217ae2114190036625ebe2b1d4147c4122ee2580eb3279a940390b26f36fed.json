@@ -1,0 +1,43 @@
+{
+  "key": "train/train-0533",
+  "request_sha256": "bad97836b2660f8a9dfc976c9d364fa6416406245da1223c627baf6bc93b90ca",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "McDonald's Big Mac"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference",
+        "Vitamin K (phylloquinone)",
+        "Calcium",
+        "Iron"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 5362,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"McDonald's Big Mac\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\", \"Vitamin K (phylloquinone)\", \"Calcium\", \"Iron\"]}}\n",
+        "seconds": 5.367278882000392,
+        "input_tokens": 1569,
+        "output_tokens": 95,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "5dfc21bbaa8b2321c1edf5cc35145d3f3eb67dacfeab988f366f148891f20281"
+}

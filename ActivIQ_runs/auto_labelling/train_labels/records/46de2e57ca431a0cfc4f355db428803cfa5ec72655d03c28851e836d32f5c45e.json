@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0922",
+  "request_sha256": "e9fc460472e85e73b54a766ca1ae4810900f039e2adc27b626dfa93ae2580f3f",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "nordic hamstring curl"
+      ],
+      "body_part": [
+        "hamstrings"
+      ],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 9252,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"nordic hamstring curl\"], \"body_part\": [\"hamstrings\"], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.2990306609999607,
+        "input_tokens": 1568,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "9dab35a5b8d9cdd7a7484ef0291984651f9f46ec5e93135b91ed3cd322ee25b2"
+}

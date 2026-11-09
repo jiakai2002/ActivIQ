@@ -1,0 +1,43 @@
+{
+  "key": "train/train-0324",
+  "request_sha256": "e8efc20af3f85d7638cc4400326e688f46138dec2b8a24f4c8134b268d26fd55",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "spirulina"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference",
+        "Vitamin K (phylloquinone)",
+        "Calcium, Ca",
+        "Iron, Fe"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3272,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"spirulina\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\", \"Vitamin K (phylloquinone)\", \"Calcium, Ca\", \"Iron, Fe\"]}}\n",
+        "seconds": 5.462705600999925,
+        "input_tokens": 1569,
+        "output_tokens": 96,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "80b7faca8a2b4c9e093c5344803c3fb5195af214b64229ef32565d43158c9de8"
+}

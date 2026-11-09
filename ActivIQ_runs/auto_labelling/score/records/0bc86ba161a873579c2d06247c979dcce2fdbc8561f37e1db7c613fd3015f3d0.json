@@ -1,0 +1,39 @@
+{
+  "key": "ape-001/entity-validation-074",
+  "request_sha256": "67c945e806cd82cf1da70fe8924b38a9dd1552f5d6d543474357a39654100f8f",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "barbell curl"
+      ],
+      "body_part": [
+        "arms"
+      ],
+      "equipment": [
+        "barbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 692,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"barbell curl\"], \"body_part\": [\"arms\"], \"equipment\": [\"barbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.224625375999949,
+        "input_tokens": 1556,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "374b7351e1b10e87e9767a8ad880a66ecb56630f40aa1d4565dde14b9f4f9144"
+}

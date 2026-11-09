@@ -1,0 +1,46 @@
+{
+  "key": "train/train-0066",
+  "request_sha256": "557a9eb3ec0044a144a4739ed9f25465246e11083b2b036b93442af1170b08d2",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "plain bagel"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference",
+        "Dietary fiber",
+        "Sugars",
+        "Total dietary fiber",
+        "Vitamin K (phylloquinone)",
+        "Calcium",
+        "Iron"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 692,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"plain bagel\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\", \"Dietary fiber\", \"Sugars\", \"Total dietary fiber\", \"Vitamin K (phylloquinone)\", \"Calcium\", \"Iron\"]}}\n",
+        "seconds": 6.179574691000198,
+        "input_tokens": 1571,
+        "output_tokens": 109,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "b86ae688edc63c311ba27728904128889317a5d286620f57986379dcce3866bf"
+}

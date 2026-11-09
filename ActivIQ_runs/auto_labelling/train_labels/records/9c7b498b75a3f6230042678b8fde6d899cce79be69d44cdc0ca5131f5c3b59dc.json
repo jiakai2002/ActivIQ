@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0333",
+  "request_sha256": "751fbc008aed7c2f0b564d80c23ca53c6eb2220262491c40866bd83bef16d675",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "cable crossover"
+      ],
+      "body_part": [
+        "chest"
+      ],
+      "equipment": [
+        "cable"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3362,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"cable crossover\"], \"body_part\": [\"chest\"], \"equipment\": [\"cable\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.3337419249996856,
+        "input_tokens": 1569,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "ac60b4c5225c96061fa865d0ffa80dd21a5623f71dd7c4b76a2abff6bca069b1"
+}

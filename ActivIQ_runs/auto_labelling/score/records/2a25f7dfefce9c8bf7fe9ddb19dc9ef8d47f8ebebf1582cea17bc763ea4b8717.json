@@ -1,0 +1,40 @@
+{
+  "key": "ape-001/entity-validation-086",
+  "request_sha256": "386a8ee869e4db1c432748285e44f37d70370acc5d80ea7cf5ccd3a4287e9f42",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "skinless chicken thigh"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 782,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"skinless chicken thigh\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\"]}}\n",
+        "seconds": 4.229470101000061,
+        "input_tokens": 1555,
+        "output_tokens": 76,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "b1eddc2f0cd0f34723054f1fc940fac15967b4d74c7e343d7d6ba4c55282348a"
+}

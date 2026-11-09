@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0121",
+  "request_sha256": "47eccbb80b37849c3982e2885db5d88456aa70241a8c093d8188153df2e68958",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "farmer's walk"
+      ],
+      "body_part": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 1242,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"farmer's walk\"], \"body_part\": [], \"equipment\": [\"dumbbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.291598826000154,
+        "input_tokens": 1573,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "707a9c17ecf5483ff97b975593dea898e5007799c350a89e539698876a77b37c"
+}

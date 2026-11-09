@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0763",
+  "request_sha256": "b28413bd464ab46a9003c8d44700037b4b0a15ae90e35175be346ca1ba41ce72",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "calf raise"
+      ],
+      "body_part": [
+        "calves"
+      ],
+      "equipment": [],
+      "goal": [
+        "muscle gain"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 7662,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"calf raise\"], \"body_part\": [\"calves\"], \"equipment\": [], \"goal\": [\"muscle gain\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.504726262999611,
+        "input_tokens": 1571,
+        "output_tokens": 60,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "82ec837a6565d96c524e3f650b2429639c6276c2c9eed1451bcfdfc4167a9067"
+}

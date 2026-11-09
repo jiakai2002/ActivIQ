@@ -1,0 +1,45 @@
+{
+  "key": "train/train-0238",
+  "request_sha256": "597dc8354b3cd2f75383c93f416890e878e2cad31da6d733740063f150f0cdf1",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "sparkling water"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference",
+        "Vitamin K (phylloquinone)",
+        "Calcium",
+        "Ca",
+        "Iron",
+        "Fe"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 2412,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"sparkling water\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\", \"Vitamin K (phylloquinone)\", \"Calcium\", \"Ca\", \"Iron\", \"Fe\"]}}\n",
+        "seconds": 5.5541842650000035,
+        "input_tokens": 1566,
+        "output_tokens": 99,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "77b1de66e5618bb612d2519eb8549527f18cde8b0f698bd2f668cae363c05776"
+}

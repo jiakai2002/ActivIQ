@@ -1,0 +1,37 @@
+{
+  "key": "ape-004/entity-validation-101",
+  "request_sha256": "06c20af973e751a21f4d2ee580eb4bb81f9c18cf9d6b19d1f9cb5d11f6c211ce",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "lentils"
+      ],
+      "nutrient": [
+        "Dietary fiber"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 862,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"lentils\"], \"nutrient\": [\"Dietary fiber\"]}}\n",
+        "seconds": 3.2771100900004058,
+        "input_tokens": 1404,
+        "output_tokens": 59,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "65e356daf33933f8f36298091ab02897c1dfa3b43ea8241ed61ea81762824671"
+}

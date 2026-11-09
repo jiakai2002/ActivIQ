@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0931",
+  "request_sha256": "e02aafc49177638036d8cdd05e738868fa5624600974e444c0292e372398528a",
+  "valid": true,
+  "payload": {
+    "intent": "generate_plan",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [
+        "7-day"
+      ],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 9342,
+      "generation": {
+        "text": "{\"intent\": \"generate_plan\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [\"7-day\"], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 2.9516107360004753,
+        "input_tokens": 1577,
+        "output_tokens": 51,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "c8237fdb7967b30fcefebba7c7a506f43f654bf40ccc2f7192b5b926694dad2d"
+}

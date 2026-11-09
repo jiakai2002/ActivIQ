@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0604",
+  "request_sha256": "2de92bdf0d94f0c1cb12bb96d36493528903401cb6af0ce8cc4f120f0cc7f1f5",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "avocado"
+      ],
+      "nutrient": [
+        "Total lipid (fat)"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 6072,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"avocado\"], \"nutrient\": [\"Total lipid (fat)\"]}}\n",
+        "seconds": 3.4374245170001814,
+        "input_tokens": 1569,
+        "output_tokens": 60,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "15817be3509e112d37647f7ba0d146997d0a70850230a0c8ac1d0ac6a002a504"
+}

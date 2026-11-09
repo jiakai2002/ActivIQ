@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0627",
+  "request_sha256": "8c5d55ef29626490e6ecbf902f9599b2de317d6f3c2b094eebbb1ded94ab312a",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "collagen peptides"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 6302,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"collagen peptides\"], \"nutrient\": []}}\n",
+        "seconds": 3.223093436000454,
+        "input_tokens": 1568,
+        "output_tokens": 55,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "f5f03cf52444e70e55f31ea3ad2bc4255288be67dd6bab715367d92734805a09"
+}

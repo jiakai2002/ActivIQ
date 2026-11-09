@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0364",
+  "request_sha256": "0ed009fb24efe3422771739cd0c0330000bfa25acaf9aa30e19ed3745b475a32",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "tricep dip"
+      ],
+      "body_part": [
+        "arms"
+      ],
+      "equipment": [
+        "bench"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3672,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"tricep dip\"], \"body_part\": [\"arms\"], \"equipment\": [\"bench\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.2458786639999744,
+        "input_tokens": 1572,
+        "output_tokens": 57,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "a17d8f355c65b2baa48f9283a29b712e11720e9cf7e17861a2724669f0281687"
+}

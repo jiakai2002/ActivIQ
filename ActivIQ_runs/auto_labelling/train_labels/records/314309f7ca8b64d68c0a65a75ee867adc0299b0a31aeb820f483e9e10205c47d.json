@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0854",
+  "request_sha256": "45ab99bc0eb956626fb11a25d9882e48c81c0318677e45655b8680c5760edd35",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "baklava"
+      ],
+      "nutrient": [
+        "Energy"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 8572,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"baklava\"], \"nutrient\": [\"Energy\"]}}\n",
+        "seconds": 3.2903420189995813,
+        "input_tokens": 1570,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "775ced266a2a92b70d1d7aea7aeb50732761bda6d1ff9e1e9045742d10fe97ad"
+}

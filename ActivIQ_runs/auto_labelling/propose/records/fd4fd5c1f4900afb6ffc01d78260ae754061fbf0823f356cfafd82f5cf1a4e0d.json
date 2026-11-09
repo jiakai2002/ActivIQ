@@ -1,0 +1,23 @@
+{
+  "key": "candidate-4",
+  "request_sha256": "6aadcccb09f5e9f71988162b5bbd7fa2214cf87d8fe2bdcde8bc2881f48ae72e",
+  "valid": true,
+  "payload": {
+    "instruction": "Label independent fitness-chat utterances by returning a JSON object with 'intent' and 'entities'. Intent must be one of: generate_plan, find_exercise, get_nutrition_info, log_feeling, general_chat, out_of_scope. Extract entities (exercise, body_part, equipment, goal, level, duration, food, nutrient) as lowercase strings or USDA canonical names where applicable, ensuring negation is captured and no profile context is inherited. Output exactly one JSON object with no additional fields or reasoning."
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 82,
+      "generation": {
+        "text": "{\n  \"instruction\": \"Label independent fitness-chat utterances by returning a JSON object with 'intent' and 'entities'. Intent must be one of: generate_plan, find_exercise, get_nutrition_info, log_feeling, general_chat, out_of_scope. Extract entities (exercise, body_part, equipment, goal, level, duration, food, nutrient) as lowercase strings or USDA canonical names where applicable, ensuring negation is captured and no profile context is inherited. Output exactly one JSON object with no additional fields or reasoning.\"\n}\n",
+        "seconds": 6.5014594879999095,
+        "input_tokens": 1281,
+        "output_tokens": 115,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "a5bf9f1858b0e12f61c2da33f5973c98e074fa575347dfbac44464380ddcad7f"
+}

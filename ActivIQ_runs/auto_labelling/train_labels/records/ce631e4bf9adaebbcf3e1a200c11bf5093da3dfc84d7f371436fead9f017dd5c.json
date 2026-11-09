@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0716",
+  "request_sha256": "00cbe1fa23b272b9576af8c499d2c271f67820d05fa6e5c60c6a36e901ebf165",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "leg extension"
+      ],
+      "body_part": [
+        "quadriceps"
+      ],
+      "equipment": [
+        "machine"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 7192,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"leg extension\"], \"body_part\": [\"quadriceps\"], \"equipment\": [\"machine\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.3594529300007707,
+        "input_tokens": 1569,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "070fc0a38ddb3e4c8fd21d61dca9ecd653b7c6dbd63bb4076b4b4b63ae534fec"
+}

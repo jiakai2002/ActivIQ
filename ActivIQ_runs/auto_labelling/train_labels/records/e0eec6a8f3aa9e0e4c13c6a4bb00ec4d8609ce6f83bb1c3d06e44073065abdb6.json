@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0786",
+  "request_sha256": "1284f496cf1b67d669025a5a983f5262bb079373c5c3661ade950e18b9e045fd",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "apple cider vinegar"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 7892,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"apple cider vinegar\"], \"nutrient\": []}}\n",
+        "seconds": 3.1539352700001473,
+        "input_tokens": 1569,
+        "output_tokens": 55,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "0601fe583fbd96ad62655223a8cd260ecd8b37a9f3c5e09436a674abc29b924f"
+}

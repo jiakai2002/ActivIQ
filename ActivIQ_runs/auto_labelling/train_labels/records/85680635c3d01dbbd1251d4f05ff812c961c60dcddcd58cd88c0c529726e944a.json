@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0025",
+  "request_sha256": "3143ac2d0563cebf047e54683bed55953e81039ca98e07b04b43ba3dd09a07aa",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "boiled potatoes"
+      ],
+      "nutrient": [
+        "Carbohydrate, by difference"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 282,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"boiled potatoes\"], \"nutrient\": [\"Carbohydrate, by difference\"]}}\n",
+        "seconds": 3.5715483250000943,
+        "input_tokens": 1570,
+        "output_tokens": 62,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "348453a1876f30084cb4df6a8bdeb807590a379804def4f0dfafd17e7e3782f2"
+}

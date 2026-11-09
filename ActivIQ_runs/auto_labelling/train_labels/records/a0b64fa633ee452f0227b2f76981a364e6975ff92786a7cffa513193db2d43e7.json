@@ -1,0 +1,41 @@
+{
+  "key": "train/train-0569",
+  "request_sha256": "e66e76fb34e0ae7bfd828ce768190274580f1d3e1971c95735d44c1552d16a77",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "hip thrust"
+      ],
+      "body_part": [
+        "glutes"
+      ],
+      "equipment": [
+        "barbell"
+      ],
+      "goal": [
+        "muscle gain"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 5722,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"hip thrust\"], \"body_part\": [\"glutes\"], \"equipment\": [\"barbell\"], \"goal\": [\"muscle gain\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.54070055900047,
+        "input_tokens": 1575,
+        "output_tokens": 62,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "b89568b0255ad7c348986db7a7938b0a731361e767fc2f687a719a00d34602a2"
+}

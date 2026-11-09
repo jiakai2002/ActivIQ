@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0884",
+  "request_sha256": "1528fbfb5fabf79bb6eaed7b5e38e7fefc8739e98e6bab550e1511c1fe2db4cf",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "fresh raspberries"
+      ],
+      "nutrient": [
+        "Dietary fiber"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 8872,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"fresh raspberries\"], \"nutrient\": [\"Dietary fiber\"]}}\n",
+        "seconds": 3.4974121969999032,
+        "input_tokens": 1573,
+        "output_tokens": 60,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "f6204734abb31bff563c36409bb903b45415db05f5788fbcdde7cbf1ba882193"
+}

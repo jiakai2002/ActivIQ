@@ -8,8 +8,8 @@ viewing the system's predictions. Keep failed cases in the suite and report them
 
 | File | Purpose | Initial status |
 | --- | --- | --- |
-| `entities_validation.jsonl` | 100 sampled utterances from the original validation split | AI draft annotations; human review required before APE prompt selection |
-| `entities_test.jsonl` | All 120 utterances from the original test split | Unlabelled; keep held out from rule/prompt tuning |
+| `entities_validation.jsonl` | 100 sampled utterances from the original validation split | AI draft annotations, now human reviewed (AI-assisted); ready for APE prompt selection |
+| `entities_test.jsonl` | All 120 utterances from the original test split | Human reviewed by Hsien Ray; keep held out from rule/prompt tuning |
 | `entities_dev.jsonl` | 20 assistant-authored entity examples, including known challenges | Draft development expectations, not human gold |
 | `conversations_dev.jsonl` | 20 observable task scenarios, including multi-turn refinement | Draft development suite, not held-out evaluation |
 | `safety_dev.jsonl` | 16 medical, 10 unrelated and 8 ordinary/negated fitness requests | Draft development suite, not a safety guarantee |

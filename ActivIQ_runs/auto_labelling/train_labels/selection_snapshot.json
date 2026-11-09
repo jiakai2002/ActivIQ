@@ -1,0 +1,943 @@
+{
+  "schema_version": 1,
+  "selection_metric": "validation_entity_micro_f1",
+  "tie_breaks": [
+    "valid_output_rate",
+    "intent_agreement",
+    "baseline_then_id"
+  ],
+  "selected_prompt": {
+    "id": "ape-002",
+    "instruction": "Label independent fitness-chat utterances by determining the user's primary intent and extracting relevant entities. Intent must be one of: generate_plan (workout planning), find_exercise (seeking exercise instructions/options), get_nutrition_info (food/nutrient facts), log_feeling (workout check-ins), general_chat (opinions, greetings, thanks), or out_of_scope (unrelated requests). Entities must be extracted for exercise, body_part, equipment, goal, level, duration, food, and nutrient, returning empty lists if absent. Extract stated or requested attributes strictly from the text, handling negation and named variants without inventing facts or inferring profile context. Normalize exercise names to lowercase families (e.g., 'push-ups' to 'push up') while keeping specific variations; map body parts to standard categories or explicit muscle names; classify equipment as specific tools or 'bodyweight' if none is mentioned (note: absence of one tool does not imply availability of others); map goals to standard terms (muscle gain, fat loss, etc.) and levels (beginner, intermediate, expert); extract session durations as lowercased time phrases; extract food phrases retaining preparation/cut but excluding questions/quantities; and map nutrients to USDA canonical names. Output exactly one JSON object with keys 'intent' and 'entities'.",
+    "sha256": "7b767f08d21145ecb73363dc08078c603418ef3c24068e1af4c6bd8e95534a59",
+    "source": "local_model_generated",
+    "engine_signature": "f7c082df8e6f63b7949fc8756efc57977ff83c431c7ebf6302e8ee77972b3000",
+    "seeds_sha256": "b5ce39e9d16114f785afb8c7516ceff9f5f775cc1d597651942e8239d4389665",
+    "contract_sha256": "c6625b2f36024857ad8c7b42c7f2ec58d3aa92125c999853bc7c2c612637a4d1"
+  },
+  "engine_signature": "f7c082df8e6f63b7949fc8756efc57977ff83c431c7ebf6302e8ee77972b3000",
+  "seeds_sha256": "b5ce39e9d16114f785afb8c7516ceff9f5f775cc1d597651942e8239d4389665",
+  "validation_sha256": "80aa8d74e5ee831005ad31b49e87c7bf63d45a12a876d1eccefe533a469d4a75",
+  "source_split_hashes": {
+    "train": "5a04d2d3fae3ba414493d1b2079c0513fdd292aff87a182950d30e18f518cbbf",
+    "validation": "0c2ec0730ff148a162a64946124c2528531d179d482598e91814f61baf8966bc",
+    "test": "46ce7d7ba2dbfc6d1733810e7505d64df656c95cd1d7495ff69220e9467b82f1"
+  },
+  "contract_sha256": "c6625b2f36024857ad8c7b42c7f2ec58d3aa92125c999853bc7c2c612637a4d1",
+  "experiment_code_hashes": {
+    "scripts/auto_label.py": "dc5fcc25e4278c380fdb9bdd6f31f346121e7d680bae177f11345579739c330b",
+    "scripts/prepare_autolabelling.py": "03e38ae684cfaa9d31130cab6fedca6a54ae1ac89adf92c6bae05d5ce0468716",
+    "src/auto_labelling/__init__.py": "4446100360772641bc556cb75c6c53556f04eade3c6ab3b08cae0e7413fe1af9",
+    "src/auto_labelling/core.py": "c0ab09269f5cce67ce76091c20e69b86044353ce985f8930c912849dd1f5694b",
+    "src/auto_labelling/engine.py": "9edd9bfbd19e9f8f4e5e0c28a04fdca25c1978a5d856fc91ad650da92312f709",
+    "src/auto_labelling/workflow.py": "ce1c2fa4ddf12a24635c81f631fef76c94c0c670dcb235bf7ee5854c77392266",
+    "src/config.py": "94bc71bd4d8c4dadadc2e95f3e688a689e2d7ae4f299b125225bb082381574de",
+    "src/evaluation.py": "29786a395b6d4329aa11a000e66e3123a15982f2c39e60659d48db501e0f3584"
+  },
+  "validation_rows": 100,
+  "research_run": true,
+  "validation_entity_target_met": false,
+  "metrics": {
+    "utterances": 100,
+    "micro": {
+      "tp": 56,
+      "fp": 35,
+      "fn": 13,
+      "support": 69,
+      "precision": 0.6153846153846154,
+      "recall": 0.8115942028985508,
+      "f1": 0.7
+    },
+    "macro_f1": 0.6357142857142857,
+    "exact_match_rate": 0.71,
+    "per_slot": {
+      "exercise": {
+        "tp": 12,
+        "fp": 3,
+        "fn": 3,
+        "support": 15,
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8
+      },
+      "body_part": {
+        "tp": 5,
+        "fp": 6,
+        "fn": 0,
+        "support": 5,
+        "precision": 0.45454545454545453,
+        "recall": 1.0,
+        "f1": 0.625
+      },
+      "equipment": {
+        "tp": 5,
+        "fp": 2,
+        "fn": 0,
+        "support": 5,
+        "precision": 0.7142857142857143,
+        "recall": 1.0,
+        "f1": 0.8333333333333334
+      },
+      "goal": {
+        "tp": 5,
+        "fp": 4,
+        "fn": 0,
+        "support": 5,
+        "precision": 0.5555555555555556,
+        "recall": 1.0,
+        "f1": 0.7142857142857143
+      },
+      "level": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 0,
+        "support": 1,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666
+      },
+      "duration": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 0,
+        "support": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "food": {
+        "tp": 14,
+        "fp": 2,
+        "fn": 2,
+        "support": 16,
+        "precision": 0.875,
+        "recall": 0.875,
+        "f1": 0.875
+      },
+      "nutrient": {
+        "tp": 14,
+        "fp": 13,
+        "fn": 8,
+        "support": 22,
+        "precision": 0.5185185185185185,
+        "recall": 0.6363636363636364,
+        "f1": 0.5714285714285714
+      }
+    },
+    "covered_slots": [
+      "exercise",
+      "body_part",
+      "equipment",
+      "goal",
+      "level",
+      "food",
+      "nutrient"
+    ],
+    "valid_output_rate": 1.0,
+    "invalid_outputs": 0,
+    "intent_agreement": 0.92,
+    "generation_timing": {
+      "samples": 100,
+      "mean_seconds": 2.9499421166400133,
+      "median_seconds": 2.824810624000065,
+      "p95_seconds": 3.421200978249908,
+      "p99_seconds": 4.19470151517997,
+      "max_seconds": 5.134051647999968,
+      "fraction_below_one_second": 0.0
+    }
+  },
+  "baseline": {
+    "id": "baseline",
+    "source": "baseline_template",
+    "metrics": {
+      "utterances": 100,
+      "micro": {
+        "tp": 55,
+        "fp": 43,
+        "fn": 14,
+        "support": 69,
+        "precision": 0.5612244897959183,
+        "recall": 0.7971014492753623,
+        "f1": 0.6586826347305389
+      },
+      "macro_f1": 0.6198145245559038,
+      "exact_match_rate": 0.7,
+      "per_slot": {
+        "exercise": {
+          "tp": 11,
+          "fp": 4,
+          "fn": 4,
+          "support": 15,
+          "precision": 0.7333333333333333,
+          "recall": 0.7333333333333333,
+          "f1": 0.7333333333333333
+        },
+        "body_part": {
+          "tp": 5,
+          "fp": 5,
+          "fn": 0,
+          "support": 5,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "equipment": {
+          "tp": 5,
+          "fp": 1,
+          "fn": 0,
+          "support": 5,
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091
+        },
+        "goal": {
+          "tp": 5,
+          "fp": 6,
+          "fn": 0,
+          "support": 5,
+          "precision": 0.45454545454545453,
+          "recall": 1.0,
+          "f1": 0.625
+        },
+        "level": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "support": 1,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "duration": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 0,
+          "support": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "food": {
+          "tp": 14,
+          "fp": 2,
+          "fn": 2,
+          "support": 16,
+          "precision": 0.875,
+          "recall": 0.875,
+          "f1": 0.875
+        },
+        "nutrient": {
+          "tp": 14,
+          "fp": 22,
+          "fn": 8,
+          "support": 22,
+          "precision": 0.3888888888888889,
+          "recall": 0.6363636363636364,
+          "f1": 0.4827586206896552
+        }
+      },
+      "covered_slots": [
+        "exercise",
+        "body_part",
+        "equipment",
+        "goal",
+        "level",
+        "food",
+        "nutrient"
+      ],
+      "valid_output_rate": 1.0,
+      "invalid_outputs": 0,
+      "intent_agreement": 0.92,
+      "generation_timing": {
+        "samples": 100,
+        "mean_seconds": 2.977756266280003,
+        "median_seconds": 2.798915209000029,
+        "p95_seconds": 3.464309676900005,
+        "p99_seconds": 5.2506440362101126,
+        "max_seconds": 5.669795800999964,
+        "fraction_below_one_second": 0.0
+      }
+    }
+  },
+  "best_ape": {
+    "id": "ape-002",
+    "source": "local_model_generated",
+    "metrics": {
+      "utterances": 100,
+      "micro": {
+        "tp": 56,
+        "fp": 35,
+        "fn": 13,
+        "support": 69,
+        "precision": 0.6153846153846154,
+        "recall": 0.8115942028985508,
+        "f1": 0.7
+      },
+      "macro_f1": 0.6357142857142857,
+      "exact_match_rate": 0.71,
+      "per_slot": {
+        "exercise": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 3,
+          "support": 15,
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8
+        },
+        "body_part": {
+          "tp": 5,
+          "fp": 6,
+          "fn": 0,
+          "support": 5,
+          "precision": 0.45454545454545453,
+          "recall": 1.0,
+          "f1": 0.625
+        },
+        "equipment": {
+          "tp": 5,
+          "fp": 2,
+          "fn": 0,
+          "support": 5,
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1": 0.8333333333333334
+        },
+        "goal": {
+          "tp": 5,
+          "fp": 4,
+          "fn": 0,
+          "support": 5,
+          "precision": 0.5555555555555556,
+          "recall": 1.0,
+          "f1": 0.7142857142857143
+        },
+        "level": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "support": 1,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "duration": {
+          "tp": 0,
+          "fp": 4,
+          "fn": 0,
+          "support": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "food": {
+          "tp": 14,
+          "fp": 2,
+          "fn": 2,
+          "support": 16,
+          "precision": 0.875,
+          "recall": 0.875,
+          "f1": 0.875
+        },
+        "nutrient": {
+          "tp": 14,
+          "fp": 13,
+          "fn": 8,
+          "support": 22,
+          "precision": 0.5185185185185185,
+          "recall": 0.6363636363636364,
+          "f1": 0.5714285714285714
+        }
+      },
+      "covered_slots": [
+        "exercise",
+        "body_part",
+        "equipment",
+        "goal",
+        "level",
+        "food",
+        "nutrient"
+      ],
+      "valid_output_rate": 1.0,
+      "invalid_outputs": 0,
+      "intent_agreement": 0.92,
+      "generation_timing": {
+        "samples": 100,
+        "mean_seconds": 2.9499421166400133,
+        "median_seconds": 2.824810624000065,
+        "p95_seconds": 3.421200978249908,
+        "p99_seconds": 4.19470151517997,
+        "max_seconds": 5.134051647999968,
+        "fraction_below_one_second": 0.0
+      }
+    }
+  },
+  "ranking": [
+    {
+      "id": "ape-002",
+      "source": "local_model_generated",
+      "metrics": {
+        "utterances": 100,
+        "micro": {
+          "tp": 56,
+          "fp": 35,
+          "fn": 13,
+          "support": 69,
+          "precision": 0.6153846153846154,
+          "recall": 0.8115942028985508,
+          "f1": 0.7
+        },
+        "macro_f1": 0.6357142857142857,
+        "exact_match_rate": 0.71,
+        "per_slot": {
+          "exercise": {
+            "tp": 12,
+            "fp": 3,
+            "fn": 3,
+            "support": 15,
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1": 0.8
+          },
+          "body_part": {
+            "tp": 5,
+            "fp": 6,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "f1": 0.625
+          },
+          "equipment": {
+            "tp": 5,
+            "fp": 2,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "f1": 0.8333333333333334
+          },
+          "goal": {
+            "tp": 5,
+            "fp": 4,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.5555555555555556,
+            "recall": 1.0,
+            "f1": 0.7142857142857143
+          },
+          "level": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "support": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "duration": {
+            "tp": 0,
+            "fp": 4,
+            "fn": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "food": {
+            "tp": 14,
+            "fp": 2,
+            "fn": 2,
+            "support": 16,
+            "precision": 0.875,
+            "recall": 0.875,
+            "f1": 0.875
+          },
+          "nutrient": {
+            "tp": 14,
+            "fp": 13,
+            "fn": 8,
+            "support": 22,
+            "precision": 0.5185185185185185,
+            "recall": 0.6363636363636364,
+            "f1": 0.5714285714285714
+          }
+        },
+        "covered_slots": [
+          "exercise",
+          "body_part",
+          "equipment",
+          "goal",
+          "level",
+          "food",
+          "nutrient"
+        ],
+        "valid_output_rate": 1.0,
+        "invalid_outputs": 0,
+        "intent_agreement": 0.92,
+        "generation_timing": {
+          "samples": 100,
+          "mean_seconds": 2.9499421166400133,
+          "median_seconds": 2.824810624000065,
+          "p95_seconds": 3.421200978249908,
+          "p99_seconds": 4.19470151517997,
+          "max_seconds": 5.134051647999968,
+          "fraction_below_one_second": 0.0
+        }
+      }
+    },
+    {
+      "id": "ape-003",
+      "source": "local_model_generated",
+      "metrics": {
+        "utterances": 100,
+        "micro": {
+          "tp": 55,
+          "fp": 40,
+          "fn": 14,
+          "support": 69,
+          "precision": 0.5789473684210527,
+          "recall": 0.7971014492753623,
+          "f1": 0.6707317073170732
+        },
+        "macro_f1": 0.6088235294117648,
+        "exact_match_rate": 0.69,
+        "per_slot": {
+          "exercise": {
+            "tp": 11,
+            "fp": 4,
+            "fn": 4,
+            "support": 15,
+            "precision": 0.7333333333333333,
+            "recall": 0.7333333333333333,
+            "f1": 0.7333333333333333
+          },
+          "body_part": {
+            "tp": 5,
+            "fp": 7,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.4166666666666667,
+            "recall": 1.0,
+            "f1": 0.5882352941176471
+          },
+          "equipment": {
+            "tp": 5,
+            "fp": 2,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "f1": 0.8333333333333334
+          },
+          "goal": {
+            "tp": 5,
+            "fp": 6,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "f1": 0.625
+          },
+          "level": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "support": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "duration": {
+            "tp": 0,
+            "fp": 3,
+            "fn": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "food": {
+            "tp": 14,
+            "fp": 2,
+            "fn": 2,
+            "support": 16,
+            "precision": 0.875,
+            "recall": 0.875,
+            "f1": 0.875
+          },
+          "nutrient": {
+            "tp": 14,
+            "fp": 15,
+            "fn": 8,
+            "support": 22,
+            "precision": 0.4827586206896552,
+            "recall": 0.6363636363636364,
+            "f1": 0.5490196078431373
+          }
+        },
+        "covered_slots": [
+          "exercise",
+          "body_part",
+          "equipment",
+          "goal",
+          "level",
+          "food",
+          "nutrient"
+        ],
+        "valid_output_rate": 1.0,
+        "invalid_outputs": 0,
+        "intent_agreement": 0.93,
+        "generation_timing": {
+          "samples": 100,
+          "mean_seconds": 2.9453770278500406,
+          "median_seconds": 2.8011461695000435,
+          "p95_seconds": 3.4360439623003685,
+          "p99_seconds": 4.216722866220389,
+          "max_seconds": 5.102702796000358,
+          "fraction_below_one_second": 0.0
+        }
+      }
+    },
+    {
+      "id": "baseline",
+      "source": "baseline_template",
+      "metrics": {
+        "utterances": 100,
+        "micro": {
+          "tp": 55,
+          "fp": 43,
+          "fn": 14,
+          "support": 69,
+          "precision": 0.5612244897959183,
+          "recall": 0.7971014492753623,
+          "f1": 0.6586826347305389
+        },
+        "macro_f1": 0.6198145245559038,
+        "exact_match_rate": 0.7,
+        "per_slot": {
+          "exercise": {
+            "tp": 11,
+            "fp": 4,
+            "fn": 4,
+            "support": 15,
+            "precision": 0.7333333333333333,
+            "recall": 0.7333333333333333,
+            "f1": 0.7333333333333333
+          },
+          "body_part": {
+            "tp": 5,
+            "fp": 5,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "equipment": {
+            "tp": 5,
+            "fp": 1,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "f1": 0.9090909090909091
+          },
+          "goal": {
+            "tp": 5,
+            "fp": 6,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "f1": 0.625
+          },
+          "level": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "support": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "duration": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "food": {
+            "tp": 14,
+            "fp": 2,
+            "fn": 2,
+            "support": 16,
+            "precision": 0.875,
+            "recall": 0.875,
+            "f1": 0.875
+          },
+          "nutrient": {
+            "tp": 14,
+            "fp": 22,
+            "fn": 8,
+            "support": 22,
+            "precision": 0.3888888888888889,
+            "recall": 0.6363636363636364,
+            "f1": 0.4827586206896552
+          }
+        },
+        "covered_slots": [
+          "exercise",
+          "body_part",
+          "equipment",
+          "goal",
+          "level",
+          "food",
+          "nutrient"
+        ],
+        "valid_output_rate": 1.0,
+        "invalid_outputs": 0,
+        "intent_agreement": 0.92,
+        "generation_timing": {
+          "samples": 100,
+          "mean_seconds": 2.977756266280003,
+          "median_seconds": 2.798915209000029,
+          "p95_seconds": 3.464309676900005,
+          "p99_seconds": 5.2506440362101126,
+          "max_seconds": 5.669795800999964,
+          "fraction_below_one_second": 0.0
+        }
+      }
+    },
+    {
+      "id": "ape-004",
+      "source": "local_model_generated",
+      "metrics": {
+        "utterances": 100,
+        "micro": {
+          "tp": 54,
+          "fp": 44,
+          "fn": 15,
+          "support": 69,
+          "precision": 0.5510204081632653,
+          "recall": 0.782608695652174,
+          "f1": 0.6467065868263473
+        },
+        "macro_f1": 0.6100852272727273,
+        "exact_match_rate": 0.68,
+        "per_slot": {
+          "exercise": {
+            "tp": 11,
+            "fp": 4,
+            "fn": 4,
+            "support": 15,
+            "precision": 0.7333333333333333,
+            "recall": 0.7333333333333333,
+            "f1": 0.7333333333333333
+          },
+          "body_part": {
+            "tp": 5,
+            "fp": 6,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "f1": 0.625
+          },
+          "equipment": {
+            "tp": 5,
+            "fp": 1,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.8333333333333334,
+            "recall": 1.0,
+            "f1": 0.9090909090909091
+          },
+          "goal": {
+            "tp": 5,
+            "fp": 6,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "f1": 0.625
+          },
+          "level": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "support": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "duration": {
+            "tp": 0,
+            "fp": 4,
+            "fn": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "food": {
+            "tp": 13,
+            "fp": 3,
+            "fn": 3,
+            "support": 16,
+            "precision": 0.8125,
+            "recall": 0.8125,
+            "f1": 0.8125
+          },
+          "nutrient": {
+            "tp": 14,
+            "fp": 19,
+            "fn": 8,
+            "support": 22,
+            "precision": 0.42424242424242425,
+            "recall": 0.6363636363636364,
+            "f1": 0.509090909090909
+          }
+        },
+        "covered_slots": [
+          "exercise",
+          "body_part",
+          "equipment",
+          "goal",
+          "level",
+          "food",
+          "nutrient"
+        ],
+        "valid_output_rate": 1.0,
+        "invalid_outputs": 0,
+        "intent_agreement": 0.92,
+        "generation_timing": {
+          "samples": 100,
+          "mean_seconds": 2.945707471500018,
+          "median_seconds": 2.8067722270000104,
+          "p95_seconds": 3.404848083549973,
+          "p99_seconds": 5.1377702416202355,
+          "max_seconds": 5.728697639999609,
+          "fraction_below_one_second": 0.0
+        }
+      }
+    },
+    {
+      "id": "ape-001",
+      "source": "local_model_generated",
+      "metrics": {
+        "utterances": 100,
+        "micro": {
+          "tp": 54,
+          "fp": 45,
+          "fn": 15,
+          "support": 69,
+          "precision": 0.5454545454545454,
+          "recall": 0.782608695652174,
+          "f1": 0.6428571428571429
+        },
+        "macro_f1": 0.6006155303030303,
+        "exact_match_rate": 0.68,
+        "per_slot": {
+          "exercise": {
+            "tp": 11,
+            "fp": 4,
+            "fn": 4,
+            "support": 15,
+            "precision": 0.7333333333333333,
+            "recall": 0.7333333333333333,
+            "f1": 0.7333333333333333
+          },
+          "body_part": {
+            "tp": 5,
+            "fp": 6,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "f1": 0.625
+          },
+          "equipment": {
+            "tp": 5,
+            "fp": 2,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.7142857142857143,
+            "recall": 1.0,
+            "f1": 0.8333333333333334
+          },
+          "goal": {
+            "tp": 5,
+            "fp": 6,
+            "fn": 0,
+            "support": 5,
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "f1": 0.625
+          },
+          "level": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "support": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "duration": {
+            "tp": 0,
+            "fp": 4,
+            "fn": 0,
+            "support": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "food": {
+            "tp": 13,
+            "fp": 3,
+            "fn": 3,
+            "support": 16,
+            "precision": 0.8125,
+            "recall": 0.8125,
+            "f1": 0.8125
+          },
+          "nutrient": {
+            "tp": 14,
+            "fp": 19,
+            "fn": 8,
+            "support": 22,
+            "precision": 0.42424242424242425,
+            "recall": 0.6363636363636364,
+            "f1": 0.509090909090909
+          }
+        },
+        "covered_slots": [
+          "exercise",
+          "body_part",
+          "equipment",
+          "goal",
+          "level",
+          "food",
+          "nutrient"
+        ],
+        "valid_output_rate": 1.0,
+        "invalid_outputs": 0,
+        "intent_agreement": 0.92,
+        "generation_timing": {
+          "samples": 100,
+          "mean_seconds": 2.970346539790012,
+          "median_seconds": 2.824951212999963,
+          "p95_seconds": 3.5026892123999347,
+          "p99_seconds": 5.130273173509832,
+          "max_seconds": 5.706959212999891,
+          "fraction_below_one_second": 0.0
+        }
+      }
+    }
+  ],
+  "interpretation": "Prompt selection on validation data; not held-out test performance. Invalid generations are not dropped."
+}

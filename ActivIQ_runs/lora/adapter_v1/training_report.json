@@ -1,0 +1,33 @@
+{
+  "base_model": "models/qwen3.5-2b",
+  "labels": "reports/auto_labelling/train_labels/machine_labels.jsonl",
+  "labels_sha256": "53a5b3d81392d3056df0a5c8a366c637170cda2a9028710e9e355251ccc42939",
+  "examples": 960,
+  "device": "cuda",
+  "quantization": "none",
+  "dtype": "torch.bfloat16",
+  "epochs": 3,
+  "batch_size": 8,
+  "learning_rate": 0.0002,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "max_length": 384,
+  "seed": 42,
+  "epoch_losses": [
+    {
+      "epoch": 1,
+      "mean_loss": 0.0634411375465182
+    },
+    {
+      "epoch": 2,
+      "mean_loss": 0.019860190552814554
+    },
+    {
+      "epoch": 3,
+      "mean_loss": 0.00854926680403878
+    }
+  ],
+  "train_seconds": 275.4843687820003,
+  "note": "Trained on machine-generated labels only. Evaluate with scripts/evaluate_lora.py."
+}

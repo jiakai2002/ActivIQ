@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0369",
+  "request_sha256": "506700a16c58f21bf7234cc910e9b896c2c187bfe9c6a098a40a059efc8f4f8c",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "front squat"
+      ],
+      "body_part": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3722,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"front squat\"], \"body_part\": [], \"equipment\": [\"dumbbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.2492887869998412,
+        "input_tokens": 1571,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "3a61791e7dc478f66ef309b3360888dcc533c073bd7695497b7bbf2f3796e4c1"
+}

@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0295",
+  "request_sha256": "3a91154b273a8131b5a7271ba17294b3ee29d1b4435ce7c2594ecb96a620707a",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "bird-dog"
+      ],
+      "body_part": [
+        "core"
+      ],
+      "equipment": [],
+      "goal": [
+        "stability"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 2982,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"bird-dog\"], \"body_part\": [\"core\"], \"equipment\": [], \"goal\": [\"stability\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.3326953379996667,
+        "input_tokens": 1572,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "be9b6b46a8df5f32444e37881f7ba0f6604229911120d47ef16ff0ad2ece6511"
+}

@@ -1,0 +1,37 @@
+{
+  "key": "ape-003/entity-validation-108",
+  "request_sha256": "703caf655b602e1abc53c1f148d874b97e530e7a8cbe8e002813b95a0ec7a9ae",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "deadlift"
+      ],
+      "body_part": [],
+      "equipment": [],
+      "goal": [
+        "strength"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 932,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"deadlift\"], \"body_part\": [], \"equipment\": [], \"goal\": [\"strength\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.0529181920001065,
+        "input_tokens": 1768,
+        "output_tokens": 54,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "e0a6fa32484255c6d0de7460f7fc8d93c01f7cd957a2043a9554053d939b700c"
+}

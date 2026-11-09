@@ -1,0 +1,40 @@
+{
+  "key": "ape-003/entity-validation-020",
+  "request_sha256": "8c7d884d3cd184c1c790e0fa12464d6d950f8fc34419911452c0ec268e5626e1",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "edamame"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 212,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"edamame\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\"]}}\n",
+        "seconds": 4.136783537000156,
+        "input_tokens": 1770,
+        "output_tokens": 75,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "ee786a58328a4da9189642411d130c8799a671845e5eef16bfb4fd97caa22814"
+}
