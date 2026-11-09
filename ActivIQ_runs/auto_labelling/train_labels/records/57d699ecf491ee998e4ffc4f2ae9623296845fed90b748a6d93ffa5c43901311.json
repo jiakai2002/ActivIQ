@@ -1,0 +1,44 @@
+{
+  "key": "train/train-0919",
+  "request_sha256": "8d1d445db7543361b74a5ba6007dd6cc34b9612c043c1444fb5e72ac6ef4a578",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "lentils"
+      ],
+      "nutrient": [
+        "Energy",
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference",
+        "Dietary fiber",
+        "Vitamin K (phylloquinone)",
+        "Calcium",
+        "Iron, Fe"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 9222,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"lentils\"], \"nutrient\": [\"Energy\", \"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\", \"Dietary fiber\", \"Vitamin K (phylloquinone)\", \"Calcium\", \"Iron, Fe\"]}}\n",
+        "seconds": 5.677169352999954,
+        "input_tokens": 1572,
+        "output_tokens": 100,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "6a315223a80f089c4918f6c921087ee1dc959e2d5634dbff02aa8b473bec7932"
+}

@@ -1,0 +1,35 @@
+{
+  "key": "ape-001/entity-validation-012",
+  "request_sha256": "3ffba900e5ce9f2a8d434d944837a3401d1301d8d232b6d8cc4f8b178373f553",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": [
+        "Zinc"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 142,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": [\"Zinc\"]}}\n",
+        "seconds": 3.019218631000058,
+        "input_tokens": 1552,
+        "output_tokens": 54,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "9a9cf9c96e07fbe6c8f2fb3d4675ec88dad2af0b8705acebb5ad3f36fb3edb44"
+}

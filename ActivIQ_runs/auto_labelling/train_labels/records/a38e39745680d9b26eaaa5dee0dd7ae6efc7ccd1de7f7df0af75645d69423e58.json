@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0858",
+  "request_sha256": "c0af412b37a5919a44407ca98574d2f72c837ac3c3b11a7e15cac025903716c4",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [
+        "bosu ball"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 8612,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [\"bosu ball\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.1184966420005367,
+        "input_tokens": 1572,
+        "output_tokens": 53,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "57d3c8ddef52021c5e5d9331236c4cb901a0075860a4ffdba69d2e72d5c1535d"
+}

@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0088",
+  "request_sha256": "c096cced4447c49728f2c6a97b74fad4a80ac740448d90b15cab5eaadf89773e",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "skull crusher"
+      ],
+      "body_part": [
+        "arms"
+      ],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 912,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"skull crusher\"], \"body_part\": [\"arms\"], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.139544876999935,
+        "input_tokens": 1572,
+        "output_tokens": 55,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "f73d9e12199a8dcb9bd240b910b1e2604fb2ddbef2ddf1bd5a7954ea53af9fca"
+}

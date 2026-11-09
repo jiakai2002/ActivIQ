@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0947",
+  "request_sha256": "92c51e48e25e68dff50fb37de9801461f213334b37904d2f6774841945a51f1e",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "battle ropes"
+      ],
+      "body_part": [],
+      "equipment": [
+        "battle ropes"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 9502,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"battle ropes\"], \"body_part\": [], \"equipment\": [\"battle ropes\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.161225679999916,
+        "input_tokens": 1570,
+        "output_tokens": 55,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "46db3e4b5483b818f3f47109300074f71432e2266842a6d58f0caef3eee72602"
+}

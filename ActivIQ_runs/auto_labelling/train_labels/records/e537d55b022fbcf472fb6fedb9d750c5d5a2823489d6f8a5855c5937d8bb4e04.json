@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0886",
+  "request_sha256": "31c48c8cebc8a4f0eeb3b2f2ad67253672ad4e5df1934e0b03cb7ad4489b6f6b",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "peanut butter"
+      ],
+      "nutrient": [
+        "Total lipid (fat)"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 8892,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"peanut butter\"], \"nutrient\": [\"Total lipid (fat)\"]}}\n",
+        "seconds": 3.489404134000324,
+        "input_tokens": 1571,
+        "output_tokens": 61,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "1832ff3c4e354e8b4d4399be42dcbc4b137ecb82f16249f3c786e8adf67d7d87"
+}

@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0654",
+  "request_sha256": "a9a1fcc110373509456600fa6fcba124245ba5094b17deddb94081f88cfd2b6f",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "single-leg romanian deadlift"
+      ],
+      "body_part": [],
+      "equipment": [],
+      "goal": [
+        "balance"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 6572,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"single-leg romanian deadlift\"], \"body_part\": [], \"equipment\": [], \"goal\": [\"balance\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.343758574000276,
+        "input_tokens": 1572,
+        "output_tokens": 58,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "afc732cd089433dd739af55c0cd79365845cdc86aff93c208257408cf8e3a667"
+}

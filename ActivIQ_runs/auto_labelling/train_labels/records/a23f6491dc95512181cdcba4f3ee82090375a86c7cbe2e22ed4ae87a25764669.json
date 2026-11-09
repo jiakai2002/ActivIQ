@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0401",
+  "request_sha256": "39b86c7b8e40c86a050bf1bea60786ae59ea5c589be75da62cb08547cd0c84f2",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "incline dumbbell press"
+      ],
+      "body_part": [
+        "chest"
+      ],
+      "equipment": [
+        "dumbbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 4042,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"incline dumbbell press\"], \"body_part\": [\"chest\"], \"equipment\": [\"dumbbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.464113290000114,
+        "input_tokens": 1572,
+        "output_tokens": 61,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "e4dda1b03450edc5015d0f5a18b18dc8860f3c707981bc3b04fb0f21fcd96a69"
+}

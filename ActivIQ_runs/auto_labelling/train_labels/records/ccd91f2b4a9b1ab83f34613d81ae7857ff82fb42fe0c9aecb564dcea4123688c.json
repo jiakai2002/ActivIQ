@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0322",
+  "request_sha256": "373b2eca863b9abd328c8f77758953a61d029d304f9dfd8e2fe940152a863774",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "air-popped popcorn"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3252,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"air-popped popcorn\"], \"nutrient\": []}}\n",
+        "seconds": 3.219595148999815,
+        "input_tokens": 1569,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "430cc53c947b5fab709d6346d385a58565eac6032a90916ab75b5708f71b6b89"
+}

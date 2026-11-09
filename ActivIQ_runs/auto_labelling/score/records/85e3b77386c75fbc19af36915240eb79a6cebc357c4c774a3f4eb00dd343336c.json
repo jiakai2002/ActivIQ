@@ -1,0 +1,35 @@
+{
+  "key": "ape-001/entity-validation-065",
+  "request_sha256": "1aea3f25d9c8809ef9346142be066bce47231032fc1c8212adb8f172f41ee8b3",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": [
+        "Total lipid (fat)"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 612,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": [\"Total lipid (fat)\"]}}\n",
+        "seconds": 3.1978359429999728,
+        "input_tokens": 1554,
+        "output_tokens": 57,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "083243732c0081e5ea1ab778ed3d90ed2c64816b858d5cfb73d36bd02b32cec4"
+}

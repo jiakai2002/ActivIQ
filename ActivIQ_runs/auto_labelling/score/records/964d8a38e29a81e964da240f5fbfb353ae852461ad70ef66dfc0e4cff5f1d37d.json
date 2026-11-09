@@ -1,0 +1,33 @@
+{
+  "key": "ape-003/entity-validation-103",
+  "request_sha256": "2389768e9d0b9c8ec8dcc9ce60f94ea0e0e72ac78f568bc9500b6e4f1c2fb10b",
+  "valid": true,
+  "payload": {
+    "intent": "log_feeling",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 882,
+      "generation": {
+        "text": "{\"intent\": \"log_feeling\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 2.8188079459996516,
+        "input_tokens": 1767,
+        "output_tokens": 49,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "0abeb61c24983e8c5b6269045338c070dda9a1a002a62905e783b9f98cd6bf1e"
+}

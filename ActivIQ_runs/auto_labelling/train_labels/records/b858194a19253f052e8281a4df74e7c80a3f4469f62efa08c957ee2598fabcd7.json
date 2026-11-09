@@ -1,0 +1,43 @@
+{
+  "key": "train/train-0895",
+  "request_sha256": "9c46d2655d0c363d3a738be25f6b9b8e77ccf8ac093a6346a16abc3989c014d0",
+  "valid": true,
+  "payload": {
+    "intent": "generate_plan",
+    "entities": {
+      "exercise": [],
+      "body_part": [
+        "legs",
+        "arms",
+        "core",
+        "back",
+        "chest",
+        "shoulders",
+        "glutes"
+      ],
+      "equipment": [],
+      "goal": [
+        "muscle gain"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 8982,
+      "generation": {
+        "text": "{\"intent\": \"generate_plan\", \"entities\": {\"exercise\": [], \"body_part\": [\"legs\", \"arms\", \"core\", \"back\", \"chest\", \"shoulders\", \"glutes\"], \"equipment\": [], \"goal\": [\"muscle gain\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 4.23028428499947,
+        "input_tokens": 1571,
+        "output_tokens": 74,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "ef5acdc74fc4a9c4518fe114cf737855faca1f11a5460db1273e3b2049d2641e"
+}

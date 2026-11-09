@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0701",
+  "request_sha256": "340b4b5677f4596950c1882afbdb137ddc7fc972c9802dc96cb8fc3aac367854",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "agave nectar"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 7042,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"agave nectar\"], \"nutrient\": []}}\n",
+        "seconds": 3.288329688999511,
+        "input_tokens": 1570,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "1de397db5ef0af94566c7b93d4a31e6057ca9b5c14ee18de7480c4622dde0d95"
+}

@@ -1,0 +1,33 @@
+{
+  "key": "ape-004/entity-validation-016",
+  "request_sha256": "da7a9bc2f27e958b702a2118170c2187bc150d0db3be1cf77c2d399904d245c2",
+  "valid": true,
+  "payload": {
+    "intent": "general_chat",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 182,
+      "generation": {
+        "text": "{\"intent\": \"general_chat\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 2.7011113140001726,
+        "input_tokens": 1401,
+        "output_tokens": 48,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "05a137200c1c2a1fd55f257f37f464971b9f551efa1dce039e176a864d0c34eb"
+}

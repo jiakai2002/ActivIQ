@@ -1,0 +1,37 @@
+{
+  "key": "ape-001/entity-validation-005",
+  "request_sha256": "b4347812ebbdc34d08a528f9016b861483db3aa109de0c84326510472c0309dd",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "bent-over dumbbell row"
+      ],
+      "body_part": [],
+      "equipment": [
+        "dumbbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 82,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"bent-over dumbbell row\"], \"body_part\": [], \"equipment\": [\"dumbbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.331158725000023,
+        "input_tokens": 1554,
+        "output_tokens": 60,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "38c711a6ef5e42f1b99dde1c3ee270b8743d71cf9186dd84ed04ae1ecbc97b8c"
+}

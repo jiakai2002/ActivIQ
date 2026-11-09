@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0574",
+  "request_sha256": "f553fccf771e7b617146094db5d4c93d52eff71ebcd84b9b1311bf1c899fc473",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "lying tricep extension"
+      ],
+      "body_part": [
+        "arms"
+      ],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 5772,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"lying tricep extension\"], \"body_part\": [\"arms\"], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.265607111999998,
+        "input_tokens": 1570,
+        "output_tokens": 57,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "de223e3015f7125e5cc76795c464626c0ea21fd0b16abcfb891a7ae8a0f71bd3"
+}

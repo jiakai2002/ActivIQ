@@ -1,0 +1,263 @@
+{
+  "test_utterances": 120,
+  "lora": {
+    "model_path": "models/qwen3.5-9b",
+    "adapter": null,
+    "intent": {
+      "accuracy": 0.8,
+      "macro_f1": 0.8078834907782276,
+      "weighted_f1": 0.8078834907782276,
+      "per_class": {
+        "generate_plan": {
+          "tp": 17,
+          "fp": 2,
+          "fn": 3,
+          "support": 20,
+          "precision": 0.8947368421052632,
+          "recall": 0.85,
+          "f1": 0.8717948717948718
+        },
+        "find_exercise": {
+          "tp": 7,
+          "fp": 1,
+          "fn": 13,
+          "support": 20,
+          "precision": 0.875,
+          "recall": 0.35,
+          "f1": 0.5
+        },
+        "get_nutrition_info": {
+          "tp": 17,
+          "fp": 3,
+          "fn": 3,
+          "support": 20,
+          "precision": 0.85,
+          "recall": 0.85,
+          "f1": 0.85
+        },
+        "log_feeling": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 2,
+          "support": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9473684210526315
+        },
+        "general_chat": {
+          "tp": 19,
+          "fp": 13,
+          "fn": 1,
+          "support": 20,
+          "precision": 0.59375,
+          "recall": 0.95,
+          "f1": 0.7307692307692307
+        },
+        "out_of_scope": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 2,
+          "support": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9473684210526315
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "generate_plan": {
+          "generate_plan": 17,
+          "find_exercise": 1,
+          "get_nutrition_info": 2,
+          "log_feeling": 0,
+          "general_chat": 0,
+          "out_of_scope": 0,
+          "INVALID": 0
+        },
+        "find_exercise": {
+          "generate_plan": 2,
+          "find_exercise": 7,
+          "get_nutrition_info": 0,
+          "log_feeling": 0,
+          "general_chat": 6,
+          "out_of_scope": 0,
+          "INVALID": 5
+        },
+        "get_nutrition_info": {
+          "generate_plan": 0,
+          "find_exercise": 0,
+          "get_nutrition_info": 17,
+          "log_feeling": 0,
+          "general_chat": 3,
+          "out_of_scope": 0,
+          "INVALID": 0
+        },
+        "log_feeling": {
+          "generate_plan": 0,
+          "find_exercise": 0,
+          "get_nutrition_info": 0,
+          "log_feeling": 18,
+          "general_chat": 2,
+          "out_of_scope": 0,
+          "INVALID": 0
+        },
+        "general_chat": {
+          "generate_plan": 0,
+          "find_exercise": 0,
+          "get_nutrition_info": 1,
+          "log_feeling": 0,
+          "general_chat": 19,
+          "out_of_scope": 0,
+          "INVALID": 0
+        },
+        "out_of_scope": {
+          "generate_plan": 0,
+          "find_exercise": 0,
+          "get_nutrition_info": 0,
+          "log_feeling": 0,
+          "general_chat": 2,
+          "out_of_scope": 18,
+          "INVALID": 0
+        }
+      }
+    },
+    "entities": {
+      "utterances": 120,
+      "micro": {
+        "tp": 32,
+        "fp": 47,
+        "fn": 46,
+        "support": 78,
+        "precision": 0.4050632911392405,
+        "recall": 0.41025641025641024,
+        "f1": 0.40764331210191085
+      },
+      "macro_f1": 0.2905815355576755,
+      "exact_match_rate": 0.6083333333333333,
+      "per_slot": {
+        "exercise": {
+          "tp": 10,
+          "fp": 6,
+          "fn": 15,
+          "support": 25,
+          "precision": 0.625,
+          "recall": 0.4,
+          "f1": 0.4878048780487805
+        },
+        "body_part": {
+          "tp": 5,
+          "fp": 1,
+          "fn": 3,
+          "support": 8,
+          "precision": 0.8333333333333334,
+          "recall": 0.625,
+          "f1": 0.7142857142857143
+        },
+        "equipment": {
+          "tp": 0,
+          "fp": 5,
+          "fn": 4,
+          "support": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "goal": {
+          "tp": 3,
+          "fp": 9,
+          "fn": 5,
+          "support": 8,
+          "precision": 0.25,
+          "recall": 0.375,
+          "f1": 0.3
+        },
+        "level": {
+          "tp": 0,
+          "fp": 3,
+          "fn": 2,
+          "support": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "duration": {
+          "tp": 0,
+          "fp": 5,
+          "fn": 3,
+          "support": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "food": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 5,
+          "support": 17,
+          "precision": 0.6,
+          "recall": 0.7058823529411765,
+          "f1": 0.6486486486486487
+        },
+        "nutrient": {
+          "tp": 2,
+          "fp": 10,
+          "fn": 9,
+          "support": 11,
+          "precision": 0.16666666666666666,
+          "recall": 0.18181818181818182,
+          "f1": 0.17391304347826086
+        }
+      },
+      "covered_slots": [
+        "exercise",
+        "body_part",
+        "equipment",
+        "goal",
+        "level",
+        "duration",
+        "food",
+        "nutrient"
+      ],
+      "provisional": false
+    },
+    "latency_seconds": {
+      "samples": 120,
+      "mean_seconds": 4.142701864691668,
+      "median_seconds": 4.079568929000004,
+      "p95_seconds": 5.144290872500011,
+      "p99_seconds": 5.537395619549976,
+      "max_seconds": 5.588312927000061,
+      "fraction_below_one_second": 0.0
+    },
+    "invalid_outputs": 5,
+    "device": "cuda",
+    "quantization": "none"
+  },
+  "invalid_examples": [
+    {
+      "text": "Show me how to use a TRX for inverted rows.",
+      "output": "{\n  \"intent\": \"find_exercise\",\n  \"entities\": {\n    \"exercise\": [\n      \"inverted rows\"\n    ],\n    \"equipment\": [\n      \"TRX\"\n    ]\n  }\n}",
+      "error": "Entities must explicitly contain all eight proposal slots and no unknown slots"
+    },
+    {
+      "text": "How to do a Russian twist with a weight.",
+      "output": "{\n  \"intent\": \"find_exercise\",\n  \"entities\": {\n    \"exercise\": [\n      \"Russian twist\"\n    ],\n    \"equipment\": [\n      \"weight\"\n    ]\n  }\n}",
+      "error": "Entities must explicitly contain all eight proposal slots and no unknown slots"
+    },
+    {
+      "text": "Show me some advanced push-up variations like the archer push-up.",
+      "output": "{\n  \"intent\": \"find_exercise\",\n  \"entities\": {\n    \"exercise\": [\n      \"push-up\",\n      \"archer push-up\"\n    ],\n    \"level\": [\n      \"advanced\"\n    ]\n  }\n}",
+      "error": "Entities must explicitly contain all eight proposal slots and no unknown slots"
+    },
+    {
+      "text": "How to do a Jefferson curl for hamstring flexibility.",
+      "output": "{\n  \"intent\": \"find_exercise\",\n  \"entities\": {\n    \"exercise\": [\n      \"Jefferson curl\"\n    ],\n    \"body_part\": [\n      \"hamstring\"\n    ],\n    \"goal\": [\n      \"flexibility\"\n    ]\n  }\n}",
+      "error": "Entities must explicitly contain all eight proposal slots and no unknown slots"
+    },
+    {
+      "text": "How to do a wall sit correctly for quad endurance.",
+      "output": "{\n  \"intent\": \"find_exercise\",\n  \"entities\": {\n    \"exercise\": [\n      \"wall sit\"\n    ],\n    \"body_part\": [\n      \"quad\"\n    ],\n    \"goal\": [\n      \"endurance\"\n    ]\n  }\n}",
+      "error": "Entities must explicitly contain all eight proposal slots and no unknown slots"
+    }
+  ],
+  "note": "Entity scores are pending until the test entity labels are human reviewed."
+}

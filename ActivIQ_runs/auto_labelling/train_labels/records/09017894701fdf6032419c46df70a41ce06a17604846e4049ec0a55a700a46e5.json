@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0375",
+  "request_sha256": "511b500ca7c2312b7f0ee63ddc99c1a35cef0f7240469cdb6ce429dd566e5b72",
+  "valid": true,
+  "payload": {
+    "intent": "generate_plan",
+    "entities": {
+      "exercise": [
+        "foam rolling"
+      ],
+      "body_part": [],
+      "equipment": [
+        "foam roller"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3782,
+      "generation": {
+        "text": "{\"intent\": \"generate_plan\", \"entities\": {\"exercise\": [\"foam rolling\"], \"body_part\": [], \"equipment\": [\"foam roller\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.1850319469999704,
+        "input_tokens": 1570,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "ee86ec65aeb02b528395834fcb198c307ec49dcf448f1ff15aa5619ef6ef452d"
+}

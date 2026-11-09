@@ -1,0 +1,33 @@
+{
+  "key": "train/train-0403",
+  "request_sha256": "305bda898154a1b26d6df15ebef46402048fac7ec589a9782ea8b2a74e6b713f",
+  "valid": true,
+  "payload": {
+    "intent": "general_chat",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 4062,
+      "generation": {
+        "text": "{\"intent\": \"general_chat\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 2.791577909999887,
+        "input_tokens": 1568,
+        "output_tokens": 48,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "c153ff3765f82ca5c60261e150debf7f7710386539e5b96ef0f8dcf512b38598"
+}

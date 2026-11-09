@@ -1,0 +1,35 @@
+{
+  "key": "baseline/entity-validation-119",
+  "request_sha256": "d6dad82907f8a663c8466fb09657c0cd4220fe5f07f3029aa7ff11395795ec5d",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [
+        "endurance"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 1022,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [\"endurance\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 2.8823929390000558,
+        "input_tokens": 1415,
+        "output_tokens": 52,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "c53ba783a1ad1068f2fc30dcc29f45e2c1e0476eba08fd4d56b2989553a95b84"
+}

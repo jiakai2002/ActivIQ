@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0790",
+  "request_sha256": "4df2a96b8d25f01d58246247f4f36875f3c7f0661517cf5fd8c901d1ad729901",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "plyometric"
+      ],
+      "body_part": [],
+      "equipment": [],
+      "goal": [
+        "endurance"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 7932,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"plyometric\"], \"body_part\": [], \"equipment\": [], \"goal\": [\"endurance\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.198001674999432,
+        "input_tokens": 1569,
+        "output_tokens": 55,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "ca9f91af7a2bbfed17607b904f4856947e685a5c7c90723418c8353b574b9bca"
+}

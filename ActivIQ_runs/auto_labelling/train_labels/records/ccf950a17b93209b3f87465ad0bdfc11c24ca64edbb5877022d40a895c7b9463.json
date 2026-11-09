@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0071",
+  "request_sha256": "1db6064e5c0a95895502091f72c730c57ec4454fd448b79ed6ef5a2367ccb970",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "whole egg"
+      ],
+      "nutrient": [
+        "Protein",
+        "Total lipid (fat)",
+        "Carbohydrate, by difference"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 742,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"whole egg\"], \"nutrient\": [\"Protein\", \"Total lipid (fat)\", \"Carbohydrate, by difference\"]}}\n",
+        "seconds": 4.041492150000067,
+        "input_tokens": 1578,
+        "output_tokens": 71,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "65fd0accbfaeb87884312380a0f3562429d662ee49792ce66649a8890d6d8060"
+}

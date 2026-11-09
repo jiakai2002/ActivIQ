@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0665",
+  "request_sha256": "795c83e9719b751bcb5f2ffd2bdbc5f087248132e6091f6051a3344c285e80f0",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "low-glycemic fruits"
+      ],
+      "nutrient": [
+        "Carbohydrate, by difference"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 6682,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"low-glycemic fruits\"], \"nutrient\": [\"Carbohydrate, by difference\"]}}\n",
+        "seconds": 3.732738700000482,
+        "input_tokens": 1570,
+        "output_tokens": 65,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "3aac11becb83eb371cd7040aaaa9efc80d74c5c7993436d73f897e7a6ace0d97"
+}

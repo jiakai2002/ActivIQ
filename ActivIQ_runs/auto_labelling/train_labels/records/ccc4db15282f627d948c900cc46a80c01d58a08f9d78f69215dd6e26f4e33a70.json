@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0269",
+  "request_sha256": "98b78798b4cef298c7769684386e6bd0521b5ff0e7b419e8dd186a3688ac2341",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [
+        "fat loss"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [
+        "rice cakes"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 2722,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [\"fat loss\"], \"level\": [], \"duration\": [], \"food\": [\"rice cakes\"], \"nutrient\": []}}\n",
+        "seconds": 3.331226312000126,
+        "input_tokens": 1574,
+        "output_tokens": 57,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "2f80282aaacea3d7e29c7311b324bcc7099575f1d28fa6a99db2715ca792d7e5"
+}

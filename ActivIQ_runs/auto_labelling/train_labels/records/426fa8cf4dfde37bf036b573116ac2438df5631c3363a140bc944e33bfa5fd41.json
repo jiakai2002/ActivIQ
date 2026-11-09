@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0078",
+  "request_sha256": "e26c9336198cff2a7ceb1de0b8e8cbefc3628a8bc173df6381a1060a2c5fc623",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "cable pull-through"
+      ],
+      "body_part": [
+        "glutes"
+      ],
+      "equipment": [
+        "cable"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 812,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"cable pull-through\"], \"body_part\": [\"glutes\"], \"equipment\": [\"cable\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.480839190000097,
+        "input_tokens": 1571,
+        "output_tokens": 60,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "5ac3fc9e3cfdc5fe0428f317b85fe16216836cfad74209b6a004d701f79e4970"
+}

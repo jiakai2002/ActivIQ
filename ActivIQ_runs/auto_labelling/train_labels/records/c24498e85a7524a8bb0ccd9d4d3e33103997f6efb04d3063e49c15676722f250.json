@@ -1,0 +1,36 @@
+{
+  "key": "train/train-0836",
+  "request_sha256": "c6b525b6ce560fde7dcb1b97b6149b3571ac59177c05624356fbfe8c001e64db",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "maple syrup",
+        "sugar"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 8392,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"maple syrup\", \"sugar\"], \"nutrient\": []}}\n",
+        "seconds": 3.4042756660001032,
+        "input_tokens": 1567,
+        "output_tokens": 59,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "a6a3d8b52962f642e7ae60bc6f193995b7b4e5e68cf0ad40352fe773a10d4246"
+}

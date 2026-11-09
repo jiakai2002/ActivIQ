@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0252",
+  "request_sha256": "9bf6036d4e279c89aaeaa75ba4526b08c8c3f3dba96c2b8f68c4bb89f440118c",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "diaphragmatic breathing"
+      ],
+      "body_part": [
+        "core"
+      ],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 2552,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"diaphragmatic breathing\"], \"body_part\": [\"core\"], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.211168996000197,
+        "input_tokens": 1572,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "d04f690b772023769657cfab91a332c913ca655b07a07a87cdbbd70c4f1a0726"
+}

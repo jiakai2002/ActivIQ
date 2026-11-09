@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0515",
+  "request_sha256": "66d8f167ee986cb24e344f0352695b1ec51c60cfa3794eb7923c5de866ab0253",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "close-grip bench press"
+      ],
+      "body_part": [
+        "chest"
+      ],
+      "equipment": [
+        "barbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 5182,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"close-grip bench press\"], \"body_part\": [\"chest\"], \"equipment\": [\"barbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.4388216180004747,
+        "input_tokens": 1570,
+        "output_tokens": 60,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "3e3905c80f5319ca0a90a5011c72329fb3b91d9c64750cc4fe342db8a1e65f8f"
+}

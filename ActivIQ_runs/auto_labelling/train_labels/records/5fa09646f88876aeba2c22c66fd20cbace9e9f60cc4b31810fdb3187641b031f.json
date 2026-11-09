@@ -1,0 +1,36 @@
+{
+  "key": "train/train-0692",
+  "request_sha256": "a26590aa7c44dd1eb2c4e74df38acbef420a99543a3818457c0b876270f6a77d",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "grass-fed butter",
+        "margarine"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 6952,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"grass-fed butter\", \"margarine\"], \"nutrient\": []}}\n",
+        "seconds": 3.4527253320002274,
+        "input_tokens": 1570,
+        "output_tokens": 60,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "3140269596fcf5344088576cc566306b04bbe3e2b2f3e414899349d935febf07"
+}

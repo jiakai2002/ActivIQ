@@ -1,0 +1,47 @@
+{
+  "key": "train/train-0154",
+  "request_sha256": "bf8cd87b4bc99c64e17a0cf36a12af2c554a2d8162a5f3441012304631fabcfc",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": [
+        "Total lipid (fat)"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 1572,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": [\"Total lipid (fat)\"]}\n",
+        "seconds": 3.2199432190000152,
+        "input_tokens": 1573,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": "Expecting ',' delimiter: line 1 column 184 (char 183)"
+    },
+    {
+      "attempt": 2,
+      "seed": 1573,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": [\"Total lipid (fat)\"]}}\n",
+        "seconds": 3.296740186000079,
+        "input_tokens": 1674,
+        "output_tokens": 57,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "581c56a4b25ad6d0749c2679ff3145108208f7d7b9f22b9460dd4ab238e7b9a6"
+}

@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-11-09T10:23:48.341073+00:00",
+  "identity_sha256": "bdba2eb6c3f91f112b51021d8593b651319efcc6b3c1c5dc8950e898209336ec",
+  "identity": {
+    "stage": "propose",
+    "source_split_hashes": {
+      "train": "5a04d2d3fae3ba414493d1b2079c0513fdd292aff87a182950d30e18f518cbbf",
+      "validation": "0c2ec0730ff148a162a64946124c2528531d179d482598e91814f61baf8966bc",
+      "test": "46ce7d7ba2dbfc6d1733810e7505d64df656c95cd1d7495ff69220e9467b82f1"
+    },
+    "seeds_sha256": "b5ce39e9d16114f785afb8c7516ceff9f5f775cc1d597651942e8239d4389665",
+    "engine": {
+      "backend": "transformers_local",
+      "checkpoint_files": {
+        "chat_template.jinja": {
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+          "bytes": 7756
+        },
+        "config.json": {
+          "sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+          "bytes": 3126
+        },
+        "merges.txt": {
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d",
+          "bytes": 3353259
+        },
+        "model.safetensors-00001-of-00004.safetensors": {
+          "sha256": "db6f444b43d318c92f360a13a25561a6a65b10c0631b8ed305a426dbaa6c380e",
+          "bytes": 5276436216
+        },
+        "model.safetensors-00002-of-00004.safetensors": {
+          "sha256": "31c7d7e2dd5d207840b31cc59083c8f4c4718959149e0358c0364052bb9a0330",
+          "bytes": 5335161512
+        },
+        "model.safetensors-00003-of-00004.safetensors": {
+          "sha256": "7ec36ba3a4176a44c3c0876ad80c56a2f70c84bf008d82e9501df642f17dadec",
+          "bytes": 5368717440
+        },
+        "model.safetensors-00004-of-00004.safetensors": {
+          "sha256": "b62b0c4cd7e44edee103ee8f4fe225f246d5e768e07bfd5f25b63a8aa1fdd0c6",
+          "bytes": 3325995712
+        },
+        "model.safetensors.index.json": {
+          "sha256": "26d3539b516be613f39563617cb9d33b3f83d401298125be392c80cefb8f7fe5",
+          "bytes": 79657
+        },
+        "preprocessor_config.json": {
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+          "bytes": 390
+        },
+        "tokenizer.json": {
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "bytes": 12807982
+        },
+        "tokenizer_config.json": {
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+          "bytes": 16710
+        },
+        "video_preprocessor_config.json": {
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+          "bytes": 385
+        },
+        "vocab.json": {
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+          "bytes": 6722759
+        }
+      },
+      "checkpoint_model_type": "qwen3_5",
+      "loaded_model_class": "Qwen3_5ForConditionalGeneration",
+      "transformers": "5.22.1",
+      "torch": "2.14.1+cu130",
+      "bitsandbytes": null,
+      "quantization": "none",
+      "dtype": "torch.bfloat16",
+      "max_input_tokens": 8192,
+      "max_new_tokens": 512,
+      "enable_thinking": false,
+      "trust_remote_code": false,
+      "signature": "f7c082df8e6f63b7949fc8756efc57977ff83c431c7ebf6302e8ee77972b3000",
+      "model_path": "/content/ActivIQ/models/qwen3.5-9b",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "device": "cuda",
+      "cuda_device": "NVIDIA A100-SXM4-40GB"
+    },
+    "settings": {
+      "candidate_count": 4,
+      "seed": 42,
+      "attempts": 2
+    },
+    "code_hashes": {
+      "scripts/auto_label.py": "dc5fcc25e4278c380fdb9bdd6f31f346121e7d680bae177f11345579739c330b",
+      "scripts/prepare_autolabelling.py": "03e38ae684cfaa9d31130cab6fedca6a54ae1ac89adf92c6bae05d5ce0468716",
+      "src/auto_labelling/__init__.py": "4446100360772641bc556cb75c6c53556f04eade3c6ab3b08cae0e7413fe1af9",
+      "src/auto_labelling/core.py": "c0ab09269f5cce67ce76091c20e69b86044353ce985f8930c912849dd1f5694b",
+      "src/auto_labelling/engine.py": "9edd9bfbd19e9f8f4e5e0c28a04fdca25c1978a5d856fc91ad650da92312f709",
+      "src/auto_labelling/workflow.py": "ce1c2fa4ddf12a24635c81f631fef76c94c0c670dcb235bf7ee5854c77392266",
+      "src/config.py": "94bc71bd4d8c4dadadc2e95f3e688a689e2d7ae4f299b125225bb082381574de",
+      "src/evaluation.py": "29786a395b6d4329aa11a000e66e3123a15982f2c39e60659d48db501e0f3584"
+    },
+    "contract_sha256": "c6625b2f36024857ad8c7b42c7f2ec58d3aa92125c999853bc7c2c612637a4d1"
+  }
+}

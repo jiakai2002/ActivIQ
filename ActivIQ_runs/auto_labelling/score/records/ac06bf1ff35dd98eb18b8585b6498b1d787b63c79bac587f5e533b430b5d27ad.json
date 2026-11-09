@@ -1,0 +1,36 @@
+{
+  "key": "ape-004/entity-validation-057",
+  "request_sha256": "1c6120858b3e612c6472d866bd152d61637bd51567d08ea280e3d7928ecefb44",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "extra virgin olive oil",
+        "regular vegetable oil"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 542,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"extra virgin olive oil\", \"regular vegetable oil\"], \"nutrient\": []}}\n",
+        "seconds": 3.4021512829999665,
+        "input_tokens": 1405,
+        "output_tokens": 61,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "d6a2ec2f7a74e10d58f49afa20cda36a43a094bf1869e42943aba9db8dc0a921"
+}

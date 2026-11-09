@@ -1,0 +1,35 @@
+{
+  "key": "train/train-0248",
+  "request_sha256": "513c636fd1cac073a573306755099e3112050a13445bded0c697238619fde88f",
+  "valid": true,
+  "payload": {
+    "intent": "general_chat",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "kombucha"
+      ],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 2512,
+      "generation": {
+        "text": "{\"intent\": \"general_chat\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"kombucha\"], \"nutrient\": []}}\n",
+        "seconds": 2.9920853759999773,
+        "input_tokens": 1569,
+        "output_tokens": 51,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "583e58e97c00906268cf6bfc07ecc533856f02af243d076ab17efe5b1fbd2629"
+}

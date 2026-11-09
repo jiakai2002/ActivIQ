@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0031",
+  "request_sha256": "7abf37ac290d8f9fdee306338201af2ccbdb6af644d3cf8d1f82d42a508b572b",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "kale"
+      ],
+      "nutrient": [
+        "Vitamin K (phylloquinone)"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 342,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"kale\"], \"nutrient\": [\"Vitamin K (phylloquinone)\"]}}\n",
+        "seconds": 3.6727606059998834,
+        "input_tokens": 1568,
+        "output_tokens": 65,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "a3ddcd6e16b00e221d04243a661127c32283671394bc2ccd54332f4fe1a62fbf"
+}

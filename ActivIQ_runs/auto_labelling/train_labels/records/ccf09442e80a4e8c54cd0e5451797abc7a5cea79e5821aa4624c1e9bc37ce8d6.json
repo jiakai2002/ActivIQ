@@ -1,0 +1,39 @@
+{
+  "key": "train/train-0028",
+  "request_sha256": "550b7f478e08ca83cc801595f7101d26ef3464cb488f3ed6f069b3f844c5dbc8",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "side plank"
+      ],
+      "body_part": [
+        "core"
+      ],
+      "equipment": [],
+      "goal": [
+        "stability"
+      ],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 312,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"side plank\"], \"body_part\": [\"core\"], \"equipment\": [], \"goal\": [\"stability\"], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.3083614760003,
+        "input_tokens": 1571,
+        "output_tokens": 57,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "2365807ce587d6b229ef8c540f629e5c3a7d25c834050259a3e35dd36ea6eb8a"
+}

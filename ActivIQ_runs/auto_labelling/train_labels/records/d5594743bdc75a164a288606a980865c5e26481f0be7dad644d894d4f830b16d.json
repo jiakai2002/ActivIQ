@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0346",
+  "request_sha256": "7770b350843feed717023c40aa37677607c2101c0c2a40ef1afa046d1a7f181f",
+  "valid": true,
+  "payload": {
+    "intent": "get_nutrition_info",
+    "entities": {
+      "exercise": [],
+      "body_part": [],
+      "equipment": [],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [
+        "coconut oil"
+      ],
+      "nutrient": [
+        "Total lipid (fat)"
+      ]
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 3492,
+      "generation": {
+        "text": "{\"intent\": \"get_nutrition_info\", \"entities\": {\"exercise\": [], \"body_part\": [], \"equipment\": [], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [\"coconut oil\"], \"nutrient\": [\"Total lipid (fat)\"]}}\n",
+        "seconds": 3.495968513999742,
+        "input_tokens": 1570,
+        "output_tokens": 61,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "4f6ddb3e45357a5e1470af9f1621236443bba74730381e1cc05438a3d0bc32eb"
+}

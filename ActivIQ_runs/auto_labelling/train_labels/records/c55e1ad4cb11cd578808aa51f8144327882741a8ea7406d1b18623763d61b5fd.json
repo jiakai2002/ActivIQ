@@ -1,0 +1,37 @@
+{
+  "key": "train/train-0021",
+  "request_sha256": "c0924baf2c0fdca46bbab728f27adecd7ab9607bd192bcc60cf2c781b800e39d",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "clean and press"
+      ],
+      "body_part": [],
+      "equipment": [
+        "barbell"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 242,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"clean and press\"], \"body_part\": [], \"equipment\": [\"barbell\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.219043015999887,
+        "input_tokens": 1572,
+        "output_tokens": 56,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "50a835d6618c5f0120d9c8e71cb8ee65625bedbebcbf2216b72b751606e46839"
+}

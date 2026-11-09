@@ -1,0 +1,39 @@
+{
+  "key": "ape-003/entity-validation-036",
+  "request_sha256": "0dd17594b69e40e616358167331cf3a1bfd31920b7ed5bf92f94340c18205d49",
+  "valid": true,
+  "payload": {
+    "intent": "find_exercise",
+    "entities": {
+      "exercise": [
+        "sit-up"
+      ],
+      "body_part": [
+        "core"
+      ],
+      "equipment": [
+        "bodyweight"
+      ],
+      "goal": [],
+      "level": [],
+      "duration": [],
+      "food": [],
+      "nutrient": []
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "seed": 352,
+      "generation": {
+        "text": "{\"intent\": \"find_exercise\", \"entities\": {\"exercise\": [\"sit-up\"], \"body_part\": [\"core\"], \"equipment\": [\"bodyweight\"], \"goal\": [], \"level\": [], \"duration\": [], \"food\": [], \"nutrient\": []}}\n",
+        "seconds": 3.1777873210003236,
+        "input_tokens": 1772,
+        "output_tokens": 57,
+        "finish_reason": "eos"
+      },
+      "error": null
+    }
+  ],
+  "record_sha256": "d634ce46a030498af6618fbd2fd8acbfee88f79663a0f90dfa79cacde73ccc6e"
+}
