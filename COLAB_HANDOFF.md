@@ -7,6 +7,20 @@ Read this file only to rerun or extend the experiment.
 
 ## Rerun
 
+For the revised prompt experiment, use `notebooks/activiq_prompt_rerun.ipynb`.
+It scores the saved winning instruction and `precision_challenger.txt` on the
+same validation set. It also scores one newly generated candidate in both runs.
+Read both instructions and set `PROMPT_FROZEN = True` in setup before running.
+New results go to `MyDrive/ActivIQ_prompt_v2`.
+
+The notebook deliberately pauses at `APPROVE_NEW_LABELS_AND_TRAINING = False`.
+After reviewing the score table, set it to `True` and run that cell onward if
+you want to continue. It requires an improvement over the rescored original
+instruction and valid output on every validation row. Subsequent cells label
+the 960 training rows, check their summary, train a new LoRA adapter, and evaluate
+it. The new prompt has not yet been tested on a GPU. The cells have been
+syntax-checked locally.
+
 1. Open `notebooks/activiq_end_to_end.ipynb` in a fresh Colab A100 runtime.
    The notebook clones `main` and downloads the Qwen revisions in
    `ActivIQ_runs/model_revisions.json`.
