@@ -1,0 +1,4 @@
+# Keep hashes of the frozen supplementary annotations stable across checkouts.
+data/evaluation/supplementary/*.jsonl -text
+data/evaluation/supplementary/manifest.json -text
+reports/benchmarks/reviewed_entities_100/** -text

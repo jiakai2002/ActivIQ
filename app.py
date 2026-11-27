@@ -10,7 +10,14 @@ st.title("ActivIQ")
 st.caption("Offline fitness guidance using local data. ActivIQ is not a medical professional.")
 
 if "pipeline" not in st.session_state:
-    st.session_state.pipeline = FitBuddyPipeline()
+    try:
+        with st.spinner("Loading the local fitness assistant..."):
+            st.session_state.pipeline = FitBuddyPipeline()
+    except FileNotFoundError as error:
+        st.error(str(error))
+        st.info("Train the intent model from the repository root, or restore the complete checkpoint into models/intent_classifier/, then reload this page. See README.md for setup.")
+        st.code("python scripts/train_intent.py", language="bash")
+        st.stop()
 if "messages" not in st.session_state:
     st.session_state.messages = []
 

@@ -15,6 +15,9 @@ models/*
 data/raw/*
 !data/raw/.gitkeep
 
+# Reports from rebuilding raw inputs are local, not packaged-data inventories.
+data/processed/preparation_report.json
+
 # Local user/session data
 data/user_profiles/*
 !data/user_profiles/.gitkeep

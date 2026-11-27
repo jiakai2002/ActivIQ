@@ -15,8 +15,17 @@ class IntentClassifier:
 
     def __init__(self, model_dir: Path = MODEL_DIR):
         self.model_dir = Path(model_dir)
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_dir)
-        self.model = AutoModelForSequenceClassification.from_pretrained(self.model_dir)
+        weight_files = ("model.safetensors", "pytorch_model.bin",
+                        "model.safetensors.index.json", "pytorch_model.bin.index.json")
+        if not (self.model_dir / "config.json").is_file() or not any(
+            (self.model_dir / name).is_file() for name in weight_files
+        ):
+            raise FileNotFoundError(
+                f"Trained intent checkpoint missing or incomplete at {self.model_dir}. "
+                "Run python scripts/train_intent.py or restore the complete trained checkpoint there."
+            )
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_dir, local_files_only=True)
+        self.model = AutoModelForSequenceClassification.from_pretrained(self.model_dir, local_files_only=True)
         self.predictor = pipeline(
             "text-classification",
             model=self.model,

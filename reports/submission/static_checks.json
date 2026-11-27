@@ -1,0 +1,22 @@
+{
+  "python_files_parsed": 37,
+  "notebook_code_cells_parsed": 57,
+  "intent_split_rows": {
+    "train": 960,
+    "validation": 120,
+    "test": 120
+  },
+  "cross_split_exact_overlap": 0,
+  "exercises": 876,
+  "foods": 7793,
+  "reviewed_annotation_rows": {
+    "data\\auto_labelling\\seeds.jsonl": 10,
+    "data\\evaluation\\entities_validation.jsonl": 100,
+    "data\\evaluation\\entities_test.jsonl": 120,
+    "data\\evaluation\\supplementary\\entities_fresh_reviewed_frozen.jsonl": 100
+  },
+  "supplementary_frozen_hash_verified": true,
+  "supplementary_source_exact_overlap": 0,
+  "credential_pattern_findings": [],
+  "tracked_files_over_50_mib": []
+}

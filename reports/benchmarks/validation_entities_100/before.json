@@ -1,0 +1,97 @@
+{
+  "utterances": 100,
+  "micro": {
+    "tp": 27,
+    "fp": 19,
+    "fn": 42,
+    "support": 69,
+    "precision": 0.5869565217391305,
+    "recall": 0.391304347826087,
+    "f1": 0.46956521739130436
+  },
+  "macro_f1": 0.6137465619934063,
+  "exact_match_rate": 0.64,
+  "per_slot": {
+    "exercise": {
+      "tp": 6,
+      "fp": 2,
+      "fn": 9,
+      "support": 15,
+      "precision": 0.75,
+      "recall": 0.4,
+      "f1": 0.5217391304347826
+    },
+    "body_part": {
+      "tp": 3,
+      "fp": 2,
+      "fn": 2,
+      "support": 5,
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1": 0.6
+    },
+    "equipment": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 2,
+      "support": 5,
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75
+    },
+    "goal": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 2,
+      "support": 5,
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75
+    },
+    "level": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "support": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "duration": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": null
+    },
+    "food": {
+      "tp": 2,
+      "fp": 13,
+      "fn": 14,
+      "support": 16,
+      "precision": 0.13333333333333333,
+      "recall": 0.125,
+      "f1": 0.12903225806451613
+    },
+    "nutrient": {
+      "tp": 9,
+      "fp": 2,
+      "fn": 13,
+      "support": 22,
+      "precision": 0.8181818181818182,
+      "recall": 0.4090909090909091,
+      "f1": 0.5454545454545454
+    }
+  },
+  "covered_slots": [
+    "exercise",
+    "body_part",
+    "equipment",
+    "goal",
+    "level",
+    "food",
+    "nutrient"
+  ]
+}

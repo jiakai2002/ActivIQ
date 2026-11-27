@@ -1,0 +1,3554 @@
+{
+  "created_utc": "2026-11-09T17:24:35.657910+00:00",
+  "metadata": {
+    "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "logical_cpus": 16,
+    "packages": {
+      "torch": "2.6.0",
+      "transformers": "4.50.0",
+      "spacy": "3.8.18",
+      "numpy": "2.4.4"
+    },
+    "torch_intraop_threads": 8,
+    "torch_interop_threads": 8,
+    "git_commit": "046368ba3bec2af549ca53745f91048cde56b65d",
+    "git_tracked_changes": "",
+    "startup_seconds_this_process": 2.080460600089282,
+    "extractor_backend": "spacy_phrase_matcher",
+    "classifier_device": null,
+    "input_files": {
+      "entities": {
+        "path": "C:\\Users\\Michael\\Documents\\GitHub\\ActivIQ\\reports\\evaluation\\entity_review_packet\\entities_fresh_reviewed_frozen.jsonl",
+        "sha256": "6b687dc544fe5b071caabed287cf4da94327b505525b2893abb9aa08fd6b7887"
+      }
+    },
+    "source_sha256": {
+      "scripts\\__init__.py": "0ca1aedb7042b89e33d8faac2f3126e703e69238eaa5d7b48cf01a32683d7a82",
+      "scripts\\auto_label.py": "dc5fcc25e4278c380fdb9bdd6f31f346121e7d680bae177f11345579739c330b",
+      "scripts\\evaluate_intent.py": "781b1dfb68608ab18b2c98ee8116f51c44f97ca08cc5c205fff75cb88dcb0b4f",
+      "scripts\\evaluate_lora.py": "524f526846272722a60bd2895ec4a463e1e808301ee584297c9eb8c840b8f5e5",
+      "scripts\\evaluate_system.py": "be15351ad82fa80e1b63ce0b5da4089b232dbfcd712b47ac13330e8bde323482",
+      "scripts\\prepare_autolabelling.py": "03e38ae684cfaa9d31130cab6fedca6a54ae1ac89adf92c6bae05d5ce0468716",
+      "scripts\\prepare_data.py": "c3a8f7bd6040b1399c3e2f1382ca4583bd5981ff8ad6197d9a9c3b5faadc5f8c",
+      "scripts\\prepare_entity_annotations.py": "edeea5d7fbfd72091f5419dfae895cc55a00488b2c9c82ec5e93466ab1997ac4",
+      "scripts\\sign_off_annotations.py": "bcbd9cdc35c33d29ebd9043531f6bd5ffad8cbed75e6c180b07ea77a249514f9",
+      "scripts\\train_intent.py": "b64419ca31ecd64194d155d1c3760b1eb627a10b2708fef0c4a1cbf72868b402",
+      "scripts\\train_lora.py": "214bcca57921da7dc185b0da5866137a92f06ae6324f79c7d754343d62fdda55",
+      "src\\__init__.py": "57ffe2f0328ef227437cec3bf18a2e3c0d1315c0cac6b6eca094f07097d6cd8d",
+      "src\\config.py": "62ae5117efe8c88045242b0a90642b1aa5152630e3393e0edf41cf30cf80cae7",
+      "src\\dialogue_manager.py": "9612ab10669ddf523e8300784eac14e1fc8b8ea03b8fcccafb06c7e4009634c8",
+      "src\\entity_extractor.py": "1f3fb8598e519e64f028e19951a7eb4dc81c14a2b0bcf20b0888414e552e5ade",
+      "src\\evaluation.py": "29786a395b6d4329aa11a000e66e3123a15982f2c39e60659d48db501e0f3584",
+      "src\\intent_classifier.py": "1d518829c248e6bda0205078d21a4c95db2ff3eb294671e4740711285d8ad44e",
+      "src\\knowledge_base.py": "93aee804fa93041e26006676b7846357345329414c319dab9fb007d90efa5025",
+      "src\\lora.py": "1f128d64a21ec5d1abbca47ced80a3547c193d521de6de2394afe209df701d2d",
+      "src\\nutrition.py": "33eae26fdd4961916068a2effd60abd2709d57a87823fa64641571568f1da7af",
+      "src\\pipeline.py": "1124e65224a5c48676c5f86391121782665cb86386a24fd29b36011b17d64ab1",
+      "src\\planner.py": "91f2a14671adc21948d287300497d602dbe84a3a2e086265d0b090a183aca368",
+      "src\\response_generator.py": "3625a40c2fd6af6827723b13682e7eb738c9ab6573fc0c85f1068f6e8cc30688",
+      "src\\safety.py": "5c1eeb496f0d2a40698bebbf0aaf0b3e5015f47ca897a7b8c1db5586e8afaa69",
+      "src\\scope.py": "bad199480e49ef5788a9e042e039bfc757ec6ed7f38890dd880d940833ccc19a",
+      "src\\vocabulary.py": "c4d730f6a234a2a7cbd8c502451bf1a0544180246e80f0ed0272083a16e63c5b"
+    },
+    "requirements_sha256": "d7ef075aac352956a612666168a245ae668956abbae8e53f642261f87175a633",
+    "data_sha256": {
+      "exercises.json": "3a0d0360d4e925a24b049e28d977652ad27c75f1fd34220e6a32631da8f23997",
+      "nutrition.json": "7140ffe3751dec96fcc52dae07be37cb55dee371cf63c25d6d6e02f369457542"
+    },
+    "model_sha256": {}
+  },
+  "components": {
+    "entities": {
+      "status": "complete",
+      "total": 100,
+      "scored": 100,
+      "pending_count": 0,
+      "pending_ids": [],
+      "scoring": "Exact canonical values per utterance/slot; case and whitespace normalised; eight proposal slots",
+      "extractor_backend": "spacy_phrase_matcher",
+      "provisional": false,
+      "target_f1": 0.85,
+      "proposal_target_verified": false,
+      "predictions": [
+        {
+          "id": "fresh-review-001",
+          "text": "I can train Monday and Thursday. Can you put together a strength routine for each day?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "strength"
+            ],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "strength"
+            ],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-002",
+          "text": "I'm new to training and only have a pair of dumbbells. Could you make a weekly plan?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-003",
+          "text": "I've got 35 minutes after work for each workout. Can you plan around a barbell and a bench?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "barbell",
+              "bench"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "35 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "barbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "35 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-004",
+          "text": "Can you put together something for fat loss that I can do with just body weight?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "bodyweight"
+            ],
+            "goal": [
+              "fat loss"
+            ],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "bodyweight"
+            ],
+            "goal": [
+              "fat loss"
+            ],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-005",
+          "text": "Could you make me a workout plan that works my glutes and hamstrings but takes at most 30 minutes?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "glutes",
+              "hamstrings"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "30 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "hamstrings",
+              "glutes"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "30 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-006",
+          "text": "Set up an intermediate routine with dumbbells for three days a week. I want to gain muscle.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [
+              "muscle gain"
+            ],
+            "level": [
+              "intermediate"
+            ],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [
+              "muscle gain"
+            ],
+            "level": [
+              "intermediate"
+            ],
+            "duration": [],
+            "days": [
+              "3"
+            ],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-007",
+          "text": "I'm training endurance and can spare 50 minutes for each workout. Can you plan a week?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [],
+            "duration": [
+              "50 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [],
+            "duration": [
+              "50 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-008",
+          "text": "I want a plan for flexibility that includes yoga.",
+          "expected": {
+            "exercise": [
+              "yoga"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "flexibility"
+            ],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "yoga"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "flexibility"
+            ],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-009",
+          "text": "Could you make a 6-week strength programme for an experienced lifter?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "strength"
+            ],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "strength"
+            ],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-010",
+          "text": "Split my workouts into chest, back, and legs. I have a cable machine at home.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "chest",
+              "back",
+              "legs"
+            ],
+            "equipment": [
+              "cable",
+              "machine"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "chest",
+              "back",
+              "legs"
+            ],
+            "equipment": [
+              "machine",
+              "cable"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-011",
+          "text": "Plan an upper-body routine for someone at an advanced level who only has resistance bands.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "upper body"
+            ],
+            "equipment": [
+              "resistance band"
+            ],
+            "goal": [],
+            "level": [
+              "expert"
+            ],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "resistance band"
+            ],
+            "goal": [],
+            "level": [
+              "expert"
+            ],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-012",
+          "text": "Can you set up a beginner plan that includes 15 minutes of cycling?",
+          "expected": {
+            "exercise": [
+              "cycling"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [
+              "15 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "cycling"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [
+              "15 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-013",
+          "text": "Can I get a two-day workout plan for my core that uses a kettlebell?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "core"
+            ],
+            "equipment": [
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "core"
+            ],
+            "equipment": [
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [
+              "2"
+            ],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-014",
+          "text": "Build a routine for my shoulders and triceps. I've got about 1 hour and 10 minutes per session.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "shoulders",
+              "triceps"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "1 hour",
+              "10 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "shoulders",
+              "triceps"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "1 hour",
+              "10 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-015",
+          "text": "I'd like a workout schedule for getting stronger, using a medicine ball and no barbells.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "medicine ball"
+            ],
+            "goal": [
+              "strength"
+            ],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "medicine ball",
+              "barbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-016",
+          "text": "Give me a 16-minute beginner workout that I can do with no equipment.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "bodyweight"
+            ],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [
+              "16 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "bodyweight"
+            ],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [
+              "16 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-017",
+          "text": "Can you plan something for my lats and rear delts for the next month?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "lats",
+              "rear delts"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "shoulders",
+              "lats"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-018",
+          "text": "I'd like to work on strength in my legs. I can fit in three 45-minute sessions a week.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "legs"
+            ],
+            "equipment": [],
+            "goal": [
+              "strength"
+            ],
+            "level": [],
+            "duration": [
+              "45 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "legs"
+            ],
+            "equipment": [],
+            "goal": [
+              "strength"
+            ],
+            "level": [],
+            "duration": [
+              "45 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-019",
+          "text": "Make a workout programme that alternates squats and push-ups every other day.",
+          "expected": {
+            "exercise": [
+              "squat",
+              "push up"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "push up",
+              "squat"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-020",
+          "text": "Build an intermediate plan to improve stamina, with half an hour for each workout.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [
+              "intermediate"
+            ],
+            "duration": [
+              "30 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [
+              "intermediate"
+            ],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-021",
+          "text": "I keep wobbling during step-ups. How do I set up for them?",
+          "expected": {
+            "exercise": [
+              "step up"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-022",
+          "text": "What does a Romanian deadlift look like when done with a barbell?",
+          "expected": {
+            "exercise": [
+              "romanian deadlift"
+            ],
+            "body_part": [],
+            "equipment": [
+              "barbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "romanian deadlift"
+            ],
+            "body_part": [],
+            "equipment": [
+              "barbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-023",
+          "text": "Can you walk me through a close-grip bench press?",
+          "expected": {
+            "exercise": [
+              "close-grip bench press"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "bench press"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-024",
+          "text": "How should I position myself for a mountain climber?",
+          "expected": {
+            "exercise": [
+              "mountain climber"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-025",
+          "text": "How do I do an alternating dumbbell curl?",
+          "expected": {
+            "exercise": [
+              "alternating dumbbell curl"
+            ],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "alternating dumbbell curl"
+            ],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-026",
+          "text": "Show me the starting position for a single-leg glute bridge.",
+          "expected": {
+            "exercise": [
+              "single-leg glute bridge"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-027",
+          "text": "How do I use a suspension trainer for an inverted row?",
+          "expected": {
+            "exercise": [
+              "inverted row"
+            ],
+            "body_part": [],
+            "equipment": [
+              "trx"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "suspension trainer"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-028",
+          "text": "What's a good way to hold a side plank for 40 seconds?",
+          "expected": {
+            "exercise": [
+              "side plank"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "40 seconds"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "plank"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "40 seconds"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-029",
+          "text": "Can you explain how to do a goblet squat using a kettlebell?",
+          "expected": {
+            "exercise": [
+              "goblet squat"
+            ],
+            "body_part": [],
+            "equipment": [
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "goblet squat"
+            ],
+            "body_part": [],
+            "equipment": [
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-030",
+          "text": "Where should my elbows go on a wide-grip lat pulldown?",
+          "expected": {
+            "exercise": [
+              "wide-grip lat pulldown"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "wide-grip lat pulldown"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-031",
+          "text": "How can a beginner learn the bird dog exercise?",
+          "expected": {
+            "exercise": [
+              "bird dog"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-032",
+          "text": "Please explain the difference between a walking lunge and a reverse lunge.",
+          "expected": {
+            "exercise": [
+              "walking lunge",
+              "reverse lunge"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "lunge"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-033",
+          "text": "What grip should I use for neutral-grip pull-ups on a pull-up bar?",
+          "expected": {
+            "exercise": [
+              "neutral-grip pull up"
+            ],
+            "body_part": [],
+            "equipment": [
+              "pull up bar"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "pull up"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-034",
+          "text": "Could you describe how to do a standing calf raise?",
+          "expected": {
+            "exercise": [
+              "standing calf raise"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "standing calf raise"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-035",
+          "text": "How do I use a leg curl machine for a seated leg curl?",
+          "expected": {
+            "exercise": [
+              "seated leg curl"
+            ],
+            "body_part": [],
+            "equipment": [
+              "machine"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "leg curl machine"
+            ],
+            "body_part": [],
+            "equipment": [
+              "machine"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-036",
+          "text": "I've never tried a kettlebell clean. How do I do it?",
+          "expected": {
+            "exercise": [
+              "kettlebell clean"
+            ],
+            "body_part": [],
+            "equipment": [
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "it"
+            ],
+            "body_part": [],
+            "equipment": [
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-037",
+          "text": "What is the right way to do a push-up without sagging through my lower back?",
+          "expected": {
+            "exercise": [
+              "push up"
+            ],
+            "body_part": [
+              "lower back"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "push up"
+            ],
+            "body_part": [
+              "lower back"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-038",
+          "text": "Can you show the movement for dumbbell hammer curls?",
+          "expected": {
+            "exercise": [
+              "dumbbell hammer curl"
+            ],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "hammer curls"
+            ],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-039",
+          "text": "I want to practise a 30-second hollow hold. Where should I start?",
+          "expected": {
+            "exercise": [
+              "hollow hold"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "30 seconds"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "30 seconds"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-040",
+          "text": "Can you explain the form for a cable face pull?",
+          "expected": {
+            "exercise": [
+              "cable face pull"
+            ],
+            "body_part": [],
+            "equipment": [
+              "cable"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "face pull"
+            ],
+            "body_part": [],
+            "equipment": [
+              "cable"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-041",
+          "text": "How much protein would I get from 180 g of roasted turkey breast?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "roasted turkey breast"
+            ],
+            "nutrient": [
+              "Protein"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "roasted turkey breast"
+            ],
+            "nutrient": [
+              "Protein"
+            ],
+            "quantity_g": [
+              "180"
+            ],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-042",
+          "text": "Is cooked spinach a good source of iron?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "cooked spinach"
+            ],
+            "nutrient": [
+              "Iron, Fe"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "cooked spinach"
+            ],
+            "nutrient": [
+              "Iron, Fe"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-043",
+          "text": "How many calories are in a standard slice of sourdough toast?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "sourdough toast"
+            ],
+            "nutrient": [
+              "Energy"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "sourdough toast"
+            ],
+            "nutrient": [
+              "Energy"
+            ],
+            "quantity_g": [],
+            "serving": [
+              "a standard slice"
+            ]
+          }
+        },
+        {
+          "id": "fresh-review-044",
+          "text": "What's the fibre content of one cup of raw raspberries?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "raw raspberries"
+            ],
+            "nutrient": [
+              "Fiber, total dietary"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "raw raspberries"
+            ],
+            "nutrient": [
+              "Fiber, total dietary"
+            ],
+            "quantity_g": [],
+            "serving": [
+              "one cup"
+            ]
+          }
+        },
+        {
+          "id": "fresh-review-045",
+          "text": "Which foods have a lot of vitamin B12?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": [
+              "Vitamin B-12"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [
+              "Vitamin B-12"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-046",
+          "text": "Please give me the macros for 90 grams of grilled chicken breast.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "grilled chicken breast"
+            ],
+            "nutrient": [
+              "Protein",
+              "Total lipid (fat)",
+              "Carbohydrate, by difference"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "grilled chicken breast"
+            ],
+            "nutrient": [
+              "Protein",
+              "Total lipid (fat)",
+              "Carbohydrate, by difference"
+            ],
+            "quantity_g": [
+              "90"
+            ],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-047",
+          "text": "Does unsweetened soy milk have calcium?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "unsweetened soy milk"
+            ],
+            "nutrient": [
+              "Calcium, Ca"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "unsweetened soy milk"
+            ],
+            "nutrient": [
+              "Calcium, Ca"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-048",
+          "text": "Tell me the nutrition facts for one serving of brown rice.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "brown rice"
+            ],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "brown rice"
+            ],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": [
+              "one serving"
+            ]
+          }
+        },
+        {
+          "id": "fresh-review-049",
+          "text": "What is the potassium content of a baked potato with skin?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "baked potato with skin"
+            ],
+            "nutrient": [
+              "Potassium, K"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "baked potato with skin"
+            ],
+            "nutrient": [
+              "Potassium, K"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-050",
+          "text": "Compare the calories in black coffee and whole milk.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "black coffee",
+              "whole milk"
+            ],
+            "nutrient": [
+              "Energy"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [
+              "Energy"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-051",
+          "text": "How much sodium is in a single slice of deli ham?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "deli ham"
+            ],
+            "nutrient": [
+              "Sodium, Na"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "deli ham"
+            ],
+            "nutrient": [
+              "Sodium, Na"
+            ],
+            "quantity_g": [],
+            "serving": [
+              "a single slice"
+            ]
+          }
+        },
+        {
+          "id": "fresh-review-052",
+          "text": "How much sugar is there in 200 g of ripe mango?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "ripe mango"
+            ],
+            "nutrient": [
+              "Sugars, Total"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "ripe mango"
+            ],
+            "nutrient": [
+              "Sugars, Total"
+            ],
+            "quantity_g": [
+              "200"
+            ],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-053",
+          "text": "What's the difference between protein and carbohydrates?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": [
+              "Protein",
+              "Carbohydrate, by difference"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [
+              "Protein",
+              "Carbohydrate, by difference"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-054",
+          "text": "Can you give me the nutrition info for plain oatmeal?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "plain oatmeal"
+            ],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "plain oatmeal"
+            ],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-055",
+          "text": "Is there any vitamin C in roasted red peppers?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "roasted red peppers"
+            ],
+            "nutrient": [
+              "Vitamin C, total ascorbic acid"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [
+              "Vitamin C, total ascorbic acid"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-056",
+          "text": "What is the fat content of a tablespoon of almond butter?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "almond butter"
+            ],
+            "nutrient": [
+              "Total lipid (fat)"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "almond butter"
+            ],
+            "nutrient": [
+              "Total lipid (fat)"
+            ],
+            "quantity_g": [],
+            "serving": [
+              "a tablespoon"
+            ]
+          }
+        },
+        {
+          "id": "fresh-review-057",
+          "text": "How much cholesterol is in a boiled egg?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "boiled egg"
+            ],
+            "nutrient": [
+              "Cholesterol"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "boiled egg"
+            ],
+            "nutrient": [
+              "Cholesterol"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-058",
+          "text": "Which is higher in magnesium, pumpkin seeds or sunflower seeds?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "pumpkin seeds",
+              "sunflower seeds"
+            ],
+            "nutrient": [
+              "Magnesium, Mg"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [
+              "Magnesium, Mg"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-059",
+          "text": "How much vitamin K is there in 75 g of cooked broccoli?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [
+              "cooked broccoli"
+            ],
+            "nutrient": [
+              "Vitamin K (phylloquinone)"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [
+              "cooked broccoli"
+            ],
+            "nutrient": [
+              "Vitamin K (phylloquinone)"
+            ],
+            "quantity_g": [
+              "75"
+            ],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-060",
+          "text": "Are there any good food sources of zinc and calcium?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": [
+              "Zinc, Zn",
+              "Calcium, Ca"
+            ]
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [
+              "Calcium, Ca",
+              "Zinc, Zn"
+            ],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-061",
+          "text": "Any beginner moves that target the lats with a resistance band?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "lats"
+            ],
+            "equipment": [
+              "resistance band"
+            ],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "lats"
+            ],
+            "equipment": [
+              "resistance band"
+            ],
+            "goal": [],
+            "level": [
+              "beginner"
+            ],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-062",
+          "text": "Could you give me some machine exercises for the quadriceps?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "quadriceps"
+            ],
+            "equipment": [
+              "machine"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "quadriceps"
+            ],
+            "equipment": [
+              "machine"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-063",
+          "text": "What exercises can I do with just dumbbells to strengthen my back?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "back"
+            ],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [
+              "strength"
+            ],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "back"
+            ],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-064",
+          "text": "I only have 7 minutes for a warm-up. Can you suggest something for my calves?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "calves"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "7 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "calves"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "7 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-065",
+          "text": "Suggest something for my chest that I can do without any equipment.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "chest"
+            ],
+            "equipment": [
+              "bodyweight"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "chest"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-066",
+          "text": "I want a 90-second exercise for core endurance.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "core"
+            ],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [],
+            "duration": [
+              "90 seconds"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "core"
+            ],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [],
+            "duration": [
+              "90 seconds"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-067",
+          "text": "Show me intermediate kettlebell exercises for hamstrings and glutes.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "hamstrings",
+              "glutes"
+            ],
+            "equipment": [
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [
+              "intermediate"
+            ],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "hamstrings",
+              "glutes"
+            ],
+            "equipment": [
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [
+              "intermediate"
+            ],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-068",
+          "text": "What can I use instead of burpees to work on endurance?",
+          "expected": {
+            "exercise": [
+              "burpee"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-069",
+          "text": "Can you suggest a shoulder mobility exercise for the next 8 minutes?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "shoulders"
+            ],
+            "equipment": [],
+            "goal": [
+              "flexibility"
+            ],
+            "level": [],
+            "duration": [
+              "8 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "shoulders"
+            ],
+            "equipment": [],
+            "goal": [
+              "flexibility"
+            ],
+            "level": [],
+            "duration": [
+              "8 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-070",
+          "text": "Any moves for upper back and forearms using a pull-up bar?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "upper back",
+              "forearms"
+            ],
+            "equipment": [
+              "pull up bar"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "pull up"
+            ],
+            "body_part": [
+              "forearms",
+              "back"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-071",
+          "text": "I'm past beginner level but still intermediate. What are some exercises for my arms?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "arms"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [
+              "intermediate"
+            ],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "arms"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [
+              "intermediate",
+              "beginner"
+            ],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-072",
+          "text": "Could you give me a 10-minute warm-up for running?",
+          "expected": {
+            "exercise": [
+              "run"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "10 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "run"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "10 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-073",
+          "text": "Suggest an alternative to a front squat that uses no weights.",
+          "expected": {
+            "exercise": [
+              "front squat"
+            ],
+            "body_part": [],
+            "equipment": [
+              "bodyweight"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "squat"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-074",
+          "text": "I have a cable station, but I want an exercise for my abs.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "core"
+            ],
+            "equipment": [
+              "cable"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "core"
+            ],
+            "equipment": [
+              "cable"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-075",
+          "text": "What can I do for my triceps in 12 minutes with a medicine ball?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "triceps"
+            ],
+            "equipment": [
+              "medicine ball"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "12 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "triceps"
+            ],
+            "equipment": [
+              "medicine ball"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "12 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-076",
+          "text": "Could you show me advanced exercises for grip strength with a barbell?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "barbell"
+            ],
+            "goal": [
+              "strength"
+            ],
+            "level": [
+              "expert"
+            ],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "barbell"
+            ],
+            "goal": [
+              "strength"
+            ],
+            "level": [
+              "expert"
+            ],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-077",
+          "text": "Find a move for my quads that doesn't require a machine.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "quadriceps"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "quadriceps"
+            ],
+            "equipment": [
+              "machine"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-078",
+          "text": "I don't have any kettlebells. What can I do for my legs with a resistance band?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "legs"
+            ],
+            "equipment": [
+              "resistance band"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "legs"
+            ],
+            "equipment": [
+              "resistance band",
+              "kettlebell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-079",
+          "text": "Suggest a 20-minute endurance session that includes swimming.",
+          "expected": {
+            "exercise": [
+              "swim"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [],
+            "duration": [
+              "20 minutes"
+            ],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "swim"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [
+              "endurance"
+            ],
+            "level": [],
+            "duration": [
+              "20 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-080",
+          "text": "What are some flexibility exercises for the shoulders and chest?",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "shoulders",
+              "chest"
+            ],
+            "equipment": [],
+            "goal": [
+              "flexibility"
+            ],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "shoulders",
+              "chest"
+            ],
+            "equipment": [],
+            "goal": [
+              "flexibility"
+            ],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-081",
+          "text": "How do I stop my alarm from ringing on weekends?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-082",
+          "text": "Thanks, that makes much more sense now.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-083",
+          "text": "I have a 45-minute train ride before I get home.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "45 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-084",
+          "text": "Could you recommend a film about space travel?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-085",
+          "text": "I wasn't in the mood earlier, but I'm feeling better now.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-086",
+          "text": "Can you help me write a cover letter for an internship?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-087",
+          "text": "I finally finished the four-week programme and I'm proud of myself.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-088",
+          "text": "How many players are on a baseball team?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-089",
+          "text": "I tried the reverse lunge yesterday and felt more balanced.",
+          "expected": {
+            "exercise": [
+              "reverse lunge"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "lunge"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-090",
+          "text": "My calves were tight after that session.",
+          "expected": {
+            "exercise": [],
+            "body_part": [
+              "calves"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [
+              "calves"
+            ],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-091",
+          "text": "I spent 15 minutes waiting for the elevator at work.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [
+              "15 minutes"
+            ],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-092",
+          "text": "How can I keep my phone battery from draining so quickly?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-093",
+          "text": "Appreciate the pep talk. I'll give it another try tomorrow.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-094",
+          "text": "What time does the post office close on Fridays?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-095",
+          "text": "What\u2019s the best way to plan a one-week trip through Italy?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-096",
+          "text": "I was thinking about the dumbbell rows we discussed earlier.",
+          "expected": {
+            "exercise": [
+              "dumbbell row"
+            ],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [
+              "dumbbell"
+            ],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-097",
+          "text": "Where can I find a good explanation of photosynthesis?",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-098",
+          "text": "I feel energised after my run this morning.",
+          "expected": {
+            "exercise": [
+              "run"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [
+              "run"
+            ],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-099",
+          "text": "Please write a haiku about rain hitting the window.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        },
+        {
+          "id": "fresh-review-100",
+          "text": "I fell behind on my routine last month and I'm just getting started again.",
+          "expected": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "food": [],
+            "nutrient": []
+          },
+          "predicted": {
+            "exercise": [],
+            "body_part": [],
+            "equipment": [],
+            "goal": [],
+            "level": [],
+            "duration": [],
+            "days": [],
+            "food": [],
+            "nutrient": [],
+            "quantity_g": [],
+            "serving": []
+          }
+        }
+      ],
+      "metrics": {
+        "utterances": 100,
+        "micro": {
+          "tp": 145,
+          "fp": 20,
+          "fn": 36,
+          "support": 181,
+          "precision": 0.8787878787878788,
+          "recall": 0.8011049723756906,
+          "f1": 0.838150289017341
+        },
+        "macro_f1": 0.8602324903924858,
+        "exact_match_rate": 0.66,
+        "per_slot": {
+          "exercise": {
+            "tp": 13,
+            "fp": 12,
+            "fn": 19,
+            "support": 32,
+            "precision": 0.52,
+            "recall": 0.40625,
+            "f1": 0.45614035087719296
+          },
+          "body_part": {
+            "tp": 29,
+            "fp": 2,
+            "fn": 3,
+            "support": 32,
+            "precision": 0.9354838709677419,
+            "recall": 0.90625,
+            "f1": 0.9206349206349206
+          },
+          "equipment": {
+            "tp": 26,
+            "fp": 3,
+            "fn": 6,
+            "support": 32,
+            "precision": 0.896551724137931,
+            "recall": 0.8125,
+            "f1": 0.8524590163934426
+          },
+          "goal": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 2,
+            "support": 16,
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1": 0.9333333333333333
+          },
+          "level": {
+            "tp": 11,
+            "fp": 1,
+            "fn": 0,
+            "support": 11,
+            "precision": 0.9166666666666666,
+            "recall": 1.0,
+            "f1": 0.9565217391304348
+          },
+          "duration": {
+            "tp": 16,
+            "fp": 2,
+            "fn": 1,
+            "support": 17,
+            "precision": 0.8888888888888888,
+            "recall": 0.9411764705882353,
+            "f1": 0.9142857142857143
+          },
+          "food": {
+            "tp": 14,
+            "fp": 0,
+            "fn": 5,
+            "support": 19,
+            "precision": 1.0,
+            "recall": 0.7368421052631579,
+            "f1": 0.8484848484848485
+          },
+          "nutrient": {
+            "tp": 22,
+            "fp": 0,
+            "fn": 0,
+            "support": 22,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "covered_slots": [
+          "exercise",
+          "body_part",
+          "equipment",
+          "goal",
+          "level",
+          "duration",
+          "food",
+          "nutrient"
+        ]
+      },
+      "target_met_on_scored_subset": false
+    }
+  }
+}

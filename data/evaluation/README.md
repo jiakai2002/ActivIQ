@@ -10,6 +10,7 @@ viewing the system's predictions. Keep failed cases in the suite and report them
 | --- | --- | --- |
 | `entities_validation.jsonl` | 100 sampled utterances from the original validation split | AI draft annotations, now human reviewed (AI-assisted); ready for APE prompt selection |
 | `entities_test.jsonl` | All 120 utterances from the original test split | Human reviewed by Hsien Ray; keep held out from rule/prompt tuning |
+| `supplementary/entities_fresh_reviewed_frozen.jsonl` | 100 separate AI-authored utterances, reviewed by Michael Suteja | Supplementary extractor comparison; never training or prompt-selection input |
 | `entities_dev.jsonl` | 20 assistant-authored entity examples, including known challenges | Draft development expectations, not human gold |
 | `conversations_dev.jsonl` | 20 observable task scenarios, including multi-turn refinement | Draft development suite, not held-out evaluation |
 | `safety_dev.jsonl` | 16 medical, 10 unrelated and 8 ordinary/negated fitness requests | Draft development suite, not a safety guarantee |
@@ -93,6 +94,11 @@ the proposal's eight-slot entity F1. Their behaviour is checked by task scenario
 These labels describe independent utterances: do not inherit an entity from a
 previous example. An unknown exercise can still be an entity even if the KB has
 no instructions for it.
+
+The [supplementary benchmark guide](supplementary/README.md) documents the frozen
+100-query labels and the paired 70.59% -> 83.82% results. Those scores use a
+different corpus from the historical 45.52% result on the original 120-query
+test set. Original source splits remain the primary experiment benchmark.
 
 Primary scoring is exact canonical-value **micro-F1**, using per-utterance,
 per-slot sets. Case/whitespace and duplicate labels are normalised. Extra entities

@@ -84,7 +84,7 @@ def main() -> None:
         args=arguments,
         train_dataset=train,
         eval_dataset=validation,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         data_collator=DataCollatorWithPadding(tokenizer=tokenizer),
         compute_metrics=metrics,
     )

@@ -1,0 +1,46 @@
+{
+  "rows": 100,
+  "categories": {
+    "workout planning": 20,
+    "exercise instructions": 20,
+    "nutrition": 20,
+    "exercise search and constraints": 20,
+    "chat and unrelated controls": 20
+  },
+  "draft_entity_mentions": {
+    "exercise": 32,
+    "body_part": 32,
+    "equipment": 32,
+    "goal": 16,
+    "level": 11,
+    "duration": 17,
+    "food": 19,
+    "nutrient": 22
+  },
+  "draft_empty_rows": 16,
+  "normalized_exact_duplicates_found": 0,
+  "included_previous_ai_challenge_in_overlap_check": true,
+  "draft_sha256": "35585a656291e8f45363186cb957886d67bfb2667557370cbcb8e0c0d09bd25b",
+  "extractor_commit_at_preparation": "046368ba3bec2af549ca53745f91048cde56b65d",
+  "scored": true,
+  "human_reviewed_rows": 100,
+  "reviewed_frozen_file": "entities_fresh_reviewed_frozen.jsonl",
+  "reviewed_frozen_sha256": "6b687dc544fe5b071caabed287cf4da94327b505525b2893abb9aa08fd6b7887",
+  "reviewers": {
+    "Michael Suteja": 100
+  },
+  "reviewed_entity_mentions": {
+    "exercise": 32,
+    "body_part": 32,
+    "equipment": 32,
+    "goal": 16,
+    "level": 11,
+    "duration": 17,
+    "food": 19,
+    "nutrient": 22
+  },
+  "rows_changed_from_original_draft": 0,
+  "baseline_commit": "17db77ea5540909fcea695f9f78204ae4ea828b2",
+  "revised_commit": "046368ba3bec2af549ca53745f91048cde56b65d",
+  "proposal_target_verified_on_reviewed_corpus": false
+}

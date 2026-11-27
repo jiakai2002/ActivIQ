@@ -50,11 +50,18 @@ def intent_metrics(gold: list[str], predicted: list[str]) -> dict:
 
 def entity_metrics(records: list[dict], predictions: dict[str, dict], allow_draft: bool) -> dict:
     ready = [r for r in records if isinstance(r.get("entities"), dict) and (
-        (r.get("label_status") == "human_reviewed" and r.get("annotator")) or allow_draft and r.get("label_status") != "unlabelled")]
+        (r.get("label_status") == "human_reviewed" and isinstance(r.get("annotator"), str)
+         and r["annotator"].strip()) or allow_draft and r.get("label_status") != "unlabelled")]
     if len(ready) < len(records):
         return {"status": "pending_human_annotation", "scored": len(ready), "total": len(records)}
     empty = {slot: [] for slot in ENTITY_SLOTS}
     result = score_entities([r["entities"] for r in ready], [predictions.get(r["id"], empty) for r in ready])
+    # Missing predictions represent invalid JSON, even when the gold has no entities.
+    # They must not receive exact-match credit for the empty fallback dictionary.
+    empty_invalid = sum(r["id"] not in predictions and not any(r["entities"][slot] for slot in ENTITY_SLOTS)
+                        for r in ready)
+    result["exact_match_rate"] -= empty_invalid / len(ready)
+    result.update(status="complete", scored=len(ready), total=len(records))
     result["provisional"] = allow_draft
     return result
 
@@ -65,7 +72,7 @@ def main() -> int:
     parser.add_argument("--adapter", type=Path, default=None,
                         help="LoRA adapter directory. Omit to benchmark the bare base model (e.g. Qwen3.5-9B zero-shot)")
     parser.add_argument("--skip-baseline", action="store_true",
-                        help="Skip DistilBERT+spaCy (needs models/intent_classifier and the spaCy model)")
+                        help="Skip DistilBERT+spaCy (baseline needs models/intent_classifier; no downloaded spaCy language model is required)")
     parser.add_argument("--device", choices=("auto", "cuda", "mps", "cpu"), default="auto")
     parser.add_argument("--quantization", choices=("none", "4bit"), default="none")
     parser.add_argument("--entities", type=Path, default=ROOT / "data/evaluation/entities_test.jsonl")
@@ -84,7 +91,8 @@ def main() -> int:
     if len(ids_by_text) != len(records) or set(ids_by_text) != set(texts):
         raise SystemExit("entities file must hold exactly the 120 test utterances")
 
-    # Baseline: DistilBERT + spaCy rules, same texts, same timing method.
+    # Baseline: classifier + extractor timing; Qwen below times generation only.
+    # Hardware and timing boundaries differ, so this is not a matched speed test.
     base_intents, base_entities, base_times = [], {}, []
     if not args.skip_baseline:
         classifier, extractor = IntentClassifier(), FitnessEntityExtractor()
@@ -136,7 +144,10 @@ def main() -> int:
                  "latency_seconds": timing_summary(lora_times),
                  "invalid_outputs": len(invalid), "device": device, "quantization": args.quantization},
         "invalid_examples": invalid[:20],
-        "note": "Entity scores are pending until the test entity labels are human reviewed.",
+        "note": "Entity scores require reviewed labels; --allow-draft results are provisional. "
+                "The entities.status field reports whether scoring is complete. "
+                "Baseline latency times classification plus extraction on CPU; Qwen latency times "
+                "model.generate only on the recorded device. These are not matched end-to-end timings.",
     }
     args.output_dir.mkdir(parents=True, exist_ok=True)
     (args.output_dir / "lora_comparison.json").write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")

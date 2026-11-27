@@ -8,6 +8,11 @@
 - Fields used: `text`, `intent`
 - Augmentation: disabled; original splits are preserved.
 
+Processed datasets are included for running the app; raw downloads are optional
+unless rebuilding them. `scripts/prepare_data.py` writes a local, Git-ignored
+`preparation_report.json` describing the raw inputs available for that invocation.
+That report is not an inventory of the prepared files shipped in the repository.
+
 ## Exercise knowledge base
 
 - Source: [Free Exercise DB](https://github.com/yuhonas/free-exercise-db)

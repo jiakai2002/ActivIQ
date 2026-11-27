@@ -1,0 +1,17 @@
+{
+  "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "accelerate": "1.15.0",
+    "datasets": "3.6.0",
+    "pandas": "2.3.3",
+    "pyarrow": "21.0.0",
+    "spacy": "3.8.18",
+    "streamlit": "1.66.1",
+    "torch": "2.6.0",
+    "transformers": "4.50.0",
+    "numpy": "2.4.4"
+  },
+  "evaluated_source_hashes_match_final_source": true,
+  "gpu_research_rerun": false
+}

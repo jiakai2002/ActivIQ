@@ -1,0 +1,15 @@
+{
+  "method": "Streamlit AppTest using the real local DistilBERT checkpoint, offline",
+  "passed": 9,
+  "checks": [
+    "Missing checkpoint displays setup instructions without an exception",
+    "Application loads the real local checkpoint",
+    "Build me a 3-day strength plan for a beginner using dumbbells.",
+    "What about bodyweight only?",
+    "How much protein is in kale raw?",
+    "200g",
+    "I have chest pain",
+    "Tell me about the weather",
+    "Reset profile clears preferences and chat history"
+  ]
+}

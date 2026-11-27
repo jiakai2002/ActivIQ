@@ -1,0 +1,8 @@
+accuracy=0.9167
+macro_f1=0.9162
+find_exercise: 17/20
+general_chat: 16/20
+generate_plan: 20/20
+get_nutrition_info: 19/20
+log_feeling: 20/20
+out_of_scope: 18/20

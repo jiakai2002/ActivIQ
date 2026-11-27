@@ -45,8 +45,9 @@ Primary branch: `main`
   foods, 149 distinct nutrient fields and 644,125 nutrient values.
 - The internal pipeline class is still named `FitBuddyPipeline` for import/API
   stability. Do not rename it casually without checking all callers.
-- The last committed change is the branding update. The working tree should be
-  clean before starting new work.
+- Food boundaries, exercise aliases and duration normalisation were subsequently
+  improved in commit `046368b`. The historical LoRA comparison below retains the
+  earlier extractor; see the separate production results below and `SUBMISSION.md`.
 
 ## Experiment results (captured)
 
@@ -55,7 +56,7 @@ A100-SXM4-40GB (about 117 minutes in total; 9B in bf16, 2B in bf16). Raw outputs
 are in `ActivIQ_runs/`. Pinned model revisions are in `ActivIQ_runs/model_revisions.json`
 (Qwen3.5-9B `c202236...`, Qwen3.5-2B `15852e8...`).
 
-### Scorecard against the proposal targets
+### Historical experiment scorecard against the proposal targets
 
 | Target (proposal section 5) | Result | Met? |
 | --- | --- | --- |
@@ -66,7 +67,7 @@ are in `ActivIQ_runs/`. Pinned model revisions are in `ActivIQ_runs/model_revisi
 | LoRA vs DistilBERT + spaCy comparison | Done, table below | Report only |
 | End-to-end task success >= 80%, safety 100%, latency < 1 s | Not yet measured on an independent held-out set | Open |
 
-### Test-set comparison (120 utterances, human-reviewed entity labels)
+### Historical test-set comparison (120 utterances, human-reviewed entity labels)
 
 | System | Intent acc | Intent macro-F1 | Entity micro-F1 | Median latency | Invalid outputs |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -89,7 +90,7 @@ Per-slot entity F1 (test support in brackets):
 
 Reading the table: the LoRA 2B ties DistilBERT on intent and beats the spaCy rules
 on entity F1, but is far slower (different hardware, so not a like-for-like timing), so the chatbot keeps DistilBERT + spaCy.
-The spaCy extractor misses its 0.85 target by a wide margin, mostly on `food`,
+The earlier spaCy extractor misses its 0.85 target by a wide margin, mostly on `food`,
 `exercise`, `equipment` and `duration`. Some of this may be label-convention
 mismatch (how a phrase is worded) rather than a missing rule. The LoRA comparison
 JSON contains aggregate entity scores. Use the system entity evaluation's
@@ -122,8 +123,9 @@ examples, so that slot is not covered by the selection score.
 
 - Seeds, validation and test entity labels were AI-drafted and then human reviewed
   (reviewers recorded in `annotator`). State this once, separately.
-- Validation scores are prompt-selection scores. The test set was never used for
-  prompt selection, rule tuning or training.
+- Validation scores are prompt-selection scores. APE selection and training use
+  the original validation and training splits respectively. A later rerun on
+  already-inspected test cases is a known-benchmark regression check.
 - The test set is small (120 rows; as few as 2 to 4 examples for `level`,
   `equipment` and `duration`), so per-slot scores are noisy.
 - The DistilBERT baseline in the Colab run was retrained with `scripts/train_intent.py`
@@ -134,7 +136,27 @@ examples, so that slot is not covered by the selection score.
 - The baseline labelling prompt (`prompts/auto_labelling/baseline.txt`) was
   assistant-authored; confirm the team reviewed it before calling it the team's prompt.
 - The `note` field inside `lora_comparison.json` still says entity scores are pending;
-  that text is stale, as the test labels are human reviewed.
+  that historical text is stale, as the test labels are human reviewed. The
+  evaluator now emits an accurate note for future runs; archived outputs are unchanged.
+
+## Subsequent production extractor results
+
+| Corpus | Earlier F1 | Revised F1 | Interpretation |
+| --- | ---: | ---: | --- |
+| Original validation, 100 rows | 0.4696 | 0.8923 | Development result; not held-out |
+| Supplementary reviewed, 100 new AI-authored rows | 0.7059 | 0.8382 | Separate corpus; still below 0.85 |
+| Original test, 120 rows | 0.4552 (historical) | 0.6434 (local rerun) | Known-benchmark regression; still below 0.85 |
+
+The original Hugging Face splits remain the primary benchmark. The supplementary
+corpus does not replace them and is never used for training or APE. Its frozen
+labels, reviewer/provenance and original/revised reports are now included in
+`data/evaluation/supplementary/` and `reports/benchmarks/reviewed_entities_100/`.
+Do not compare 0.455 directly with 0.8382: the corpora differ.
+
+The final local checks and their limitations are recorded in `SUBMISSION.md`
+and `reports/submission/`. These production fixes did not rerun Qwen, relabel
+training data or retrain LoRA. The revised prompt notebook is ready to run but
+has no new GPU experiment result.
 
 ## Start here
 
@@ -145,12 +167,15 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
+python scripts/train_intent.py
 streamlit run app.py
 ```
 
 Empty knowledge bases receive controlled fallback responses. The trained intent
-model is required for normal application startup; missing-model fallback is not
-implemented. To prepare data when raw source files are available:
+model is required for normal application startup; a missing checkpoint now shows
+setup instructions in the UI. Training may download the base DistilBERT model;
+normal inference loads local files only. Prepared data is already tracked. To
+rebuild it when raw source files are available:
 
 ```powershell
 python scripts/prepare_data.py
@@ -204,8 +229,9 @@ nutrition CSV files under `data/raw/`. Prepared datasets go under
 `data/processed/`; the trained classifier goes under
 `models/intent_classifier/`.
 
-Do not commit private data, downloaded archives, processed datasets, model
-weights, secrets, or virtual-environment files. Keep dataset provenance in
+The prepared datasets are intentionally tracked so a checkout has the local
+knowledge bases. Do not commit private data, downloaded archives, model weights,
+secrets, or virtual-environment files. Keep dataset provenance in
 `data/SOURCES.md`.
 
 ## Product and safety constraints
@@ -242,10 +268,10 @@ For behavior changes, manually check at least these prompts in the UI:
 
 ## Suggested next work
 
-1. **Entity extractor (priority).** spaCy rules score 0.455 test F1 against the 0.85
-   target. Inspect per-utterance errors, improve rules using the **validation** set
-   only, and keep the test set frozen; a rerun on test after tuning is no longer
-   untouched and must be described that way.
+1. **Entity extractor.** The revised supplementary score is 0.8382 against the 0.85
+   target; exercise names remain the main weakness. Use development/validation
+   examples for further work. A rerun on an already-inspected benchmark is no
+   longer an untouched evaluation and must be described that way.
 2. Collect independent human-authored multi-turn task and safety scenarios, then run
    `scripts/evaluate_system.py` for task success (>= 80%), safety (100%) and CPU
    latency (< 1 s) on the target laptop. Keep failed development cases in the suite.

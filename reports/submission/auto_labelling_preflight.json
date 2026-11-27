@@ -1,0 +1,19 @@
+{
+  "ready": true,
+  "checks": {
+    "seeds": {
+      "ready": true,
+      "reviewed": 10
+    },
+    "validation": {
+      "ready": true,
+      "reviewed": 100
+    }
+  },
+  "source_counts": {
+    "train": 960,
+    "validation": 120,
+    "test": 120
+  },
+  "model_loaded": false
+}

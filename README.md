@@ -76,20 +76,50 @@ out-of-scope requests.
 The chatbot, the DistilBERT intent model, the spaCy entity rules and the
 auto-labelling/LoRA experiment (proposal section 4.6) are all implemented and the
 experiment has been run. Full tables, caveats and remaining work are in
-[HANDOFF.md](HANDOFF.md); raw outputs are in `ActivIQ_runs/`. Headline results on the
-120-utterance human-labelled test set:
+[HANDOFF.md](HANDOFF.md); raw outputs are in `ActivIQ_runs/`. The **historical Colab
+comparison** on the original 120 Hugging Face test utterances used the earlier
+extractor, before the food, exercise-alias and duration fixes:
 
 | System | Intent acc | Entity micro-F1 | Median latency |
 | --- | ---: | ---: | ---: |
-| DistilBERT + spaCy (the chatbot) | 0.917 | 0.455 | 0.018 s |
+| DistilBERT + earlier spaCy rules | 0.917 | 0.455 | 0.018 s |
 | Qwen3.5-2B + LoRA on machine labels | 0.917 | 0.571 | 2.9 s (A100) |
 | Qwen3.5-9B zero-shot | 0.800 | 0.408 | 4.1 s (A100) |
 
-The intent target (>= 0.90) is met. The entity target (>= 0.85) is **not** met by the
-spaCy rules (0.455), and the best auto-labelling prompt scored 0.700 against its 0.80
-validation target (intent agreement 0.904 met its 0.85 target). Still open: independent
-multi-turn task/safety evaluation, laptop latency run, and the report. Reproduce the
-experiment with `notebooks/activiq_end_to_end.ipynb` on a Colab A100.
+CPU classification-plus-extraction timing and A100 generation timing use different
+hardware and boundaries; these medians are not a matched speed comparison.
+
+The revised production extractor has separate results:
+
+| Corpus | Earlier rules | Revised rules | Meaning |
+| --- | ---: | ---: | --- |
+| 100 original validation queries | 0.4696 | 0.8923 | Development score; used to improve rules |
+| 100 supplementary AI-authored, human-reviewed queries | 0.7059 | 0.8382 | Separate reviewed corpus; all eight slots covered |
+
+The final local rerun of the **original 120 test queries** scores **0.6434**
+entity micro-F1 with the revised extractor (46 true positives, 19 false positives,
+32 false negatives). This is a regression check on an already-inspected benchmark,
+recorded in [the submission evaluation](reports/submission/system_evaluation.md).
+It is separate from the historical Colab comparison and the supplementary corpus.
+
+The [validation reports](reports/benchmarks/validation_entities_100/README.md) and
+[supplementary comparison](reports/benchmarks/reviewed_entities_100/comparison.md)
+preserve these results. Frozen supplementary labels are included in
+`data/evaluation/supplementary/`. **45.52% and 70.59% refer to different corpora**;
+do not combine them into one before/after comparison. The original Hugging Face
+splits remain the primary experiment dataset. The revised extractor still falls
+short of the 85% target on the supplementary corpus.
+
+The intent target (>= 0.90) is met. The best Qwen auto-labelling prompt scored
+0.700 against its 0.80 validation target; training intent agreement of 0.904 met
+its 0.85 target. Production extraction fixes do not change those saved Qwen
+labels or the existing LoRA adapter. `notebooks/activiq_prompt_rerun.ipynb` prepares
+a revised prompt experiment, but no new GPU result is claimed. Reproduce the
+original experiment with `notebooks/activiq_end_to_end.ipynb` on a Colab A100.
+
+See [SUBMISSION.md](SUBMISSION.md) for verification evidence, artifact locations
+and remaining limitations. Development task/safety checks do not replace an
+independent evaluation.
 
 ## Model results
 
@@ -132,6 +162,11 @@ Each run saves a JSON report and a readable Markdown report with conversation
 transcripts under `reports/evaluation/`. This machine-specific output directory
 is ignored by Git. Input, model and code hashes, package versions, hardware and
 thread settings are recorded so results can be reproduced.
+
+Selected historical evidence is deliberately preserved in the tracked
+`reports/benchmarks/` directory. The final local verification run is in
+`reports/submission/`; fresh ad hoc runs should continue to use the ignored
+default directory so archived evidence is not overwritten.
 
 The supplied suites include 20 development conversation scenarios and 34 safety
 cases. Scenario success requires every turn to pass; the proposal's task-success
@@ -185,8 +220,8 @@ human gold or annotates validation/test data as training data.
 
 Qwen3.5 uses the separate `requirements-llm.txt` / `requirements-llm-4bit.txt`
 environment; the baseline application dependency file is retained. Local model
-weights must be supplied explicitly. No Qwen quality results or LoRA training
-are implied by the infrastructure tests. Read the
+weights must be supplied explicitly. Infrastructure tests do not establish Qwen
+quality. Actual historical experiment outputs are in `ActivIQ_runs/`. Read the
 [setup, experiment and provenance guide](data/auto_labelling/README.md) before
 running the experiment.
 
@@ -267,11 +302,13 @@ information such as goal, level, equipment, duration, and the last intent.
 ## Repository structure
 
 ```text
-fitbuddy/
+ActivIQ/
 ├── data/
 │   ├── SOURCES.md
 │   ├── raw/                    # Downloaded source data; ignored by Git
 │   ├── processed/              # Prepared datasets tracked by Git
+│   ├── evaluation/             # Reviewed labels and development suites
+│   ├── auto_labelling/         # Reviewed training seeds and provenance
 │   └── user_profiles/
 ├── models/
 │   └── intent_classifier/      # Local trained model; ignored by Git
@@ -279,6 +316,10 @@ fitbuddy/
 │   ├── prepare_data.py
 │   ├── train_intent.py
 │   └── evaluate_intent.py
+├── notebooks/                  # Colab auto-labelling and LoRA workflows
+├── ActivIQ_runs/               # Captured original experiment outputs
+├── reports/benchmarks/         # Preserved validation/supplementary evidence
+├── tests/                      # Offline regression tests
 ├── templates/
 │   └── responses.json
 ├── src/
